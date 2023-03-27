@@ -11,8 +11,8 @@
 	<groupId>com.example</groupId>
 	<artifactId>Juntas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Juntas</name>
-	<description>Proyecto Juntas</description>
+	<name>juntas</name>
+	<description>Proyecto juntas</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
