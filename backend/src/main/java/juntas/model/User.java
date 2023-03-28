@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,15 +20,14 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    private String lastName;
-
     @Column(unique = true)
     private String email;
 
     @Column(unique = true)
     private Integer dni;
 
+    private String name;
+    private String lastName;
     private String profileImage;
     private String password;
     private LocalDate birthdayDate;
@@ -45,5 +45,6 @@ public class User implements Serializable {
         this.registerDate = LocalDate.now();
         this.hasConfirmedDni = true;
         this.isConfirmedEmail = false;
+        this.qualifications = new ArrayList<>();
     }
 }
