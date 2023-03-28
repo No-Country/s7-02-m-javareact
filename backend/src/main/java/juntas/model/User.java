@@ -35,4 +35,10 @@ public class User implements Serializable {
 
     @OneToOne
     private Role role;
+
+    @PrePersist
+    public void prePersist(){
+        this.registerDate = LocalDate.now();
+        this.isConfirmedEmail = false;
+    }
 }
