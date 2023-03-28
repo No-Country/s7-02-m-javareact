@@ -19,7 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Journey implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate createDate;
     private LocalDateTime departureDate;

@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -34,6 +35,8 @@ public class User implements Serializable {
     private Boolean isConfirmedEmail;
     private Boolean hasConfirmedDni;
 
+    @OneToMany
+    private List<Qualification> qualifications;
     @OneToOne
     private Role role;
 
