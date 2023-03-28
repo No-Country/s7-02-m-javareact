@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "journeys")
@@ -20,11 +21,23 @@ public class Journey implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    //Foreign Key How??
-    private Long userId;
     private LocalDate createDate;
-    private LocalDateTime departure;
+    private LocalDateTime departureDate;
     private LocalDate arrivalDate;
+    @OneToOne
+    @JoinColumn(name = "comfort_journey")
+    private Comfort comfort;
+    @ManyToOne
+    @JoinColumn(name = "vehicle_journey")
+    private Vehicle vehicle;
 
+    private Long driverId;
+    @ManyToMany
+    private List<User> users;
 
+    @OneToOne
+    private Place arrival;
+
+    @OneToOne
+    private Place departure;
 }

@@ -9,18 +9,17 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "places")
+@Table(name = "comforts")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Place implements Serializable {
+public class Comfort implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long placeId;
-    private String address;
-    private String city;
-    private String province;
-    private String country;
-
+    private Long comfortId;
+    private Boolean acceptChild;
+    private Boolean petFriendly;
+    private Boolean acceptSmokers;
+    private Boolean luggage;
 }

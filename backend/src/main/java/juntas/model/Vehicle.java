@@ -15,21 +15,17 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Vehicle implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long vehicleId;
-
-    //Both are foreign keys in the relationship
-    private Long userId;
-    private Long journeyId;
-
     private String vehicleColor;
     private Integer emptySeats;
     private String primaryBrand;
     private String modelName;
     private String patentNumber;
     private Boolean isVerified;
-
+    @OneToOne
+    @JoinColumn(name = "driver")
+    private User user;
 
 }
