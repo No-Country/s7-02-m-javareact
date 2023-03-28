@@ -27,6 +27,7 @@ public class User implements Serializable {
     @Column(unique = true)
     private Integer dni;
 
+    private String profileImage;
     private String password;
     private LocalDate birthdayDate;
     private LocalDate registerDate;
@@ -35,4 +36,11 @@ public class User implements Serializable {
 
     @OneToOne
     private Role role;
+
+    @PrePersist
+    public void prePersist(){
+        this.registerDate = LocalDate.now();
+        this.hasConfirmedDni = true;
+        this.isConfirmedEmail = false;
+    }
 }
