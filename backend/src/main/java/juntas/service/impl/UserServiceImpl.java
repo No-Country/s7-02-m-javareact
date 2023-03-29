@@ -14,6 +14,7 @@ import juntas.repository.UserRepository;
 import juntas.security.jwt.JwtUtil;
 import juntas.service.IUserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -54,14 +55,13 @@ public class UserServiceImpl implements IUserService, UserDetailsService {
     public LoginResponseDto login(LoginRequestDto dto) {
         var user = findByEmail(dto.email());
 
-        if (encoder.matches(dto.password(), user.getPassword())) {
-
+        if (!encoder.matches(dto.password(), user.getPassword())) {
+            throw new BadCredentialsException("message");
+        }
             LoginResponseDto response = mapper.map(user, LoginResponseDto.class);
             response.setToken(JwtUtil.generateToken(user));
 
             return response;
-        }
-        return null;
     }
 
     @Override
