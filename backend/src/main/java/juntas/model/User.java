@@ -31,6 +31,7 @@ public class User implements Serializable {
     private String lastname;
 
     @Column(name = "profile_image")
+
     private String profileImage;
 
     private String password;
