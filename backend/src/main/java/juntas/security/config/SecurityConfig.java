@@ -31,7 +31,7 @@ public class SecurityConfig {
                         corsConfigurationSource()).and().csrf().disable()
 
                 .authorizeRequests()
-                .antMatchers("/users/**", "/h2-console**").permitAll()
+                .antMatchers("/users/**", "/h2-console/**").permitAll()
                 .anyRequest().authenticated()
 
                 .and()
