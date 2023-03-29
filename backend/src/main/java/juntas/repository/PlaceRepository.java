@@ -12,4 +12,8 @@ public interface PlaceRepository extends JpaRepository<Place, Long> {
     Optional<Place> findById(Long id);
     @Override
     List<Place> findAll();
+
+    public Optional<Place> findByProvince(String province) throws Exception;
+
+    public Optional<Place> findByCity(String city) throws Exception;
 }
