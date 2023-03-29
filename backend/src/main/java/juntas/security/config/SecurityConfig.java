@@ -27,9 +27,11 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain configuration(HttpSecurity http) throws Exception {
         return http
-                .cors().configurationSource(
-                        corsConfigurationSource()).and().csrf().disable()
+                .cors().configurationSource(corsConfigurationSource())
+                .and().csrf().disable()
+                .headers().frameOptions().disable()
 
+                .and()
                 .authorizeRequests()
                 .antMatchers("/users/**", "/h2-console/**").permitAll()
                 .anyRequest().authenticated()

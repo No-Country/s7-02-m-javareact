@@ -27,12 +27,25 @@ public class User implements Serializable {
     private Integer dni;
 
     private String name;
-    private String lastName;
+
+    private String lastname;
+
+    @Column(name = "profile_image")
+
     private String profileImage;
+
     private String password;
+
+    @Column(name = "birthday_date")
     private LocalDate birthdayDate;
+
+    @Column(name = "register_date")
     private LocalDate registerDate;
+
+    @Column(name = "email_confirmed")
     private Boolean isConfirmedEmail;
+
+    @Column(name = "dni_confirmed")
     private Boolean hasConfirmedDni;
 
     @OneToMany
