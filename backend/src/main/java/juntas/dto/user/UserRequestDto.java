@@ -9,6 +9,7 @@ public record UserRequestDto(
         String email,
         Integer dni,
         String password,
-        LocalDate birthdayDate
+        LocalDate birthdayDate,
+        String profileImage
 ) {
 }

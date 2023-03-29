@@ -1,20 +1,22 @@
 package juntas.dto.user;
 
-import lombok.Builder;
+
+import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Builder
-public record UserResponseDto(
+@Setter
+public class UserResponseDto {
 
-        String name,
-        String lastName,
-        String email,
-        Integer dni,
-        LocalDate birthdayDate,
-        LocalDate registerDate,
-        Boolean isConfirmedEmail,
-        Boolean hasConfirmedDni,
-        String token
-) {
+    private Long id;
+    private String name;
+    private String lastName;
+    private String email;
+    private Integer dni;
+    private LocalDate birthdayDate;
+    private LocalDate registerDate;
+    private Boolean isConfirmedEmail;
+    private Boolean hasConfirmedDni;
+    private String profileImage;
+    private String token;
 }
