@@ -31,7 +31,7 @@ public class SecurityConfig {
                         corsConfigurationSource()).and().csrf().disable()
 
                 .authorizeRequests()
-                .antMatchers("/users/**").permitAll()
+                .antMatchers("/users/**", "/h2-console**").permitAll()
                 .anyRequest().authenticated()
 
                 .and()
@@ -47,7 +47,7 @@ public class SecurityConfig {
     CorsConfigurationSource corsConfigurationSource() {
         var configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of("*"));
-        configuration.setAllowedMethods(List.of("GET","POST","DELETE"));
+        configuration.setAllowedMethods(List.of("GET","POST","PUT", "DELETE"));
         configuration.setAllowedHeaders(List.of("*"));
         var source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
