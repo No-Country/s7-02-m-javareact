@@ -14,8 +14,6 @@ import juntas.repository.UserRepository;
 import juntas.security.jwt.JwtUtil;
 import juntas.service.IUserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -32,7 +30,6 @@ public class UserServiceImpl implements IUserService, UserDetailsService {
     private final UserRepository repository;
     private final RoleRepository roleRepository;
     private final PasswordEncoder encoder;
-    private final AuthenticationManager authenticationManager;
     private final GenericMapper mapper;
 
     @Override
