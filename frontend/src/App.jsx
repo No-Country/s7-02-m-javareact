@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./views/Login";
 import Home from "./views/Home";
 import AppNavbar from "./components/AppNavbar";
+import Recoverpassword from "./views/Recoverpassword";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/recover" element={<Recoverpassword />} />
         </Routes>
       </BrowserRouter>
     </div>
