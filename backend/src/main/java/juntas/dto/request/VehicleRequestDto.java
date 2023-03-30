@@ -1,24 +1,29 @@
 package juntas.dto.request;
 
-import juntas.model.User;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-public record VehicleRequestDto(
+@Getter
+@Setter
+@RequiredArgsConstructor
+public class VehicleRequestDto {
 
         @NotBlank(message = "The color of the vehicle may not be blank")
-        String vehicleColor,
+        private String vehicleColor;
         @NotNull(message = "Empty seats of the vehicle may not be null")
-        Integer emptySeats,
+        private Integer emptySeats;
         @NotBlank(message = "The brand of the vehicle may not be blank")
-        String primaryBrand,
+        private String primaryBrand;
         @NotBlank(message = "The model of the vehicle may not be blank")
-        String modelName,
+        private String modelName;
         @NotBlank(message = "The patent of the vehicle may not be blank")
-        String patentNumber,
+        private String patentNumber;
         @NotNull(message = "the driver of the vehicle may not be null")
-        Long driverId,
-        Boolean isVerified
-) {
+        private Long driverId;
+        private Boolean isVerified;
+
 }

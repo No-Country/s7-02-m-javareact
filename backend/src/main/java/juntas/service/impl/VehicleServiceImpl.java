@@ -31,12 +31,12 @@ public class VehicleServiceImpl implements IVehicleService {
     public VehicleResponseDto update(Long id,VehicleRequestDto request) {
         Vehicle vehicle = repository.findById(id).orElseThrow(()->new ResourceNotFoundException(""));
 
-        vehicle.setVehicleColor(request.vehicleColor());
-        vehicle.setEmptySeats(request.emptySeats());
-        vehicle.setPrimaryBrand(request.primaryBrand());
-        vehicle.setModelName(request.modelName());
-        vehicle.setPatentNumber(request.patentNumber());
-        vehicle.setIsVerified(request.isVerified());
+        vehicle.setVehicleColor(request.getVehicleColor());
+        vehicle.setEmptySeats(request.getEmptySeats());
+        vehicle.setPrimaryBrand(request.getPrimaryBrand());
+        vehicle.setModelName(request.getModelName());
+        vehicle.setPatentNumber(request.getPatentNumber());
+        vehicle.setIsVerified(request.getIsVerified());
 
         return mapper.map(repository.save(vehicle), VehicleResponseDto.class);
     }
