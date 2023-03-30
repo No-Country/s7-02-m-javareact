@@ -11,7 +11,7 @@ public interface IPlaceService {
 
     PlaceResponseDto findById(Long id);
 
-    PlaceResponseDto findByCity(String city) throws Exception;
+    PlaceResponseDto findByCity(String city);
 
     PlaceResponseDto findByProvince(String province);
 
