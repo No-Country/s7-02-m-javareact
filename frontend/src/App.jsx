@@ -58,7 +58,7 @@ function App() {
           </motion.div>
         }
       ></Route>
-               <Route
+      <Route
         path="/register"
         exact
         element={
