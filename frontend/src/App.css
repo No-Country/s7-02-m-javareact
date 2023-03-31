@@ -1,42 +1,71 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.traveler {
+  background-image: linear-gradient(
+      90deg,
+      rgba(97, 97, 97, 0.5) 50%,
+      rgba(59, 237, 30, 0.5) 100%
+    ),
+    url("assets/landing/viajera.png");
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.driver {
+  background-image: linear-gradient(
+      90deg,
+      rgba(97, 97, 97, 0.5) 50%,
+      rgba(59, 237, 30, 0.5) 100%
+    ),
+    url("assets/landing/conductora.png");
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.driver,
+.traveler,
+.carousel-item-1 {
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.bg-green {
+  background-color: #3bed1e;
 }
 
-.card {
-  padding: 2em;
+.share-travel {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
 }
 
-.read-the-docs {
-  color: #888;
-} */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 36rem;
+  overflow: hidden;
+}
+
+.carousel-item-0 {
+  background-image: linear-gradient(
+      90deg,
+      rgba(97, 97, 97, 0.5) 50%,
+      rgba(59, 237, 30, 0.5) 100%
+    ),
+    url("./assets/landing/header1.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.carousel-item-1 {
+  background-image: linear-gradient(
+      90deg,
+      rgba(97, 97, 97, 0.5) 50%,
+      rgba(59, 237, 30, 0.5) 100%
+    ),
+    url("./assets/landing/header2.png");
+}
+
+.carousel-content {
+  margin-right: 4rem;
+  margin-top: 3rem;
+  align-items: end;
+  width: 26rem;
+}
