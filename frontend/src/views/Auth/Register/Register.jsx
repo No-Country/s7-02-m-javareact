@@ -1,21 +1,34 @@
 import React from 'react'
 import RegisterForm from './RegisterForm';
 import Logo from "../../../assets/Recurso 8@2x 2.svg"
+import registerViewPic from "../../../assets/register-view-pic.png"
 
 const Register = () => {
   return (
-    <div className='w-full  grid grid-cols-12 gap-3 bg-white px-[2rem] md:px-[5rem] pt-[5rem]'>
-
-      <div className='col-span-12 md:col-span-6 flex flex-col items-center justify-center px-[4rem]'>
-        <img src={Logo} alt='logo' />
-        <h2 className=' mt-10 text-black font-light text-[1.5rem] '>Mayor <span className='font-bold'>seguridad</span> <span className='font-bold'>Comodidad</span> <span className='font-bold'> y confianza</span> en cada viaje</h2>
-      </div>
-
-      <div className='col-span-12 md:col-span-6 flex items-center justify-center'>
-        <RegisterForm/>
-      </div>
-      
+    <div  className='w-full min-h-fit  flex max-md:flex-col justify-around items-center bg-white border-solid border-2  px-[2rem] pt-[5rem]' >
+    <div className='col-span-12 md:col-span-6 flex items-center w-3/6 max-md:w-screen p-7 justify-center'>
+      <RegisterForm/>
     </div>
+    <div className='w-3/6 max-md:w-full relative'>
+    <img src={registerViewPic} alt="register-view-pic" style={{ width:"100%",zIndex:"-10" ,borderRadius:"20px"}}/>
+    <div style={{
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      fontSize:"40px",
+      color: '#fff',
+      padding: '10px',
+      borderRadius: '5px',
+      textAlign:"center",
+      width:"90%",
+  wordBreak:"keep-all"
+    }}>
+      <h1>Mayor<strong> seguridad, comodidad y confianza</strong> en cada viaje.</h1>
+     
+    </div>
+    </div>
+  </div>
   )
 }
 
