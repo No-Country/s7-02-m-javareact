@@ -4,7 +4,7 @@ import Logo from "../../../assets/Recurso 8@2x 2.svg"
 
 const Register = () => {
   return (
-    <div className='w-full h-screen grid grid-cols-12 gap-3 bg-white px-[2rem] md:px-[5rem] pt-[5rem]'>
+    <div className='w-full  grid grid-cols-12 gap-3 bg-white px-[2rem] md:px-[5rem] pt-[5rem]'>
 
       <div className='col-span-12 md:col-span-6 flex flex-col items-center justify-center px-[4rem]'>
         <img src={Logo} alt='logo' />
