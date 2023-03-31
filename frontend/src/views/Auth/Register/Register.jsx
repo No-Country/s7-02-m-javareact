@@ -2,14 +2,13 @@ import React from 'react'
 import RegisterForm from './RegisterForm';
 import Logo from "../../../assets/Recurso 8@2x 2.svg"
 import registerViewPic from "../../../assets/register-view-pic.png"
+import useMobile from "./../../../hooks/useMobile"
 
 const Register = () => {
+
   return (
     <div  className='w-full min-h-fit  flex max-md:flex-col justify-around items-center bg-white border-solid border-2  px-[2rem] pt-[5rem]' >
-    <div className='col-span-12 md:col-span-6 flex items-center w-3/6 max-md:w-screen p-7 justify-center'>
-      <RegisterForm/>
-    </div>
-    <div className='w-3/6 max-md:w-full relative'>
+  <div className='w-3/6 max-md:w-full relative'>
     <img src={registerViewPic} alt="register-view-pic" style={{ width:"100%",zIndex:"-10" ,borderRadius:"20px"}}/>
     <div style={{
       position: 'absolute',
@@ -27,6 +26,9 @@ const Register = () => {
       <h1>Mayor<strong> seguridad, comodidad y confianza</strong> en cada viaje.</h1>
      
     </div>
+    </div>
+    <div className='col-span-12 md:col-span-6 flex items-center w-3/6 max-md:w-screen p-7 justify-center'>
+      <RegisterForm/>
     </div>
   </div>
   )
