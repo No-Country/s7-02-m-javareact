@@ -13,7 +13,7 @@ public interface PlaceRepository extends JpaRepository<Place, Long> {
     @Override
     List<Place> findAll();
 
-    Optional<Place> findByProvince(String province);
+    Optional<List<Place>> findByProvince(String province);
 
-    Optional<Place> findByCity(String city);
+    Optional<List<Place>> findByCity(String city);
 }

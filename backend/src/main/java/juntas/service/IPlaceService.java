@@ -3,6 +3,8 @@ package juntas.service;
 import juntas.dto.place.PlaceRequestDto;
 import juntas.dto.place.PlaceResponseDto;
 
+import java.util.List;
+
 public interface IPlaceService {
 
     PlaceResponseDto createPlace(PlaceRequestDto toCreate);
@@ -11,9 +13,9 @@ public interface IPlaceService {
 
     PlaceResponseDto findById(Long id);
 
-    PlaceResponseDto findByCity(String city);
+    List<PlaceResponseDto> findByCity(String city);
 
-    PlaceResponseDto findByProvince(String province);
+    List<PlaceResponseDto> findByProvince(String province);
 
     void deletePlace(Long id);
 }
