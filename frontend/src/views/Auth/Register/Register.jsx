@@ -1,7 +1,7 @@
 import RegisterForm from "./RegisterForm";
-
 import useMobile from "./../../../hooks/useMobile";
 import { registerViewPic } from "../../../assets/images";
+
 
 const Register = () => {
   return (

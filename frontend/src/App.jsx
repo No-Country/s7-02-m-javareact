@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 
 //Framer motion
 import { AnimatePresence, motion } from "framer-motion";
+import AccountCreated from "./views/Auth/Register/AccountCreated";
 
 const pageTransition = {
   in: {
@@ -25,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <AppNavbar />
-      <div className="flex justify-center">
+      <div className="">
         <div className="container w-auto m-auto">
           <BrowserRouter>
             <AnimatePresence>
@@ -75,6 +76,24 @@ function App() {
                     </motion.div>
                   }
                 ></Route>
+
+                <Route
+                  path="/register/accountCreated"
+                  exact
+                  element={
+                    <motion.div
+                      className="page"
+                      initial="out"
+                      animate="in"
+                      exit="out"
+                      variants={pageTransition}
+                    >
+                      <AccountCreated/>
+                    </motion.div>
+                  }
+                ></Route>
+
+
               </Routes>
             </AnimatePresence>
           </BrowserRouter>
