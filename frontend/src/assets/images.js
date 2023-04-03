@@ -36,6 +36,9 @@ import imagedni from "../assets/auth/dni.svg";
 // Account created
 import imageCreated from "./auth/carcreated.png";
 import accountCreatedImage from "./auth/cuentacreada.svg";
+//welcome
+
+import welcomeImage from "./auth/welcomeImage.png";                                                                                                                                                                                                                                                   
 
 export {
   GreenCar,
@@ -68,4 +71,5 @@ export {
   imageCreated,
   accountCreatedImage,
   Logo,
+  welcomeImage,
 };

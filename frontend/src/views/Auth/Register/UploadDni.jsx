@@ -1,5 +1,6 @@
 import { imagedni } from "../../../assets/images";
 
+
 const UploadDni = () => {
   return (
     <div className="flex mt-5 w-full px-1">
