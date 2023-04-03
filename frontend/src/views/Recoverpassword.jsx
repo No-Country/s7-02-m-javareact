@@ -16,7 +16,7 @@ const Recoverpassword = () => {
           </p>
 
           <input
-            className="p-2 rounded-xl px-4 text-lg"
+            className="p-2 rounded-xl px-4 text-lg lg: w-96 lg: "
             type="email"
             id="email"
             placeholder="email address"
