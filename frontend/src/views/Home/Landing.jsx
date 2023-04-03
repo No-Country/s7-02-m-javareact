@@ -22,6 +22,7 @@ import Carousel from "../../components/Carousel";
 const Home = () => {
   return (
     <>
+      <div className="container w-auto m-auto">
       <div className="header text-center">
         <h1 className="text-3xl font-bold flex justify-center items-center mt-5 ">
           ¿Que es <img className="w-60" src={Logo} alt="juntas" />?
@@ -186,6 +187,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+      </div>
+      
     </>
   );
 };

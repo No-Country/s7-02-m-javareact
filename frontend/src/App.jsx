@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 
 //Framer motion
 import { AnimatePresence, motion } from "framer-motion";
+import AccountCreated from "./views/Auth/Register/AccountCreated";
+import WelcomeToApp from "./views/Auth/Register/WelcomeToApp";
 
 const pageTransition = {
   in: {
@@ -21,12 +23,14 @@ const pageTransition = {
   },
 };
 
+
+
 function App() {
   return (
     <div className="App">
       <AppNavbar />
-      <div className="flex justify-center">
-        <div className="container w-auto m-auto">
+      <div className="">
+        <div className="">
           <BrowserRouter>
             <AnimatePresence>
               <Routes>
@@ -59,7 +63,7 @@ function App() {
                       <Login />
                     </motion.div>
                   }
-                ></Route>
+                ></Route>    
                 <Route
                   path="/register"
                   exact
@@ -75,6 +79,39 @@ function App() {
                     </motion.div>
                   }
                 ></Route>
+
+                <Route
+                  path="/register/accountCreated"
+                  exact
+                  element={
+                    <motion.div
+                      className="page"
+                      initial="out"
+                      animate="in"
+                      exit="out"
+                      variants={pageTransition}
+                    >
+                      <AccountCreated/>
+                    </motion.div>
+                  }
+                ></Route>
+
+                <Route
+                  path="/register/welcomeToApp"
+                  exact
+                  element={
+                    <motion.div
+                      className="page"
+                      initial="out"
+                      animate="in"
+                      exit="out"
+                      variants={pageTransition}
+                    >
+                      <WelcomeToApp/>
+                    </motion.div>
+                  }
+                ></Route>
+
               </Routes>
             </AnimatePresence>
           </BrowserRouter>
