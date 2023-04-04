@@ -6,13 +6,15 @@ import juntas.service.IPlaceService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 @RequestMapping("/places")
 public record PlaceController(IPlaceService placeService) {
     @PostMapping
-    public ResponseEntity<PlaceResponseDto> createPlace(@RequestBody PlaceRequestDto toCreate) {
+    public ResponseEntity<PlaceResponseDto> createPlace(@Valid @RequestBody PlaceRequestDto toCreate) {
         return new ResponseEntity<>(placeService.createPlace(toCreate), HttpStatus.CREATED);
     }
     @PutMapping("/{id}")

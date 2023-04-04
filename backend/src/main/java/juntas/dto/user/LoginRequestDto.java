@@ -1,8 +1,12 @@
 package juntas.dto.user;
 
-public record LoginRequestDto(
+import lombok.Getter;
+import lombok.Setter;
 
-        String email,
-        String password
-) {
+@Getter
+@Setter
+public class LoginRequestDto{
+
+       private String email;
+       private String password;
 }

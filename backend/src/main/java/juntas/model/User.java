@@ -1,5 +1,7 @@
 package juntas.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -48,7 +50,9 @@ public class User implements Serializable {
     @Column(name = "dni_confirmed")
     private Boolean hasConfirmedDni;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    @JsonIgnore
+    @JsonBackReference
     private List<Qualification> qualifications;
     @OneToOne
     private Role role;

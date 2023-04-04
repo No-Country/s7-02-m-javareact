@@ -1,15 +1,19 @@
 package juntas.dto.user;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
-public record UserRequestDto(
+@Setter
+@Getter
+public class UserRequestDto {
 
-        String name,
-        String lastName,
-        String email,
-        Integer dni,
-        String password,
-        LocalDate birthdayDate,
-        String profileImage
-) {
+    private String name;
+    private String lastName;
+    private String email;
+    private Integer dni;
+    private String password;
+    private LocalDate birthdayDate;
+    private String profileImage;
 }

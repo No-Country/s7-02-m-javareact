@@ -26,6 +26,6 @@ public class Vehicle implements Serializable {
     private Boolean isVerified;
     @OneToOne
     @JoinColumn(name = "driver")
-    private User user;
+    private User driver;
 
 }

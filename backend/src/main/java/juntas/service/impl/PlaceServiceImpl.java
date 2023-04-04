@@ -22,21 +22,18 @@ public class PlaceServiceImpl implements IPlaceService {
 
     @Override
     public PlaceResponseDto createPlace(PlaceRequestDto toCreate) {
-        if(checkGoodPlace(toCreate)) {
+
             Place newPlace = mapper.map(toCreate, Place.class);
             return mapper.map(repository.save(newPlace), PlaceResponseDto.class);
-        } else {
-            throw new ResourceEmptyOrNullException("The place that you attempt to create is null or empty.");
-        }
     }
     @Override
     public PlaceResponseDto updatePlace(Long id, PlaceRequestDto toUpdate) {
         Place updatedPlace = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("The place doesn't exist. ")) ;
 
-        updatedPlace.setAddress(toUpdate.address());
-        updatedPlace.setCity(toUpdate.city());
-        updatedPlace.setProvince(toUpdate.province());
-        updatedPlace.setCountry(toUpdate.country());
+        updatedPlace.setAddress(toUpdate.getAddress());
+        updatedPlace.setCity(toUpdate.getCity());
+        updatedPlace.setProvince(toUpdate.getProvince());
+        updatedPlace.setCountry(toUpdate.getCountry());
 
         return mapper.map(repository.save(updatedPlace), PlaceResponseDto.class);
     }
@@ -72,8 +69,8 @@ public class PlaceServiceImpl implements IPlaceService {
 
     private boolean checkGoodPlace(PlaceRequestDto toCheck) {
         return toCheck != null &&
-                (toCheck.city().isEmpty() ||
-                toCheck.address().isEmpty() ||
-                toCheck.province().isEmpty());
+                (toCheck.getCity().isEmpty() ||
+                toCheck.getAddress().isEmpty() ||
+                toCheck.getProvince().isEmpty());
     }
 }

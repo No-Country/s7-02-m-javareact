@@ -1,5 +1,6 @@
 package juntas.dto.vehicle;
 
+import juntas.model.User;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -15,6 +16,6 @@ public class VehicleResponseDto{
     private String primaryBrand;
     private String modelName;
     private String patentNumber;
-    private Long driverId;
+    private User driver;
     private Boolean isVerified;
 }

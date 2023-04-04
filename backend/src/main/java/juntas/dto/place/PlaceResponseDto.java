@@ -1,9 +1,13 @@
 package juntas.dto.place;
 
-public record PlaceResponseDto (
-        String address,
-        String city,
-        String province,
-        String country
-){
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+public class PlaceResponseDto {
+        private String address;
+        private String city;
+        private String province;
+        private String country;
 }
