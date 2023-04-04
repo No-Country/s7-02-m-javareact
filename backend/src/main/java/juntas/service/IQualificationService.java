@@ -5,13 +5,13 @@ import juntas.dto.qualification.QualificationResponseDto;
 
 public interface IQualificationService {
 
-    public QualificationResponseDto createQualification(QualificationRequestDto toCreate);
+    QualificationResponseDto createQualification(QualificationRequestDto toCreate);
 
-    public QualificationResponseDto updateQualification(Long id, QualificationRequestDto toUpdate);
+    QualificationResponseDto updateQualification(Long id, QualificationRequestDto toUpdate);
 
-    public QualificationResponseDto getById(Long id);
+    QualificationResponseDto getById(Long id);
 
-    public void deleteQualification(Long id);
+    void deleteQualification(Long id);
 
     //public QualificationResponseDto getByUserQualificated(Long id);
 
