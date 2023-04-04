@@ -1,11 +1,13 @@
 package juntas.dto.user;
 
 
+import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Setter
+@Getter
 public class UserResponseDto {
 
     private Long id;

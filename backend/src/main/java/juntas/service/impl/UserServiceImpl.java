@@ -36,13 +36,13 @@ public class UserServiceImpl implements IUserService, UserDetailsService {
     @Override
     public UserResponseDto register(UserRequestDto dto) {
 
-        if(existsByEmail(dto.email()) || existsByDni(dto.dni())) {
+        if(existsByEmail(dto.getEmail()) || existsByDni(dto.getDni())) {
             throw new ResourceAlreadyExistsException("message");
         }
-            Role role = roleRepository.findById(1L).get();
+            Role role = roleRepository.findById(1L).orElseThrow();
 
             User user = mapper.map(dto, User.class);
-            user.setPassword(encoder.encode(dto.password()));
+            user.setPassword(encoder.encode(dto.getPassword()));
             user.setRole(role);
 
             UserResponseDto response = mapper.map(repository.save(user), UserResponseDto.class);
@@ -53,9 +53,9 @@ public class UserServiceImpl implements IUserService, UserDetailsService {
 
     @Override
     public LoginResponseDto login(LoginRequestDto dto) {
-        var user = findByEmail(dto.email());
+        var user = findByEmail(dto.getEmail());
 
-        if (!encoder.matches(dto.password(), user.getPassword())) {
+        if (!encoder.matches(dto.getPassword(), user.getPassword())) {
             throw new BadCredentialsException("message");
         }
             LoginResponseDto response = mapper.map(user, LoginResponseDto.class);
