@@ -3,7 +3,7 @@ import { Envelope } from "../assets/images";
 
 const Footer = () => {
   return (
-    <div className="bg-black">
+    <div className="bg-black px-6 py-3">
       <div className="grid grid-cols-3 sm:grid-cols-1 md:grid-cols-3 text-white h-52 sm:h-auto items-center">
         <div className="w-full">
           <img className="w-64" src={Logo} alt="logo" />

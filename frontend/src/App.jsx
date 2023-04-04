@@ -12,6 +12,7 @@ import Landing from "./views/Home/Landing";
 import AccountCreated from "./views/Auth/Register/AccountCreated";
 import WelcomeToApp from "./views/Auth/Register/WelcomeToApp";
 import Home from "./views/Home/Landing";
+import TermsAndConditions from "./views/Auth/Register/TermsAndConditions";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" Component={<Home />} />
-
+        <Route path="/register/termsAndConditions" element={<TermsAndConditions />}></Route>
         <Route path="/register/accountCreated" element={<AccountCreated />} />
 
         <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />

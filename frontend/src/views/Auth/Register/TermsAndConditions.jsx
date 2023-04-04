@@ -35,7 +35,10 @@ function TermsAndConditions({userRegistered}) {
   return (<>
   {
     isLoading?(
-      <Loader/>
+      <div className='flex items-center justify-center w-full h-screen'>
+        <Loader/>
+      </div>
+      
     ):(
 
 <div style={{ display:"flex", justifyContent:"center", alignItems:"center", boxShadow:"rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset"}} className="p-3  rounded-[20px] "   >
