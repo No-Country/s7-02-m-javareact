@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header1, Header2 } from "../assets/images";
+import { Header1, Header2, TransitionArrow } from "../assets/images";
 
 const images = [Header1, Header2];
 
@@ -55,13 +55,17 @@ const Carousel = () => {
         className="absolute top-1/2 left-0 transform -translate-y-1/2 focus:outline-none"
         onClick={prevImage}
       >
-        &#x2190;
+        <img
+          className="w-12 -rotate-180"
+          src={TransitionArrow}
+          alt="prevImage"
+        />
       </button>
       <button
         className="absolute top-1/2 right-0 transform -translate-y-1/2 focus:outline-none"
         onClick={nextImage}
       >
-        &#x2192;
+        <img className="w-12 " src={TransitionArrow} alt="nextImage" />
       </button>
     </div>
   );

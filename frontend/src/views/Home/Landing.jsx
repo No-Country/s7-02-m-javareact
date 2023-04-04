@@ -22,10 +22,9 @@ import Carousel from "../../components/Carousel";
 const Home = () => {
   return (
     <>
-      <div className="container w-auto m-auto">
       <div className="header text-center">
         <h1 className="text-3xl font-bold flex justify-center items-center mt-5 ">
-          ¿Que es <img className="w-60" src={Logo} alt="juntas" />?
+          ¿Qué es <img className="w-60" src={Logo} alt="juntas" />?
         </h1>
         <h5 className="text-2xl font-thin mt-5">
           Es una plataforma que permite{" "}
@@ -37,7 +36,9 @@ const Home = () => {
       </div>
       <Carousel />
       <div className="mt-10">
-        <h3 className="text-center font-bold text-3xl">+ Ventajas</h3>
+        <h3 className="text-center font-bold text-3xl">
+          <strong className="font-black">+</strong> Ventajas
+        </h3>
         <br />
         <div className="grid grid-cols-2 bg-pink-800 text-white p-20">
           <div className="col-span-1">
@@ -95,6 +96,7 @@ const Home = () => {
       </div>
       <div className="text-center mt-8 m-auto">
         <h3 className="text-center font-bold text-3xl">¿Cómo funciona?</h3>
+        <br />
         <div className="traveler gradient h-96 p-16">
           <h3 className="text-left font-semibold text-2xl text-white">
             Como viajera
@@ -132,7 +134,7 @@ const Home = () => {
           </div>
         </div>
         <div className="flex justify-center ">
-          <img className="w-40" src={Share} alt="share" />
+          <img className="w-80" src={Share} alt="share" />
         </div>
         <div className="driver h-96 p-16">
           <h3 className="text-left font-semibold text-2xl text-white">
@@ -187,8 +189,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      </div>
-      
     </>
   );
 };

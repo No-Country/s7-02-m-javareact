@@ -1,85 +1,34 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
+//Partials
+import AppNavbar from "./components/AppNavbar";
+import Footer from "./components/Footer";
+
 //Components
 import Login from "./views/Auth/Login/Login";
 import Register from "./views/Auth/Register/Register";
 import Landing from "./views/Home/Landing";
-import AppNavbar from "./components/AppNavbar";
-import Footer from "./components/Footer";
-
-//Framer motion
-import { AnimatePresence, motion } from "framer-motion";
-
-//Components
 import AccountCreated from "./views/Auth/Register/AccountCreated";
 import WelcomeToApp from "./views/Auth/Register/WelcomeToApp";
-
-const pageTransition = {
-  in: {
-    opacity: 1,
-  },
-
-  out: {
-    opacity: 0,
-  },
-};
-
-
+import Home from "./views/Home/Landing";
 
 function App() {
   return (
     <div className="App">
       <AppNavbar />
-  
-              <Routes>
-                <Route
-                  path="/"
-                  exact
-                  element={
-         
-                      <Landing />
-                
-                  }
-                ></Route>
-                <Route
-                  path="/login"
-                  element={
-           
-                      <Login />
-         
-                  }
-                ></Route>    
-                <Route
-                  path="/register"
-                  element={
-         
-                      <Register />
-            
-                  }
-                ></Route>
 
-                <Route
-                  path="/register/accountCreated"
-                  element={
-              
-                      <AccountCreated/>
-                
-                  }
-                ></Route>
+      <Routes>
+        <Route path="/" exact element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" Component={<Home />} />
 
-                <Route
-                  path="/register/welcomeToApp"
-                  element={
-            
-                      <WelcomeToApp/>
-                
-                  }
-                ></Route>
+        <Route path="/register/accountCreated" element={<AccountCreated />} />
 
-              </Routes>
-      
- 
+        <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />
+      </Routes>
+
       <Footer />
     </div>
   );
