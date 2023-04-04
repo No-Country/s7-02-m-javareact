@@ -1,12 +1,15 @@
 package juntas.dto.qualification;
 
-public record QualificationResponseDto(
-        Long qualificationId,
-        Long fromUser,
-        Long toUser,
-        String comment,
-        Integer qualificationQuantity
+import lombok.Getter;
+import lombok.Setter;
 
-) {
+@Getter
+@Setter
+public class QualificationResponseDto{
+        private Long qualificationId;
+        private Long fromUser;
+        private Long toUser;
+        private String comment;
+        private Integer qualificationQuantity;
 
 }

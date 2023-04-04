@@ -4,7 +4,9 @@ import juntas.dto.request.VehicleRequestDto;
 import juntas.dto.response.VehicleResponseDto;
 import juntas.exception.ResourceNotFoundException;
 import juntas.mapper.GenericMapper;
+import juntas.model.User;
 import juntas.model.Vehicle;
+import juntas.repository.UserRepository;
 import juntas.repository.VehicleRepository;
 import juntas.service.IVehicleService;
 
@@ -18,12 +20,14 @@ public class VehicleServiceImpl implements IVehicleService {
 
     private final GenericMapper mapper;
     private final VehicleRepository repository;
+    private final UserRepository userRepository;
 
 
     @Override
     public VehicleResponseDto create(VehicleRequestDto request) {
         Vehicle vehicle = mapper.map(request, Vehicle.class);
-
+        User user = userRepository.findById(request.getDriverId()).orElseThrow();
+        vehicle.setDriver(user);
         return mapper.map(repository.save(vehicle), VehicleResponseDto.class);
     }
 

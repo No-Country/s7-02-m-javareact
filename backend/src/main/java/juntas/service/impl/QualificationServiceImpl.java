@@ -32,8 +32,8 @@ public class QualificationServiceImpl implements IQualificationService {
         if(goodQualification(toUpdate)){
             Qualification toReassign = repository.findById(id).orElseThrow( () -> new ResourceNotFoundException("Resources not found or not exist."));
 
-            toReassign.setQualificationQuantity(toUpdate.qualificationQuantity());
-            toReassign.setComment(toUpdate.comment());
+            toReassign.setQualificationQuantity(toUpdate.getQualificationQuantity());
+            toReassign.setComment(toUpdate.getComment());
 
             return mapper.map(repository.save(toReassign), QualificationResponseDto.class);
         } else {
@@ -53,10 +53,10 @@ public class QualificationServiceImpl implements IQualificationService {
 
     public boolean goodQualification(QualificationRequestDto toCheck){
         return toCheck != null &&
-                (toCheck.qualificationQuantity() != 0 &&
-                    !toCheck.comment().isEmpty() &&
-                    toCheck.fromUser() >= 0 &&
-                    toCheck.toUser() >= 0
+                (toCheck.getQualificationQuantity() != 0 &&
+                    !toCheck.getComment().isEmpty() &&
+                    toCheck.getFromUser() >= 0 &&
+                    toCheck.getToUser() >= 0
                 );
     }
 }

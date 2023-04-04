@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 import static juntas.handler.ResponseBuilder.responseBuilder;
 
 
@@ -16,7 +18,7 @@ import static juntas.handler.ResponseBuilder.responseBuilder;
 public record VehicleController (IVehicleService service){
 
 @PostMapping
-public ResponseEntity<?> create(@RequestBody VehicleRequestDto requestDto){
+public ResponseEntity<?> create(@Valid @RequestBody VehicleRequestDto requestDto){
     return responseBuilder(HttpStatus.CREATED,service.create(requestDto));
 }
 
