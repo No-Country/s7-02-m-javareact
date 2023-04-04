@@ -6,6 +6,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 
 @Setter
+
 public class UserResponseDto {
 
     private Long id;
