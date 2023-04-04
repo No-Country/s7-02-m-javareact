@@ -1,11 +1,23 @@
 import React from 'react'
 import { Logo, accountCreatedImage, imageCreated  } from "../../../assets/images";
 
+import Loader from '../../../components/Loader';
+
 
 const AccountCreated = () => {
 
+    const [isLoading, setIsLoading] = React.useState(true)
+
+    React.useEffect(()=>{
+        setTimeout(() => {
+            setIsLoading(false)
+          }, 3500);
+    },[])
+
     return (
-    <div className='w-full px-[1rem]'>
+    <>
+
+        <div className='w-full px-[1rem]'>
         <div className='grid grid-cols-12 grid-rows-1'>
             <div className='hidden md:block md:col-span-6 w-full h-screen bg-cover bg-center' style={{backgroundImage:`url(${imageCreated})`}} >
                 
@@ -14,9 +26,15 @@ const AccountCreated = () => {
                 </div>
             </div>
             <div className='col-span-12 md:col-span-6 flex justify-center items-center h-screen'>
-                
+
                 <div className='text-center shadow-md py-6 px-7'>
-                    <div className='text-center mb-10'>
+         {
+            isLoading? (
+                <Loader/>
+            ):
+            (
+                <>
+                           <div className='text-center mb-10'>
                         <img src={Logo} alt='logo' className='mx-auto' />
                     </div>
                     
@@ -34,11 +52,16 @@ const AccountCreated = () => {
                             Continuar
                         </button>
                     </div>
+                </>
+            )
+         }
                 </div>
-                
             </div>
         </div>
     </div>
+
+    </>
+   
   )
 }
 

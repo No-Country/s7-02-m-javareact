@@ -23,6 +23,7 @@ import Header1 from "../assets/landing/header1.png";
 import Header2 from "../assets/landing/header2.png";
 //Register
 import woman from "../assets/auth/Vector.svg";
+import download from "./../assets/auth/download.svg"
 // import pastel from "../assets/auth/pastel.svg";
 import movil from "../assets/auth/movil.svg";
 import facebook from "../assets/auth/facebook.svg";
@@ -60,6 +61,7 @@ export {
   Header1,
   Header2,
   woman,
+  download,
   movil,
   facebook,
   instagram,
