@@ -3,7 +3,8 @@ import "./App.css";
 import Login from "./views/Login";
 import Home from "./views/Home";
 import AppNavbar from "./components/AppNavbar";
-import Recoverpassword from "./views/Recoverpassword";
+import Recoverpassword from "./components/Recoverpassword";
+
 
 function App() {
   return (
