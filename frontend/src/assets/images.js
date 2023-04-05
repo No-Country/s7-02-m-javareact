@@ -39,10 +39,10 @@ import key from "../assets/auth/password.svg";
 import registerViewPic from "../assets/auth/register-view-pic.png";
 import dni from "../assets/auth/dni.svg";
 import imagedni from "../assets/auth/dni.svg";
-import LoginViewPic from "../assets/auth/login-view-pic.png";
+// import LoginViewPic from "../assets/auth/login-view-pic.png";
 
 // Account created
-import imageCreated from "./auth/carcreated.png";
+// import imageCreated from "./auth/carcreated.png";
 import accountCreatedImage from "./auth/cuentacreada.svg";
 
 //welcome
@@ -79,10 +79,10 @@ export {
   email,
   key,
   registerViewPic,
-  LoginViewPic,
+  // LoginViewPic,
   dni,
   imagedni,
-  imageCreated,
+  // imageCreated,
   accountCreatedImage,
   welcomeImage,
 };

@@ -22,14 +22,14 @@ const AppNavbar = () => {
               </div>
               <div className="flex flex-1 items-center justify-center sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <a href="/">
+                  <a href="/home">
                     <img
                       className="block h-12 w-auto lg:hidden"
                       src={Logo}
                       alt="juntas"
                     />
                   </a>
-                  <a href="/">
+                  <a href="/home">
                     <img
                       className="hidden h-12 w-auto lg:block"
                       src={Logo}

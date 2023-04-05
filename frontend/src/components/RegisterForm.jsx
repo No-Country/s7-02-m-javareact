@@ -115,9 +115,9 @@ function RegisterForm() {
                 />
               </div>
               <div className="flex max-md:flex-col justify-between mb-2">
-                <div class="w-3/6 max-md:w-full">
+                <div className="w-3/6 max-md:w-full">
                   <label
-                    for="nombre"
+                    htmlFor="nombre"
                     className="block text-sm font-medium text-gray-900  "
                   >
                     Nombre:

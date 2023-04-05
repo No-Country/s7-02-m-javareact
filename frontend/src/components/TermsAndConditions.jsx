@@ -1,26 +1,19 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 //React PDF
 import { PDFDownloadLink } from "@react-pdf/renderer";
-
-//React router dom
-import { useNavigate } from "react-router-dom";
-
-//Css
-// import "./Styles.css";
 
 //Icons
 import { download } from "../assets/images";
 
 //Components
 import Spinner from "./Spinner";
-
 import TandConditionsPdf from "./TandConditionsPdf";
+import AccountModal from "./AccountModal";
 
-function TermsAndConditions({ userRegistered }) {
+const TermsAndConditions = ({ userRegistered }) => {
   const [isLoading, setIsLoading] = useState(true);
-
-  const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -30,7 +23,7 @@ function TermsAndConditions({ userRegistered }) {
 
   const handleRegister = (user) => {
     console.log(user);
-    navigate("/register/accountcreated");
+    setOpen(true);
   };
 
   return (
@@ -236,6 +229,7 @@ function TermsAndConditions({ userRegistered }) {
               >
                 ACEPTAR
               </button>
+              <AccountModal open={open} />
 
               <PDFDownloadLink
                 document={<TandConditionsPdf />}
@@ -261,6 +255,6 @@ function TermsAndConditions({ userRegistered }) {
       )}
     </>
   );
-}
+};
 
 export default TermsAndConditions;
