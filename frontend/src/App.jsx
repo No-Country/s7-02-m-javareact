@@ -16,15 +16,20 @@ function App() {
   return (
     <div className="App">
       <AppNavbar />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" exact element={<Landing />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />
-        </Routes>
-      </BrowserRouter>
+      <div className="flex justify-center">
+        <div className="container w-auto m-auto">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" exact element={<Landing />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

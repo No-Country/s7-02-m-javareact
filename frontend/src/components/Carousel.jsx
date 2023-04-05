@@ -23,10 +23,10 @@ const Carousel = () => {
   }, 5000);
 
   return (
-    <div className="relative h-96">
+    <div className="carousel">
       <div className="absolute inset-0 flex items-center justify-center">
         <div
-          className={`flex justify-end w-full h-full object-cover carousel-item-${currentIndex}`}
+          className={`flex justify-end w-full h-full px-36 carousel-item-${currentIndex}`}
         >
           <div className="text-white text-center carousel-content">
             {currentIndex === 0 ? (
@@ -52,7 +52,7 @@ const Carousel = () => {
         </div>
       </div>
       <button
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 focus:outline-none"
+        className="ml-10 absolute top-1/2 left-0 transform -translate-y-1/2 focus:outline-none"
         onClick={prevImage}
       >
         <img
@@ -62,7 +62,7 @@ const Carousel = () => {
         />
       </button>
       <button
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 focus:outline-none"
+        className="mr-10 absolute top-1/2 right-0 transform -translate-y-1/2 focus:outline-none"
         onClick={nextImage}
       >
         <img className="w-12 " src={TransitionArrow} alt="nextImage" />
