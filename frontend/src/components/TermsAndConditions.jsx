@@ -40,11 +40,13 @@ const TermsAndConditions = ({ userRegistered }) => {
             alignItems: "center",
             boxShadow:
               "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset",
+
+              borderRadius:"16px"
           }}
           className="p-3 rounded-[20px"
         >
           <div
-            style={{ height: "600px" }}
+            style={{ height: "600px"}}
             className="terms relative flex-col overflow-y-auto text-justify break-word hyphens-auto bg-white px-2 pt-5 pb-2"
           >
             <div className="absolute inset-0 -z-10 overflow-hidden">
