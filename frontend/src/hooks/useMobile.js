@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useEsMobil() {
+export function useMobile() {
   const [esMobil, setEsMobil] = useState(null);
 
   useEffect(() => {

@@ -1,5 +1,4 @@
-import { imagedni } from "../../../assets/images";
-
+import { imagedni } from "../assets/images";
 
 const UploadDni = () => {
   return (

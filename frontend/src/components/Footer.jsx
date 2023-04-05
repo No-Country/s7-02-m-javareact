@@ -1,5 +1,6 @@
-import Logo from "../assets/logo-home.svg";
 import { Envelope } from "../assets/images";
+// import Logo from "../../assets/logo-home.svg";
+import Logo from "../assets/logo-home.svg";
 
 const Footer = () => {
   return (

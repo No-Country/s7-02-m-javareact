@@ -1,20 +1,13 @@
 import React, { useState } from "react";
 
 //Icons
-import {
-  email,
-  facebook,
-  instagram,
-  key,
-  movil,
-  woman,
-} from "../../../assets/images.js";
-import Logo from "../../../assets/logo2.svg";
+import { email, key, movil, woman } from "../assets/images";
+import Logo from "../assets/logo2.svg";
 
 import UploadDni from "./UploadDni.jsx";
 
 //Components
-import TermsAndConditions from "./TermsAndConditions";
+import TermsAndConditions from "./TermsAndConditions.jsx";
 
 //Formik
 import { Formik, Field, ErrorMessage, Form } from "formik";
@@ -402,32 +395,6 @@ function RegisterForm() {
 
               <UploadDni />
 
-              {/**
-         * 
-        <div>
-        <label className="block text-sm font-medium text-center mt-3 text-gray-900">Carga tu Documento Nacional de Identidad</label>
-        <label className="block text-sm font-medium mt-1 text-gray-900">Foto frontal:</label>
-        <div className="flex mb-1">
-            <Field type="file" id="frontDni" placeholder="foto frontal" name="frontDni" style={{color:"black",border:"0.1px solid #E0E0E0"}} className="rounded-lg text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  bg-white dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
-        </div>
-        <ErrorMessage
-                name="frontDni"
-                component={() => {
-                  return <div style={{color:"red", fontSize:"12px"}}>{errors.frontDni}</div>;
-                }}
-              />
-         <label className="block text-sm font-medium mt-1 text-gray-900">Foto del Dorso:</label>
-         <div className="flex mb-1">
-            <Field type="file" id="dorsoDni"  name="dorsoDni" style={{color:"black",border:"0.1px solid #E0E0E0"}} className="rounded-lg text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  bg-white dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
-        </div>  
-        <ErrorMessage
-                name="dorsoDni"
-                component={() => {
-                  return <div style={{color:"red", fontSize:"12px"}}>{errors.dorsoDni}</div>;
-                }}
-              />     
-        </div>
-         */}
               <div className="text-center mt-10">
                 <button
                   type="submit"

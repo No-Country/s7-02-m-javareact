@@ -2,7 +2,6 @@ import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Logo from "../assets/logo.svg";
 
-
 const AppNavbar = () => {
   return (
     <Disclosure as="nav" className="w-full bg-pink-600">

@@ -1,12 +1,12 @@
-import React from "react";
-import { accountCreatedImage, imageCreated } from "../../../assets/images";
-import Logo from "../../../assets/logo2.svg";
-import Loader from "../../../components/Loader";
+import { useEffect, useState } from "react";
+import { accountCreatedImage, imageCreated } from "../../assets/images";
+import Logo from "../../assets/logo2.svg";
+import Spinner from "../../components/Spinner";
 
 const AccountCreated = () => {
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 3500);
@@ -31,7 +31,7 @@ const AccountCreated = () => {
           <div className="col-span-12 md:col-span-6 flex justify-center items-center h-screen">
             <div className="text-center shadow-md py-6 px-7">
               {isLoading ? (
-                <Loader />
+                <Spinner />
               ) : (
                 <>
                   <div className="text-center mb-10">

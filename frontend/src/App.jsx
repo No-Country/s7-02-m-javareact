@@ -1,35 +1,37 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
+import "./styles/App.css";
 
 //Partials
 import AppNavbar from "./components/AppNavbar";
 import Footer from "./components/Footer";
 
 //Components
-import Login from "./views/Auth/Login/Login";
-import Register from "./views/Auth/Register/Register";
+import Login from "./views/Auth/Login";
+import Register from "./views/Auth/Register";
 import Landing from "./views/Home/Landing";
-import AccountCreated from "./views/Auth/Register/AccountCreated";
-import WelcomeToApp from "./views/Auth/Register/WelcomeToApp";
+import AccountCreated from "./views/Auth/AccountCreated";
+import WelcomeToApp from "./views/Auth/WelcomeToApp";
 import Home from "./views/Home/Landing";
-import TermsAndConditions from "./views/Auth/Register/TermsAndConditions";
+import TermsAndConditions from "./components/TermsAndConditions";
 
 function App() {
   return (
     <div className="App">
       <AppNavbar />
-
-      <Routes>
-        <Route path="/" exact element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/home" Component={<Home />} />
-        <Route path="/register/termsAndConditions" element={<TermsAndConditions />}></Route>
-        <Route path="/register/accountCreated" element={<AccountCreated />} />
-
-        <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />
-      </Routes>
-
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" exact element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/home" Component={<Home />} />
+          <Route
+            path="/register/termsAndConditions"
+            element={<TermsAndConditions />}
+          ></Route>
+          <Route path="/register/accountCreated" element={<AccountCreated />} />
+          <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
     </div>
   );

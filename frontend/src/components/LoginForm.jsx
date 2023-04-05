@@ -1,18 +1,12 @@
-import Logo from "../../../assets/logo2.svg";
+import Logo from "../assets/logo2.svg";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 //Formik
 import { Formik, Field, ErrorMessage, Form } from "formik";
 
-import {
-  email,
-  facebook,
-  google,
-  key,
-  outlook,
-} from "../../../assets/images.js";
-import Spinner from "../../../components/Spinner";
+import { email, facebook, google, key, outlook } from "../assets/images.js";
+import Spinner from "./Spinner";
 
 const LoginForm = () => {
   const [show, setShow] = useState(false);
