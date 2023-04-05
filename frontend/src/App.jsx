@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <AppNavbar />
       <div className="flex justify-center">
-        <div className="container w-full m-auto">
+        <div className="container">
           <BrowserRouter>
             <Routes>
               <Route path="/" exact element={<Landing />} />

@@ -111,7 +111,7 @@ function RegisterForm() {
           }}
         >
           {({ errors }) => (
-            <Form className="w-10/12 p-0 md:px-10 ">
+            <Form className="w-full p-0 md:px-20 md:py-10 md:border-none ">
               <div className="col-span-12 md:col-span-6 flex flex-col items-center justify-center px-[4rem]">
                 <img
                   src={Logo}

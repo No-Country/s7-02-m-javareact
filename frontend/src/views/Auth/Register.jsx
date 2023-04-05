@@ -11,7 +11,7 @@ import  registerViewPic  from "./../../assets/auth/register-view-pic.png";
 const Register = () => {
   const isMobile = useMobile();
   return (
-    <div style={{padding:"0",maxHeight:"180vh",zIndex:"-10", margin:"0" }}  className='w-full flex max-md:flex-col justify-around items-center bg-white' >
+    <div style={{padding:"0",maxHeight:"165vh",zIndex:"-10"}}  className='w-full flex max-md:flex-col justify-around items-center bg-white' >
   {isMobile?(<></>):(
   <div style={{ backgroundImage:`url(${registerViewPic})`,minHeight:"160vh", backgroundSize:"cover", backgroundRepeat:"no-repeat"}} className='w-3/6 max-md:w-full relative'>
     <div style={{
@@ -32,7 +32,7 @@ const Register = () => {
     </div>
     </div>
   )}
-    <div className='col-span-12 md:col-span-6 flex items-center w-3/6 p-7 justify-center'>
+    <div className='flex items-center w-full md:w-3/6 p-7 justify-center'>
       <RegisterForm/>
     </div>
   </div>
