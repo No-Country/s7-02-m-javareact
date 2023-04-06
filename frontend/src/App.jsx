@@ -11,6 +11,7 @@ import Register from "./views/Auth/Register";
 import Landing from "./views/Home/Landing";
 import WelcomeToApp from "./views/Auth/WelcomeToApp";
 import Home from "./views/Home/Home";
+import TermsAndConditions from "./components/TermsAndConditions";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/home" element={<Home />} />
               <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />
+              <Route path="/termsAndConditions" element={<TermsAndConditions />} />
             </Routes>
           </BrowserRouter>
         </div>

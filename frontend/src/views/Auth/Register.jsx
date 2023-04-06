@@ -13,7 +13,7 @@ const Register = () => {
   return (
     <div style={{padding:"0",maxHeight:"165vh",zIndex:"-10"}}  className='w-full flex max-md:flex-col justify-around items-center bg-white' >
   {isMobile?(<></>):(
-  <div style={{ backgroundImage:`url(${registerViewPic})`,minHeight:"160vh", backgroundSize:"cover", backgroundRepeat:"no-repeat"}} className='w-3/6 max-md:w-full relative'>
+  <div style={{ backgroundImage:`url(${registerViewPic})`,minHeight:"160vh", backgroundSize:"cover", backgroundRepeat:"no-repeat"}} className='w-3/6 max-md:w-full relative hidden md:block'>
     <div style={{
       position: 'absolute',
       top: '50%',
