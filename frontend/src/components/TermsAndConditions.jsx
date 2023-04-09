@@ -235,7 +235,7 @@ const TermsAndConditions = ({ userRegistered }) => {
 
               <PDFDownloadLink
                 document={<TandConditionsPdf />}
-                fileName="TerminosYCondicones-JuntasApp.pdf"
+                fileName="TerminosYCondiciones-JuntasApp.pdf"
               >
                 <button
                   className="px-5 m-5 h-full flex justify-around py-2 items-center"

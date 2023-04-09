@@ -39,7 +39,8 @@ import key from "../assets/auth/password.svg";
 import registerViewPic from "../assets/auth/register-view-pic.png";
 import dni from "../assets/auth/dni.svg";
 import imagedni from "../assets/auth/dni.svg";
-// import LoginViewPic from "../assets/auth/login-view-pic.png";
+import cake from "./auth/cake.svg"
+//import LoginViewPic from "../assets/auth/login-view-pic.png";
 
 // Account created
 // import imageCreated from "./auth/carcreated.png";
@@ -47,6 +48,8 @@ import accountCreatedImage from "./auth/cuentacreada.svg";
 
 //welcome
 import welcomeImage from "./auth/welcomeImage.png";
+
+
 
 export {
   GreenCar,
@@ -85,4 +88,5 @@ export {
   // imageCreated,
   accountCreatedImage,
   welcomeImage,
+  cake
 };
