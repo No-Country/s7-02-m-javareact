@@ -111,7 +111,7 @@ function RegisterForm() {
           }}
         >
           {({ errors }) => (
-            <Form className="w-full p-0 md:px-20 md:py-10 md:border-none ">
+            <Form className="w-full p-0 md:px-15 md:py-10 md:border-none ">
               <div className="col-span-12 md:col-span-6 flex flex-col items-center justify-center px-[4rem]">
                 <img
                   src={Logo}
@@ -140,7 +140,7 @@ function RegisterForm() {
                         border: "0.1px solid #E0E0E0",
                         borderLeft:"none"
                       }}
-                      className="rounded-none bg-gray-200 rounded-r-lg mr-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5"
+                      className="rounded-none bg-gray-200 rounded-r-lg  text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5"
                     />
                   </div>
                   <ErrorMessage
