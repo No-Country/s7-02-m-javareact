@@ -19,8 +19,8 @@ public record JourneyController(IJourneyService service){
     }
 
     @PutMapping("/{id}")
-    public  ResponseEntity<?> update(@PathVariable Long id, @RequestBody JourneyRequestDto requestDto) {
-        return responseBuilder(HttpStatus.OK,service.update(id,requestDto));
+    public  ResponseEntity<?> update(@RequestBody JourneyRequestDto requestDto) {
+        return responseBuilder(HttpStatus.OK,service.update(requestDto));
     }
 
     @GetMapping("/{id}")

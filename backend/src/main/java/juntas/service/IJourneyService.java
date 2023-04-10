@@ -10,7 +10,7 @@ public interface IJourneyService {
 
     JourneyResponseDto create(JourneyRequestDto requestDto);
 
-    JourneyResponseDto update(Long id, JourneyRequestDto requestDto);
+    JourneyResponseDto update(JourneyRequestDto requestDto);
 
     JourneyResponseDto getById(Long id);
 
