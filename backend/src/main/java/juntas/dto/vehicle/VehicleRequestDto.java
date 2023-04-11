@@ -1,4 +1,4 @@
-package juntas.dto.request;
+package juntas.dto.vehicle;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
