@@ -1,4 +1,4 @@
-package juntas.dto.response;
+package juntas.dto.vehicle;
 
 import juntas.model.User;
 import lombok.Getter;
@@ -10,6 +10,7 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class VehicleResponseDto{
 
+    private Long vehicleId;
     private String vehicleColor;
     private Integer emptySeats;
     private String primaryBrand;
