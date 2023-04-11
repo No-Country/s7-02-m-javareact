@@ -161,11 +161,10 @@
     display: flex;
   }
   .tabs {
-  
     padding: 15px;
     text-align: center;
     width: 50%;
-    background: rgb(238, 238, 238);
+    background: #eeeeee;
     cursor: pointer;
     border-bottom: 1px solid rgba(0, 0, 0, 0.274);
     box-sizing: content-box;
@@ -173,6 +172,7 @@
     outline: none;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    font-weight: bold;
   }
   .tabs:not(:last-child){
     border-right: 1px solid rgba(0, 0, 0, 0.274);
@@ -181,6 +181,7 @@
   .active-tabs  {
     background: #5CBA2A;
     border-bottom: 1px solid transparent;
+    color:white
   }
   
   
@@ -246,3 +247,22 @@
   .tabs-container .content::-webkit-scrollbar-track {
     border-radius: 10px;
   }
+
+  .tab-btn{
+    font-weight: bold;
+    background-color: #eeeeee;
+    border:1px solid gray
+  }
+
+  .active-btn{
+    background-color: #5CBA2A;
+    border:0.2px solid gray;
+    color:white
+  }
+
+  .myprofile-data{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+

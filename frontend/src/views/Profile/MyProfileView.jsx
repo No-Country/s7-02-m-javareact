@@ -18,14 +18,16 @@ function MyProfileView() {
 
   return (
     <div style={{border:"2px solid blue"}} className="profile-container flex max-sm:flex-col overflow-x-hidden items-start justify-center"  >
-            <div style={{border:"2px solid red"}} className='container-column flex-col items-center w-2/6 p-3 max-sm:w-11/12  max-sm:p-0' >
+            <div style={{border:"2px solid red"}} className='container-column flex-col items-center w-2/6
+            pt-5
+            p-3 max-sm:w-11/12  max-sm:p-0' >
               <h2 style={{textAlign:"center"}} >Mi perfil</h2>
               <div style={{borderBottom:"0.09px solid gray", marginBottom:"15px"}} className='flex-col items-center' >
 
-        <div style={{border:"1px solid #3BED1E"}} className='username-container relative w-full justify-around items-center max-sm:w-full flex' >
-          <img style={{border:"1px solid #3BED1E"}} src={`https://randomuser.me/api/portraits/women/90.jpg`} alt='woman-pic' ></img>
+        <div style={{boxShadow:"rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px"}} className='myprofile-data relative pt-2 rounded-lg' >
+          <img style={{borderRadius:"50%", border:"2px solid #3BED1E "}} src={`https://randomuser.me/api/portraits/women/90.jpg`} alt='woman-pic' ></img>
         <span style={{fontSize:"30px"}}><strong>Camila Sosa</strong></span>
-          <img onClick={()=>{console.log("hola")}} style={{position:"absolute",top:"10px", left:"35%", height:"20px", cursor:"pointer"}} src={edit} alt="edit_icon.svg" ></img>
+          <img onClick={()=>{console.log("hola")}} style={{position:"absolute",top:"10px", left:"70%", height:"20px", cursor:"pointer"}} src={edit} alt="edit_icon.svg" ></img>
         </div>
         <div style={{margin:"none", border:"2px solid blue"}} className='userdata-container relative flex-col' >
           <ul className='p-4  md:p-6'  >
