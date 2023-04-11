@@ -1,10 +1,96 @@
-import React from 'react'
+import React,{useState} from 'react'
+
+
+//React Bootsrap
+//import Dropdown from "react-bootstrap/dropdown";
+import Fade from "react-bootstrap/Fade";
+import Accordion from 'react-bootstrap/Accordion';
+
+//Icons
+import { edit, movil, cake, instagram, facebook } from '../../assets/images';
+
+//Components
+import NoteItem from './NoteItem';
+import Tabs from "./Tabs"
 
 function MyProfileView() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div style={{border:"2px solid blue"}} className="profile-container flex max-sm:flex-col overflow-x-hidden items-center justify-center"  >
-            <div className='container-column flex-col items-center w-4/6 p-3 max-sm:w-11/12  max-sm:p-0' ></div>
-            <div className='container-column flex-col items-center w-4/6  max-sm:w-11/12  max-sm:p-0' ></div>
+    <div style={{border:"2px solid blue"}} className="profile-container flex max-sm:flex-col overflow-x-hidden items-start justify-center"  >
+            <div style={{border:"2px solid red"}} className='container-column flex-col items-center w-2/6 p-3 max-sm:w-11/12  max-sm:p-0' >
+              <h2 style={{textAlign:"center"}} >Mi perfil</h2>
+              <div style={{borderBottom:"0.09px solid gray", marginBottom:"15px"}} className='flex-col items-center' >
+
+        <div style={{border:"1px solid #3BED1E"}} className='username-container relative w-full justify-around items-center max-sm:w-full flex' >
+          <img style={{border:"1px solid #3BED1E"}} src={`https://randomuser.me/api/portraits/women/90.jpg`} alt='woman-pic' ></img>
+        <span style={{fontSize:"30px"}}><strong>Camila Sosa</strong></span>
+          <img onClick={()=>{console.log("hola")}} style={{position:"absolute",top:"10px", left:"35%", height:"20px", cursor:"pointer"}} src={edit} alt="edit_icon.svg" ></img>
+        </div>
+        <div style={{margin:"none", border:"2px solid blue"}} className='userdata-container relative flex-col' >
+          <ul className='p-4  md:p-6'  >
+            <li className='flex pb-2' >
+              <img className='pr-4'  src={movil} alt="cellphone-icon"></img>
+              1197545698
+            </li>
+            <li className='flex pb-2 ' >
+              <img className='pr-4'  style={{height:"20px"}} src={cake} alt="cake-icon"></img>
+              14/06
+            </li>
+            <li className='flex pb-2 ' >
+              <img className='pr-4'  src={facebook} style={{height:"22px"}} alt="facebook-icon"></img>
+              facebook.com/miperfiljuntas
+            </li>
+            <li className='flex pb-2' >
+              <img className='pr-4'  src={instagram} alt="instagram-icon.svg"></img>
+              @miperfiljuntas
+            </li>
+          </ul>
+          <img onClick={()=>{console.log("hola")}} style={{position:"absolute",top:"10px", left:"90%", height:"20px", cursor:"pointer"}} src={edit} alt="edit_icon.svg" ></img>
+
+        </div>
+              </div>
+        {
+          /**
+           * 
+           * <div       onClick={() => setOpen(!open)}
+        aria-controls="example-fade-text"
+        aria-expanded={open} style={{width:"80%", borderRadius:"10px"}} className="select-container flex justify-between items-center px-3" >
+          <h4>Mis Calificaciones</h4>
+      <Dropdown>
+            <Dropdown.Toggle style={{backgroundColor:"#fff",border:"none", height:"30px", color:"black"}} variant="success" id="dropdown-basic">
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu align="end" >
+              <Dropdown.Item href="#/action-1">Mas recientes</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Mejores calificaciones</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Menor costo</Dropdown.Item>
+            </Dropdown.Menu>
+    </Dropdown>
+        </div>
+    <Fade in={open}>
+    <div id="example-fade-text" className="calificacion-container w-5/6 overflow-y-auto">
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+        </div>
+      </Fade>
+           */
+        }
+        
+            </div>
+            <div className='container-column flex-col items-center w-4/6  max-sm:w-11/12  max-sm:p-0' >
+            <Tabs/>
+            </div>
     </div>
   )
 }

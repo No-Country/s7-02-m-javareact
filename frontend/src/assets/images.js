@@ -42,6 +42,9 @@ import imagedni from "../assets/auth/dni.svg";
 import cake from "./auth/cake.svg"
 //import LoginViewPic from "../assets/auth/login-view-pic.png";
 
+//Profile view
+import edit from "./profile/edit.svg"
+
 // Account created
 // import imageCreated from "./auth/carcreated.png";
 import accountCreatedImage from "./auth/cuentacreada.svg";
@@ -88,5 +91,6 @@ export {
   // imageCreated,
   accountCreatedImage,
   welcomeImage,
-  cake
+  cake,
+  edit
 };

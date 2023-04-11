@@ -14,7 +14,7 @@ import NoteItem from './NoteItem';
 import { Checklist } from '../../assets/images';
 
 //React bootstrap
-import Fade from 'react-bootstrap/Fade';
+//import Fade from 'react-bootstrap/Fade';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 //React hot toast
@@ -87,7 +87,7 @@ function ProfileView() {
           <h1 style={{fontSize:"22px", marginBottom:"10px"}} >Querés dejarle una consulta?</h1>
           <form onSubmit={handleSubmit} className='flex-col w:10/12 md:w-5/6' style={{ display:"flex"}} >
           <textarea onChange={handleChange} name="consulta" value={message.consulta} title='Número máximo de caracteres es: 144' rows={3} cols={40} maxLength={144} ></textarea>
-          <button type='submit'  style={{backgroundColor:"#3BED1E", width:"30%", alignSelf:"center", marginTop:"10px", borderRadius:"16px", paddingTop:"5px",paddingBottom:"5px", fontWeight:"bold"}} >Enviar</button>
+          <button type='submit'  style={{backgroundColor:"#FF3A90", width:"25%", alignSelf:"end", marginTop:"10px", borderRadius:"16px", paddingTop:"5px",paddingBottom:"5px", fontWeight:"bold", color:"#fff", boxShadow:"rgba(0, 0, 0, 0.1) 0px 4px 12px"}} >Enviar</button>
           </form>
         </div>
       </div>
