@@ -1,6 +1,10 @@
 import { useState } from "react";
 import "./../../styles/Profile-styles.css";
 
+//Components
+import Documents from "./Documents";
+import NoteItem from "./NoteItem";
+
 function Tabs() {
   const [toggleState, setToggleState] = useState(1);
 
@@ -15,7 +19,7 @@ function Tabs() {
           className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(1)}
         >
-         Mi documentación
+         Documentos
         </button>
         <button
           className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
@@ -35,24 +39,26 @@ function Tabs() {
         <div
           className={toggleState === 1 ? "content  active-content" : "content"}
         >
-          <h2>Content 1</h2>
-          <hr />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            praesentium incidunt quia aspernatur quasi quidem facilis quo nihil
-            vel voluptatum?
-          </p>
+            <Documents/>
         </div>
 
         <div
           className={toggleState === 2 ? "content  active-content" : "content"}
         >
-          <h2>Content 2</h2>
-          <hr />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-            voluptatum qui adipisci.
-          </p>
+        <div className="calificacion-container">
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+          <NoteItem/>
+        </div>
         </div>
         <div
           className={toggleState === 3 ? "content  active-content" : "content"}

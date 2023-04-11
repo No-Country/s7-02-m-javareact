@@ -44,6 +44,10 @@ import cake from "./auth/cake.svg"
 
 //Profile view
 import edit from "./profile/edit.svg"
+import dniFront from "./profile/dni-front.png"
+import dniBack from "./profile/dni-Back.png"
+import carnetFront from "./profile/carnet-front.png"
+import carnetBack from "./profile/carnet-back.png"
 
 // Account created
 // import imageCreated from "./auth/carcreated.png";
@@ -92,5 +96,9 @@ export {
   accountCreatedImage,
   welcomeImage,
   cake,
-  edit
+  edit,
+  dniFront,
+  dniBack,
+  carnetFront,
+  carnetBack
 };

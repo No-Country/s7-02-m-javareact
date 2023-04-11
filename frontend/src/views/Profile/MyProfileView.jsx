@@ -7,7 +7,7 @@ import Fade from "react-bootstrap/Fade";
 import Accordion from 'react-bootstrap/Accordion';
 
 //Icons
-import { edit, movil, cake, instagram, facebook } from '../../assets/images';
+import { edit, movil, cake, instagram, facebook, dniFront, dniBack, carnetBack, carnetFront } from '../../assets/images';
 
 //Components
 import NoteItem from './NoteItem';
