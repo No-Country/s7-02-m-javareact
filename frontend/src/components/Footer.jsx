@@ -32,7 +32,7 @@ const Footer = () => {
             <ul>
               <li className="flex">
                 <img className="mr-2" src={Envelope} alt="envelope" />
-                <a href="mailto:consultas@juntas.com">consultas@juntas.com</a>
+                <a href="mailto:consultas@juntas.com">@mail</a>
               </li>
             </ul>
           </div>
@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="flex justify-center sm:justify-start md:justify-center h-auto underline">
           <ul>
             <li>
-              <a href="/">Términos y condiciones</a>
+              <a href="/">T y C</a>
             </li>
             <li>
               <a href="/"></a>Política de privacidad

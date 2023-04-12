@@ -1,7 +1,7 @@
 import React from 'react'
 
 //Icons
-import { dniFront, dniBack, carnetBack, carnetFront } from '../../assets/images';
+import { dniFront, dniBack, carnetBack, carnetFront } from '../assets/images';
 
 function Documents() {
   return (
