@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 
 //Icons
-import { email, key, movil, woman } from "../assets/images";
-import Logo from "../assets/logo2.svg";
+import {
+  key,
+  movil,
+  woman,
+} from "./../assets/images";
+import Logo from "./../assets/logo2.svg";
+import email  from "./../assets/auth/email.svg"
 
 import UploadDni from "./UploadDni.jsx";
 
 //Components
-import TermsAndConditions from "./TermsAndConditions.jsx";
+import TermsAndConditions from "./TermsAndConditions";
 
 //Formik
 import { Formik, Field, ErrorMessage, Form } from "formik";
@@ -106,7 +111,7 @@ function RegisterForm() {
           }}
         >
           {({ errors }) => (
-            <Form className="w-10/12 ">
+            <Form className="w-full p-0 md:px-15 md:py-10 md:border-none ">
               <div className="col-span-12 md:col-span-6 flex flex-col items-center justify-center px-[4rem]">
                 <img
                   src={Logo}
@@ -115,15 +120,15 @@ function RegisterForm() {
                 />
               </div>
               <div className="flex max-md:flex-col justify-between mb-2">
-                <div className="w-3/6 max-md:w-full">
+                <div class="w-3/6 max-md:w-full">
                   <label
-                    htmlFor="nombre"
+                    for="nombre"
                     className="block text-sm font-medium text-gray-900  "
                   >
                     Nombre:
                   </label>
                   <div className="flex mb-1">
-                    <span className="inline-flex items-center px-3 text-sm text-gray-900 border border-r-5 border-gray-300 rounded-l-md  ">
+                    <span style={{border:"none"}} className=" inline-flex bg-gray-200 items-center px-3 text-sm text-gray-900 rounded-l-md  ">
                       <img src={woman} />
                     </span>
                     <Field
@@ -133,9 +138,9 @@ function RegisterForm() {
                       style={{
                         color: "black",
                         border: "0.1px solid #E0E0E0",
-                        borderleft: "none",
+                        borderLeft:"none"
                       }}
-                      className="rounded-none rounded-r-lg mr-2 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 bg-white"
+                      className="rounded-none bg-gray-200 rounded-r-lg  text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5"
                     />
                   </div>
                   <ErrorMessage
@@ -163,7 +168,7 @@ function RegisterForm() {
                       id="apellido"
                       name="lastname"
                       style={{ color: "black", border: "0.1px solid #E0E0E0" }}
-                      className="rounded-lg text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  bg-white dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="rounded-lg bg-gray-200 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     />
                   </div>
                   <ErrorMessage
@@ -200,7 +205,7 @@ function RegisterForm() {
                       border: "0.1px solid #E0E0E0",
                       width: "100%",
                     }}
-                    className="rounded-lg  mr-5  text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 text-sm p-2.5  bg-white dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="rounded-lg bg-gray-200  mr-5  text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                   <ErrorMessage
                     name="day"
@@ -226,7 +231,7 @@ function RegisterForm() {
                       border: "0.1px solid #E0E0E0",
                       width: "100%",
                     }}
-                    className=" rounded-lg   mr-5 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 text-sm p-2.5  bg-white dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className=" rounded-lg bg-gray-200   mr-5 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                   <ErrorMessage
                     name="month"
@@ -252,7 +257,7 @@ function RegisterForm() {
                       border: "0.1px solid #E0E0E0",
                       width: "100%",
                     }}
-                    className=" rounded-lg   text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 text-sm p-2.5  bg-white dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className=" rounded-lg bg-gray-200 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                   <ErrorMessage
                     name="year"
@@ -275,7 +280,7 @@ function RegisterForm() {
                   Email:
                 </label>
                 <div className="flex mb-1">
-                  <span className="inline-flex items-center px-2 text-sm text-gray-900 border border-r-5 border-gray-300 rounded-l-md  ">
+                  <span style={{border:"none"}} className="inline-flex bg-gray-200 items-center px-2 text-sm text-gray-900 border border-r-5 border-gray-300 rounded-l-md  ">
                     <img
                       src={email}
                       style={{ height: "18px", width: "28px" }}
@@ -285,8 +290,8 @@ function RegisterForm() {
                     type="text"
                     id="email"
                     name="email"
-                    style={{ color: "black", border: "0.1px solid #E0E0E0" }}
-                    className="rounded-r-lg text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  bg-white"
+                    style={{ color: "black", border: "0.1px solid #E0E0E0",borderLeft:"none" }}
+                    className="rounded-r-lg bg-gray-200 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  "
                   />
                 </div>
                 <ErrorMessage
@@ -308,15 +313,15 @@ function RegisterForm() {
                   Contraseña:
                 </label>
                 <div className="flex mb-1">
-                  <span className="inline-flex items-center px-2 text-sm text-gray-900 border border-r-5 border-gray-300 rounded-l-md  ">
+                  <span style={{border:"none"}} className=" bg-gray-200 inline-flex items-center px-2 text-sm text-gray-900 border border-r-5 border-gray-300 rounded-l-md  ">
                     <img src={key} style={{ height: "28px", width: "28px" }} />
                   </span>
                   <Field
                     type="password"
                     id="password"
                     name="password"
-                    style={{ color: "black", border: "0.1px solid #E0E0E0" }}
-                    className="rounded-r-lg text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  bg-white dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    style={{ color: "black", border: "0.1px solid #E0E0E0", borderLeft:"none" }}
+                    className="rounded-r-lg bg-gray-200 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                 </div>
                 <ErrorMessage
@@ -343,7 +348,7 @@ function RegisterForm() {
                     id="confirmPassword"
                     name="confirmPassword"
                     style={{ color: "black", border: "0.1px solid #E0E0E0" }}
-                    className="rounded-lg text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  bg-white dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="rounded-lg bg-gray-200 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                 </div>
                 <ErrorMessage
@@ -365,15 +370,15 @@ function RegisterForm() {
                   Teléfono:
                 </label>
                 <div className="flex mb-1">
-                  <span className="inline-flex items-center px-4 text-sm text-gray-900 border border-r-5 border-gray-300 rounded-l-md  ">
+                  <span style={{border:"none"}} className=" bg-gray-200 inline-flex items-center px-4 text-sm text-gray-900 border border-r-5 border-gray-300 rounded-l-md  ">
                     <img src={movil} />
                   </span>
                   <Field
                     type="text"
                     id="telefono"
                     name="telNumber"
-                    style={{ color: "black", border: "0.1px solid #E0E0E0" }}
-                    className="rounded-r-lg text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  bg-white dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    style={{ color: "black", border: "0.1px solid #E0E0E0",borderLeft:"none" }}
+                    className="rounded-r-lg bg-gray-200 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                 </div>
                 <ErrorMessage
@@ -395,6 +400,32 @@ function RegisterForm() {
 
               <UploadDni />
 
+              {/**
+         * 
+        <div>
+        <label className="block text-sm font-medium text-center mt-3 text-gray-900">Carga tu Documento Nacional de Identidad</label>
+        <label className="block text-sm font-medium mt-1 text-gray-900">Foto frontal:</label>
+        <div className="flex mb-1">
+            <Field type="file" id="frontDni" placeholder="foto frontal" name="frontDni" style={{color:"black",border:"0.1px solid #E0E0E0"}} className="rounded-lg text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+        </div>
+        <ErrorMessage
+                name="frontDni"
+                component={() => {
+                  return <div style={{color:"red", fontSize:"12px"}}>{errors.frontDni}</div>;
+                }}
+              />
+         <label className="block text-sm font-medium mt-1 text-gray-900">Foto del Dorso:</label>
+         <div className="flex mb-1">
+            <Field type="file" id="dorsoDni"  name="dorsoDni" style={{color:"black",border:"0.1px solid #E0E0E0"}} className="rounded-lg text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+        </div>  
+        <ErrorMessage
+                name="dorsoDni"
+                component={() => {
+                  return <div style={{color:"red", fontSize:"12px"}}>{errors.dorsoDni}</div>;
+                }}
+              />     
+        </div>
+         */}
               <div className="text-center mt-10">
                 <button
                   type="submit"

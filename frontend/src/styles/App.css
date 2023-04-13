@@ -1,5 +1,9 @@
 @import url("TyC.css");
 
+*{
+  box-sizing: border-box;
+}
+
 /* Landing */
 .traveler {
   background-image: linear-gradient(
