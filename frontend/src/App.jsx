@@ -11,24 +11,40 @@ import Register from "./views/Auth/Register";
 import Landing from "./views/Home/Landing";
 import WelcomeToApp from "./views/Auth/WelcomeToApp";
 import Home from "./views/Home/Home";
+import { RedirectHome } from "./components/RedirectHome";
 
 function App() {
   return (
     <div className="App">
-      <AppNavbar />
-      <div className="flex justify-center">
-        <div className="container w-auto m-auto">
-          <BrowserRouter>
+      <BrowserRouter>
+        <AppNavbar />
+        <div>
+          <div className="container w-auto m-auto">
             <Routes>
-              <Route path="/" exact element={<Landing />} />
+              <Route
+                path="/"
+                exact
+                element={
+                  <RedirectHome>
+                    <Landing />
+                  </RedirectHome>
+                }
+              />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/home" element={<Home />} />
+              <Route
+                path="/home"
+                element={
+                  <RedirectHome>
+                    <Home />
+                  </RedirectHome>
+                }
+              />
               <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />
             </Routes>
-          </BrowserRouter>
+          </div>
         </div>
-      </div>
+      </BrowserRouter>
 
       <Footer />
     </div>
