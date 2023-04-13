@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Header1, Header2, TransitionArrow } from "../assets/images";
+import { Header1, Header2 } from "../assets/images";
+import { ArrowLeftCircleIcon } from "@heroicons/react/24/outline";
 
 const images = [Header1, Header2];
 
@@ -55,17 +56,13 @@ const Carousel = () => {
         className="ml-10 absolute top-1/2 left-0 transform -translate-y-1/2 focus:outline-none"
         onClick={prevImage}
       >
-        <img
-          className="w-12 -rotate-180"
-          src={TransitionArrow}
-          alt="prevImage"
-        />
+        <ArrowLeftCircleIcon className="w-12 text-white" />
       </button>
       <button
         className="mr-10 absolute top-1/2 right-0 transform -translate-y-1/2 focus:outline-none"
         onClick={nextImage}
       >
-        <img className="w-12 " src={TransitionArrow} alt="nextImage" />
+        <ArrowLeftCircleIcon className="w-12 text-white -rotate-180" />
       </button>
     </div>
   );
