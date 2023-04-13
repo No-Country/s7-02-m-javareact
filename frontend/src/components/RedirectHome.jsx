@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export function RedirectHome({ children }) {
+export default function RedirectHome({ children }) {
   // const user = "pepe@test.com";
   const user = null;
   const navigate = useNavigate();
