@@ -47,6 +47,12 @@ import accountCreatedImage from "./auth/cuentacreada.svg";
 
 //welcome
 import welcomeImage from "./auth/welcomeImage.png";
+//driver
+
+import check from "./driver/check.svg";
+import driver from "./driver/driver.svg";
+import position from "./driver/position.svg";
+import rectangle from "./driver/Rectangle 153.png";
 
 export {
   GreenCar,
@@ -85,4 +91,9 @@ export {
   // imageCreated,
   accountCreatedImage,
   welcomeImage,
+  //driver
+  check,
+  driver,
+  position,
+  rectangle,
 };
