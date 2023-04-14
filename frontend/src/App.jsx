@@ -18,6 +18,9 @@ import TermsAndConditions from "./components/TermsAndConditions";
 import WhereToDrive from "./views/WhereToDrive/WhereToDrive";
 
 
+import ProfileView from "./views/Profile/ProfileView";
+import MyProfileView from "./views/Profile/MyProfileView";
+import TripDetail from "./components/TripDetail";
 
 function App() {
   return (
@@ -47,8 +50,11 @@ function App() {
                 }
               />
               <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />
-              <Route path="/termsAndConditions" element={<TermsAndConditions />}/>
-              <Route path="/driver" element={<WhereToDrive/>}/>
+              <Route path="/termsAndConditions" element={<TermsAndConditions />} />
+              <Route path="/profile" element={<ProfileView />} />
+              <Route path="/myprofile" element={<MyProfileView />} />
+              <Route path="/tripdetail" element={<TripDetail />} />
+              
             </Routes>
           </div>
         </div>
