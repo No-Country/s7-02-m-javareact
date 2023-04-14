@@ -28,7 +28,7 @@ function MyProfileView() {
     />
     <ModalEditProfilePic show={modalShowPic} onHide={()=>setModalShowPic(false)} />
     <div style={{border:"2px solid blue"}} className="profile-container flex max-sm:flex-col overflow-x-hidden items-start justify-center"  >
-      <div style={{border:"2px solid red", alignSelf:"center"}} className='container-column flex-col items-center w-2/6
+      <div style={{border:"2px solid red", alignSelf:"center"}} className='container-column flex-col justify-around items-center w-2/6
             pt-5
             p-3 max-sm:w-11/12  max-sm:p-0' >
               <h2 style={{textAlign:"center"}} >Mi perfil</h2>

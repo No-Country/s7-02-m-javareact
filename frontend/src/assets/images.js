@@ -48,6 +48,12 @@ import dniFront from "./profile/dni-front.png"
 import dniBack from "./profile/dni-Back.png"
 import carnetFront from "./profile/carnet-front.png"
 import carnetBack from "./profile/carnet-back.png"
+import mydocuments_active from "./profile/mydocuments_active.svg";
+import mydocuments from "./profile/mydocuments.svg"
+import myratings_active from "./profile/myratings_active.svg";
+import myratings from "./profile/myratings.svg";
+import mytrips from "./profile/mytrips.svg";
+import mytrips_active from "./profile/mytrips_active.svg";
 
 // Account created
 // import imageCreated from "./auth/carcreated.png";
@@ -100,5 +106,11 @@ export {
   dniFront,
   dniBack,
   carnetFront,
-  carnetBack
+  carnetBack,
+  mydocuments_active,
+  mydocuments,
+  myratings_active,
+  myratings,
+  mytrips,
+  mytrips_active
 };

@@ -23,7 +23,6 @@ function ModalEditProfilePic(props) {
         setPic(file)
         console.log(file);
     
-    
   }
 
   const handleButtonClick = () => {
@@ -38,7 +37,7 @@ function ModalEditProfilePic(props) {
       
       toast.error('Los campos están vacios!',{
         duration:3500,
-        position:'center',
+        position:'top-center',
         style: {
           borderRadius: '10px',
           background: '#333',
@@ -51,19 +50,20 @@ function ModalEditProfilePic(props) {
           console.log(pic)
           
               setTimeout(() => {
-                setPic({pic:""});
+                setPic(null);
                 props.onHide()
               }, 1);
 
               toast.success('Los cambios se han guardado!',{
                 duration:4000,
-                position:'bottom-center',
+                position:'top-center',
                 style: {
                   borderRadius: '10px',
                   background: '#333',
                   color: '#fff',
                 },
               })
+              
     }
   }
 
@@ -79,23 +79,19 @@ function ModalEditProfilePic(props) {
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
-              Editar perfil
+              Cambiar foto
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-          <Form onSubmit={handleSubmit} >
+          <Form  onSubmit={handleSubmit} >
           <Form.Group className="mb-2" controlId="formBasicPic">
-            <Form.Label>Imagen:</Form.Label>
-            <Form.Control type="file" onChange={handleChange} ref={fileInputRef} name="pic" placeholder="Nuevo número" />
+            <Form.Control  type="file" onChange={handleChange} ref={fileInputRef} name="pic"  />
           </Form.Group>
-          <Button style={{backgroundColor:"#FF3A90"}} variant="primary" type="submit">
+          <Button style={{backgroundColor:"#FF3A90",borderRadius:"20px"}} className="max-md:ml-40 mt-3 ml-[68%]" variant="primary" type="submit">
             Guardar Cambios
           </Button>
         </Form>
           </Modal.Body>
-          <Modal.Footer>
-            <Button style={{backgroundColor:"gray"}} onClick={props.onHide}>Cancelar</Button>
-          </Modal.Footer>
         </Modal>
         </>
       );

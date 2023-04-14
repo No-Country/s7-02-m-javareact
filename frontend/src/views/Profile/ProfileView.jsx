@@ -48,8 +48,13 @@ function ProfileView() {
               }, 1);
 
               toast.success('La consulta se envió exitosamente!',{
-                duration:4000,
-                position:'top-center'
+                duration:3500,
+                position:'top-center',
+                style: {
+                  borderRadius: '10px',
+                  background: '#333',
+                  color: '#fff',
+                },
               })
     }
   }
@@ -95,7 +100,8 @@ function ProfileView() {
         <div className="select-container flex justify-between items-center px-3" >
           <h2>Calificaciones</h2>
       <Dropdown>
-            <Dropdown.Toggle style={{backgroundColor:"#3BED1E",border:"none", height:"30px"}} variant="success" id="dropdown-basic">
+            <Dropdown.Toggle style={{backgroundColor:"white",border:"none", height:"30px", color:"black"}} variant="success" id="dropdown-basic">
+            Filtro
             </Dropdown.Toggle>
 
             <Dropdown.Menu align="end" >

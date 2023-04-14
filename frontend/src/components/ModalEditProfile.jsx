@@ -34,7 +34,7 @@ function ModalEditProfile(props) {
       
       toast.error('Los campos están vacios!',{
         duration:4000,
-        position:'center',
+        position:'top-center',
         style: {
           borderRadius: '10px',
           background: '#333',
@@ -51,7 +51,7 @@ function ModalEditProfile(props) {
 
               toast.success('Los cambios se han guardado!',{
                 duration:3500,
-                position:'bottom-center',
+                position:'top-center',
                 style: {
                   borderRadius: '10px',
                   background: '#333',
@@ -76,27 +76,24 @@ function ModalEditProfile(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-      <Form onSubmit={handleSubmit} >
-      <Form.Group className="mb-2" controlId="formBasicTeléfono">
-        <Form.Label>Teléfono:</Form.Label>
-        <Form.Control type="text" value={newData.tel} name="tel" onChange={handleChange} placeholder="Nuevo número" />
+      <Form  onSubmit={handleSubmit} >
+      <Form.Group className=" items-center mb-2" controlId="formBasicTeléfono">
+        <Form.Label className="mt-2 mr-4" >Teléfono</Form.Label>
+        <Form.Control type="text"  style={{backgroundColor:"#d9d9d9"}} value={newData.tel} name="tel" onChange={handleChange} />
       </Form.Group>
-      <Form.Group className="mb-2" controlId="formBasicFacebook">
-        <Form.Label>Facebook:</Form.Label>
-        <Form.Control type="text" value={newData.facebook} name="facebook" onChange={handleChange} placeholder="Nuevo enlace" />
+      <Form.Group className=" items-center mb-2" controlId="formBasicFacebook">
+        <Form.Label className="mt-2 mr-3">Facebook</Form.Label>
+        <Form.Control style={{backgroundColor:"#d9d9d9"}} type="text" value={newData.facebook} name="facebook" onChange={handleChange} />
       </Form.Group>
       <Form.Group className="mb-2" controlId="formBasicInstagram">
         <Form.Label>Instagram:</Form.Label>
-        <Form.Control type="text" value={newData.instagram} name="instagram" onChange={handleChange} placeholder="Nuevo enlace" />
+        <Form.Control style={{backgroundColor:"#d9d9d9"}} type="text" value={newData.instagram} name="instagram" onChange={handleChange} />
       </Form.Group   >
-      <Button style={{backgroundColor:"#FF3A90"}} variant="primary" type="submit">
+      <Button style={{backgroundColor:"#FF3A90", borderRadius:"20px"}} className="max-md:ml-40 mt-4 ml-[68%]" variant="primary" type="submit">
         Guardar Cambios
       </Button>
     </Form>
       </Modal.Body>
-      <Modal.Footer>
-        <Button style={{backgroundColor:"gray"}} onClick={props.onHide}>Cancelar</Button>
-      </Modal.Footer>
     </Modal>
     </>
   );
