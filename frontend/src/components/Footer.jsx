@@ -1,5 +1,5 @@
-import { Envelope } from "../assets/images";
-// import Logo from "../../assets/logo-home.svg";
+import { Instagram } from "../assets/images";
+import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import Logo from "../assets/logo-home.svg";
 
 const Footer = () => {
@@ -12,38 +12,53 @@ const Footer = () => {
         <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4">
           <div className="sm:mb-3">
             <h6 className="text-md font-bold">Home</h6>
-            <ul>
-              <li>Perfil</li>
-              <li>Mis calificaciones</li>
-            </ul>
-          </div>
-          <div className="sm:mb-3">
-            <h6 className="text-md font-bold">Mis viajes</h6>
-          </div>
-          <div className="sm:mb-3">
-            <h6 className="text-md font-bold">Búsqueda</h6>
-            <ul>
+            <br />
+            <ul className="font-thin">
               <li>Soy pasajera</li>
               <li>Conduzco</li>
+              <li>Viajes activos</li>
             </ul>
+          </div>
+          <div className="sm:mb-3">
+            <h6 className="text-md font-bold">Perfil</h6>
+          </div>
+          <div className="sm:mb-3">
+            <h6 className="text-md font-bold">Mis Viajes</h6>
+            <ul></ul>
           </div>
           <div className="sm:mb-3">
             <h6 className="text-md font-bold">Contacto</h6>
+            <br />
             <ul>
+              <li className="w-max">
+                <EnvelopeIcon className="w-6 inline text-white" />{" "}
+                <a className="inline" href="mailto:consultas@juntas.com">
+                  consultas@juntas.com
+                </a>
+              </li>
               <li className="flex">
-                <img className="mr-2" src={Envelope} alt="envelope" />
-                <a href="mailto:consultas@juntas.com">consultas@juntas.com</a>
+                <img className="mr-2" src={Instagram} alt="instagram" />
+                <a href="instagram.com" target="_blank" rel="noreferrer">
+                  @JuntasCar
+                </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="flex justify-center sm:justify-start md:justify-center h-auto underline">
+        <div className="flex justify-center sm:justify-start md:justify-center h-auto">
           <ul>
             <li>
-              <a href="/">Términos y condiciones</a>
+              <a href="/">¿Cómo funciona?</a>
             </li>
             <li>
-              <a href="/"></a>Política de privacidad
+              <a href="/" className="underline">
+                Términos y condiciones
+              </a>
+            </li>
+            <li>
+              <a href="/" className="underline">
+                Política de privacidad
+              </a>
             </li>
           </ul>
         </div>
