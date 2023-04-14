@@ -20,6 +20,20 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 //Yup
 import * as Yup from "yup";
 
+//estado inicial formulario segun la api.
+const dataFormDefault = {
+  
+  birthdayDate: "2023-04-14",
+  dni: 0,
+  email: "string",
+  lastName: "string",
+  name: "string",
+  password: "string",
+  profileImage: "string"
+  
+};
+
+
 /**
  *
  * Cambiar el color del texto de los inputs a negro.
@@ -57,9 +71,6 @@ const validationSchema = Yup.object().shape({
     .min(8, "Debe contener al menos 8 caracteres de largo")
     .required(required)
     .oneOf([Yup.ref("password")], "Las contraseñas no coinciden"),
-  telNumber: Yup.string()
-    .matches(phoneRegExp, "El número de teléfono no es válido")
-    .required(required),
 });
 
 function RegisterForm() {
