@@ -17,6 +17,8 @@ import RedirectHome from "./components/RedirectHome";
 import TermsAndConditions from "./components/TermsAndConditions";
 import WhereToDrive from "./views/WhereToDrive/WhereToDrive";
 
+
+
 function App() {
   return (
     <div className="App">
@@ -45,20 +47,12 @@ function App() {
                 }
               />
               <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />
-<<<<<<< HEAD
               <Route path="/termsAndConditions" element={<TermsAndConditions />}/>
               <Route path="/driver" element={<WhereToDrive/>}/>
-=======
-              <Route
-                path="/termsAndConditions"
-                element={<TermsAndConditions />}
-              />
->>>>>>> a6b151fddbde02ef2615716933f5b1f15e3bc96c
             </Routes>
           </div>
         </div>
       </BrowserRouter>
-
       <Footer />
     </div>
   );
