@@ -14,6 +14,7 @@ import Home from "./views/Home/Home";
 import TermsAndConditions from "./components/TermsAndConditions";
 import ProfileView from "./views/Profile/ProfileView";
 import MyProfileView from "./views/Profile/MyProfileView";
+import TripDetail from "./components/TripDetail";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               <Route path="/termsAndConditions" element={<TermsAndConditions />} />
               <Route path="/profile" element={<ProfileView />} />
               <Route path="/myprofile" element={<MyProfileView />} />
+              <Route path="/tripdetail" element={<TripDetail />} />
             </Routes>
           </BrowserRouter>
         </div>

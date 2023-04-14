@@ -20,7 +20,7 @@ function TripItem() {
 
 
   return (
-    <div className="trip-item-container w-11/12 max-sm:w-full mt-2 max-sm:mb-2 p-1 relative ">
+    <div className="trip-item-container w-11/12 max-sm:w-full mt-2 mb-3 max-sm:mb-2 p-1 relative ">
       <div className='header-container flex items-center justify-around'>
         <div className='title-container text-center w-full'>
           <span className='text-xl max-sm:text-sm' ><strong>Jueves 14 de Abril 2023</strong></span>
@@ -38,8 +38,10 @@ function TripItem() {
           <span style={{fontWeight:"bold"}} className="text-sm max-sm:text-xs" >S.C de Bariloche</span>
         </div>
       </div>
-      <div className='flex w-full justify-end' >
+      <div className='flex w-full justify-end max-sm:justify-center' >
+        <Link to="/tripdetail" >        
 <Button className="px-3.5" style={{backgroundColor:"#3BED1E", color:"black", fontWeight:"bold", borderRadius:"20px", marginTop:"8px", fontSize:"14px"}} >Ver mas</Button>
+        </Link>
       </div>
     </div>
   )

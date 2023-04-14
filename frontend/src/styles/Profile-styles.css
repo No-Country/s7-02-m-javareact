@@ -77,7 +77,6 @@
 
 .calificacion-container{
     max-height:90%;
-    border:2px solid blue;
 }
 
 
@@ -210,7 +209,6 @@
     width: 100%;
     max-height: 78vh;
     display: none;
-   border:2px solid green;
    overflow-y: auto;
 
   }
@@ -277,7 +275,6 @@
   }
 
   .trips-grid-container{
-    border: 4px solid blue;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
    justify-items: center;
@@ -285,7 +282,6 @@
 
 
   .trip-item-container{
-    border:2px solid var(--pink);
     border-radius: 1rem;
     min-height: 12.8rem;
     background-color: #FF3A90;
