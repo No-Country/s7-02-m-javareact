@@ -20,6 +20,7 @@ const LoginForm = () => {
 
       setTimeout(() => {
         setShow(false);
+        sessionStorage.setItem("user", values.email);
         navigate("/home");
       }, 3000);
     } catch (error) {

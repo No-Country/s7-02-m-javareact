@@ -1,20 +1,14 @@
 //Landing
+import Juntas from "./landing/juntas.png";
+
 import Money from "./landing/money.svg";
 import TiredEye from "./landing/eye.svg";
 import Schedule from "./landing/schedule.svg";
 import GreenCar from "./landing/green-car.svg";
-import Envelope from "../assets/landing/envelope.svg";
+import Instagram from "../assets/landing/instagram.svg";
 
 //driver/traveler
-import Marker from "./landing/marker.svg";
-import Calendar from "./landing/calendar.svg";
-import Check from "./landing/check.svg";
-import Cross from "./landing/cross.svg";
-import Like from "./landing/like.svg";
-import Route from "./landing/route.svg";
-import Clock from "./landing/clock.svg";
 import Car from "./landing/car.svg";
-import Checklist from "./landing/checklist.svg";
 import Share from "./landing/viaje_compartido.png";
 
 //Landing end
@@ -24,7 +18,6 @@ import AppStore from "./landing/app-store.png";
 //Carrusel
 import Header1 from "../assets/landing/header1.png";
 import Header2 from "../assets/landing/header2.png";
-import TransitionArrow from "../assets/landing/arrow.svg";
 
 //Auth
 import woman from "../assets/auth/Vector.svg";
@@ -55,36 +48,34 @@ import myratings from "./profile/myratings.svg";
 import mytrips from "./profile/mytrips.svg";
 import mytrips_active from "./profile/mytrips_active.svg";
 
+
 // Account created
-// import imageCreated from "./auth/carcreated.png";
 import accountCreatedImage from "./auth/cuentacreada.svg";
 
 //welcome
 import welcomeImage from "./auth/welcomeImage.png";
+//driver
+
+import check from "./driver/check.svg";
+import driver from "./driver/driver.svg";
+import position from "./driver/position.svg";
+import rectangle from "./driver/Rectangle 153.png";
 
 
 
 export {
+  Juntas,
   GreenCar,
-  Calendar,
   GPlay,
   AppStore,
   Schedule,
   TiredEye,
   Money,
-  Marker,
-  Check,
-  Cross,
-  Like,
-  Route,
-  Clock,
   Car,
-  Checklist,
   Share,
-  Envelope,
+  Instagram,
   Header1,
   Header2,
-  TransitionArrow,
   woman,
   download,
   movil,
@@ -95,10 +86,8 @@ export {
   email,
   key,
   registerViewPic,
-  // LoginViewPic,
   dni,
   imagedni,
-  // imageCreated,
   accountCreatedImage,
   welcomeImage,
   cake,
@@ -113,4 +102,8 @@ export {
   myratings,
   mytrips,
   mytrips_active
+  check,
+  driver,
+  position,
+  rectangle,
 };

@@ -1,31 +1,32 @@
-import Logo from "../../assets/logo-home.svg";
 import {
   AppStore,
-  Calendar,
   Car,
-  Check,
-  Checklist,
-  Clock,
-  Cross,
   GPlay,
   GreenCar,
-  Like,
-  Marker,
+  Juntas,
   Money,
-  Route,
   Schedule,
   Share,
   TiredEye,
 } from "../../assets/images";
+import {
+  CalendarIcon,
+  CheckCircleIcon,
+  MapPinIcon,
+  XCircleIcon,
+  ClockIcon,
+  MapIcon,
+  ListBulletIcon,
+  HandThumbUpIcon,
+} from "@heroicons/react/24/outline";
 import Carousel from "../../components/Carousel";
 
 const Home = () => {
   return (
     <>
-      <div className="header text-center">
-        <h1 className="text-3xl font-bold flex justify-center items-center mt-5 ">
-          ¿Qué es <img className="w-60" src={Logo} alt="juntas" />?
-        </h1>
+      <div className="flex flex-col justify-center items-center text-center my-8">
+        <img className="w-96" src={Juntas} alt="juntas" />
+
         <h5 className="text-2xl font-thin mt-5">
           Es una plataforma que permite{" "}
           <span className="text-green-700">conectar</span> a{" "}
@@ -106,29 +107,30 @@ const Home = () => {
             <div className="flex flex-col items-center justify-center">
               <span className="text-white">¿Donde vas?</span>
               <div className="bg-green w-32 h-32 mt-3 rounded-full flex items-center justify-center">
-                <img className="w-10" src={Marker} alt="marker" />
+                <MapPinIcon className="w-14" />
               </div>
             </div>
 
             <div className="flex flex-col items-center justify-center">
               <span className="text-white">¿Cuando?</span>
-              <div className="bg-pink-500 rounded-full w-32 h-32 mt-3 p-10">
-                <img className="w-10" src={Calendar} alt="calendar" />
+              <div className="bg-pink-500 rounded-full w-32 h-32 mt-3 p-8">
+                <CalendarIcon className="w-14 ml-1" />
               </div>
             </div>
 
             <div className="flex flex-col items-center justify-center">
               <span className="text-white">Filtra tus preferencias</span>
-              <div className="bg-green w-32 h-32 mt-3 rounded-full flex items-center justify-center">
-                <img className="w-10" src={Check} alt="filter" />
-                <img className="w-10" src={Cross} alt="filter" />
+              <div className="bg-green w-32 h-32 mt-3 rounded-full flex justify-center">
+                <CheckCircleIcon className="w-14" />
+                <XCircleIcon className="w-14" />
               </div>
             </div>
 
             <div className="flex flex-col items-center justify-center">
               <span className="text-white">Elige tu mejor opción</span>
               <div className="bg-pink-700 w-32 h-32 mt-3 rounded-full flex items-center justify-center">
-                <img className="w-14" src={Like} alt="like" />
+                {/* <img className="w-14" src={Like} alt="like" /> */}
+                <HandThumbUpIcon className="w-14" />
               </div>
             </div>
           </div>
@@ -145,14 +147,16 @@ const Home = () => {
             <div className="flex flex-col items-center justify-center">
               <span className="text-white">Tu ruta</span>
               <div className="bg-green w-32 h-32 mt-3 rounded-full flex items-center justify-center">
-                <img className="w-14" src={Route} alt="route" />
+                {/* <img className="w-14" src={Route} alt="route" /> */}
+                <MapIcon className="w-14" />
               </div>
             </div>
 
             <div className="flex flex-col items-center justify-center">
               <span className="text-white">Fecha y hora</span>
               <div className="bg-pink-700 w-32 h-32 mt-3 rounded-full flex items-center justify-center">
-                <img className="w-10" src={Clock} alt="clock" />
+                {/* <img className="w-10" src={Clock} alt="clock" /> */}
+                <ClockIcon className="w-14" />
               </div>
             </div>
 
@@ -168,7 +172,8 @@ const Home = () => {
                 Selecciona tus <br /> condiciones
               </span>
               <div className="bg-pink-700 w-32 h-32 mt-3 rounded-full flex items-center justify-center">
-                <img className="w-10" src={Checklist} alt="checklist" />
+                {/* <img className="w-10" src={Checklist} alt="checklist" /> */}
+                <ListBulletIcon className="w-14" />
               </div>
             </div>
           </div>
