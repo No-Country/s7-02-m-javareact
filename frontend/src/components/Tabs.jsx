@@ -5,6 +5,7 @@ import "./../styles/Profile-styles.css";
 import Documents from "./Documents";
 import NoteItem from "./NoteItem";
 import MyTripsContainer from "./MyTripsContainer";
+import NoteItemMobile from "./NoteItemMobile";
 
 //React- bootstrap 
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -80,8 +81,25 @@ function Tabs() {
                   className={driver===2? "tab-btn p-2 w-3/6 active-btn":"tab-btn p-2 w-3/6"}>Como pasajera</button>    
           </div>
           </div>
-        <div className="calificacion-container pt-1">
-        {driver === 1?(
+        <div className="calificacion-container pt-1 pb-5 max-sm:pb-20">
+
+        {isMobile?(<>
+          {driver === 1?(
+          <>
+          <NoteItemMobile/>
+          <NoteItemMobile/>
+          </>
+        ):(
+        <>
+          <NoteItemMobile/>
+          <NoteItemMobile/>
+          <NoteItemMobile/>
+          <NoteItemMobile/>
+        </>
+        )}
+        </>):(
+        <>
+          {driver === 1?(
           <>
           <NoteItem/>
           <NoteItem/>
@@ -94,6 +112,9 @@ function Tabs() {
           <NoteItem/>
         </>
         )}
+        </>)}
+
+       
         </div>
         </div>
         <div

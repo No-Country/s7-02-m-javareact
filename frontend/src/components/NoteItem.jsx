@@ -20,9 +20,12 @@ function NoteItem() {
       };
 
   return (
-    <div className='item-container m-1 mb-4 flex-col items-center relative'>
-        <div className='rating flex items-center justify-around'>
-            <span style={{fontSize:"12px"}} className='p-1' >Maneja con mucha seguridad y es muy atenta</span>
+    <div className='item-container m-1 max-sm:m-0 mb-4 flex-col items-center relative'>
+        <div className='rating flex items-center ml-3 mr-3 justify-between'>
+        <div className='userinfo flex items-center p-1'>
+                <img style={{height:"40px",borderRadius:"50%"}} src="https://randomuser.me/api/portraits/women/29.jpg" alt="user_pic"></img>
+                <span className="ml-2" ><strong>Ana Gonzalez</strong></span>
+            </div>
             <Rating
       style={{ maxWidth: 180 }}
       value={3}
@@ -30,14 +33,14 @@ function NoteItem() {
       readOnly
     />
         </div>
-        <div className='userdata-rating p-2'>
-            <div className='userinfo flex items-center p-1'>
-                <img src="https://randomuser.me/api/portraits/women/29.jpg" alt="user_pic"></img>
-                <span>Ana Gonzalez</span>
-            </div>
+        <div className='userdata-rating ml-4 p-2'>
             <p>Viajó con María de <strong>Mendoza a San Luis</strong> el 14/04/2023 a las 17hs</p>
         </div>
+        <span style={{fontSize:"12px"}} className='p-1 ml-5' >Maneja con mucha seguridad y es muy atenta</span>
+
+        <div className='flex items-center justify-end mr-5' >
         <button>Ver ruta</button>
+        </div>
     </div>
   )
 }
