@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 //Icons
 import {
@@ -20,18 +20,7 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 //Yup
 import * as Yup from "yup";
 
-//estado inicial formulario segun la api.
-const dataFormDefault = {
-  
-  birthdayDate: "2023-04-14",
-  dni: 0,
-  email: "string",
-  lastName: "string",
-  name: "string",
-  password: "string",
-  profileImage: "string"
-  
-};
+
 
 
 /**
@@ -59,6 +48,10 @@ const validationSchema = Yup.object().shape({
     .required(required)
     .min(1, "Debe ingresar una fecha válida")
     .max(12, "Debe ingresar una fecha válida"),
+  NumberDNI:Yup.number()
+    .required(required)
+    .min(1,"Debe Ingresar un Numero de DNI correcto")
+    .max(100000000, "Debe ingresar un numero de DNI correcto"),
   year: Yup.number()
     .required(required)
     .min(1900, "Debe ingresar una fecha válida")
@@ -83,6 +76,36 @@ function RegisterForm() {
     console.log(user);
   };
 
+  const urlBase = `https://juntas-production.up.railway.app/users/register`;
+ 
+  useEffect(()=>{
+    if(userRegistered===null)return;
+    //esquema del formulario según api.
+    const dataFormDefault = {
+      "birthdayDate": `${userRegistered.day}-${userRegistered.month}-${userRegistered.year}`,
+      "dni": userRegistered.NumberDNI,
+      "email": `${userRegistered.email}`,
+      "lastName": `${userRegistered.lastname}`,
+      "name": `${userRegistered.name}`,
+      "password": `${userRegistered.password}`,
+      "profileImage": "string",
+    };
+    
+    
+    
+    fetch(urlBase, {
+      method: 'POST', // or 'PUT'
+      body: JSON.stringify(dataFormDefault), // data can be `string` or {object}!
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => console.log('Success:', response));
+  
+  },[userRegistered]);
+
   return (
     <>
       {userRegistered ? (
@@ -94,6 +117,7 @@ function RegisterForm() {
             lastname: "",
             day: "",
             month: "",
+            NumberDNI: 0,
             year: "",
             date: "",
             telNumber: "",
@@ -105,19 +129,18 @@ function RegisterForm() {
           onSubmit={(values, { resetForm }) => {
             resetForm();
             let user = {};
-
             user = {
               name: values.name,
               lastname: values.lastname,
               day: values.day,
               month: values.month,
+              NumberDNI: values.NumberDNI,
               year: values.year,
               date: values.date,
               telNumber: values.telNumber,
               email: values.email,
               password: values.password,
             };
-
             storeUser(user);
           }}
         >
@@ -131,9 +154,9 @@ function RegisterForm() {
                 />
               </div>
               <div className="flex max-md:flex-col justify-between mb-2">
-                <div class="w-3/6 max-md:w-full">
+                <div className="w-3/6 max-md:w-full">
                   <label
-                    for="nombre"
+                    htmlFor="nombre"
                     className="block text-sm font-medium text-gray-900  "
                   >
                     Nombre:
@@ -398,6 +421,35 @@ function RegisterForm() {
                     return (
                       <div style={{ color: "red", fontSize: "12px" }}>
                         {errors.telNumber}
+                      </div>
+                    );
+                  }}
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="NumberDNI"
+                  className="block mt-2 text-sm font-medium text-gray-900 "
+                >
+                  Numero de DNI:
+                </label>
+                <div className="flex mb-1">
+                  
+                  <Field
+                    type="number"
+                    id="NumberDNI"
+                    name="NumberDNI"
+                    style={{ color: "black", border: "0.1px solid #E0E0E0",borderLeft:"none" }}
+                    className="rounded-r-lg bg-gray-200 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <ErrorMessage
+                  name="NumberDNI"
+                  component={() => {
+                    return (
+                      <div style={{ color: "red", fontSize: "12px" }}>
+                        {errors.NumberDNI}
                       </div>
                     );
                   }}
