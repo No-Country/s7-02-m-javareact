@@ -54,7 +54,7 @@ function App() {
               <Route path="/profile" element={<ProfileView />} />
               <Route path="/myprofile" element={<MyProfileView />} />
               <Route path="/tripdetail" element={<TripDetail />} />
-              
+              <Route path="/driver" element={<WhereToDrive />} />
             </Routes>
           </div>
         </div>

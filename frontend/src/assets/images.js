@@ -38,7 +38,7 @@ import cake from "./auth/cake.svg"
 //Profile view
 import edit from "./profile/edit.svg"
 import dniFront from "./profile/dni-front.png"
-import dniBack from "./profile/dni-Back.png"
+import dniBack from "./profile/dni-back.png"
 import carnetFront from "./profile/carnet-front.png"
 import carnetBack from "./profile/carnet-back.png"
 import mydocuments_active from "./profile/mydocuments_active.svg";
