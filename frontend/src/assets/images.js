@@ -32,8 +32,6 @@ import key from "../assets/auth/password.svg";
 import registerViewPic from "../assets/auth/register-view-pic.png";
 import dni from "../assets/auth/dni.svg";
 import imagedni from "../assets/auth/dni.svg";
-<<<<<<< HEAD
-=======
 import cake from "./auth/cake.svg"
 //import LoginViewPic from "../assets/auth/login-view-pic.png";
 
@@ -49,7 +47,6 @@ import myratings_active from "./profile/myratings_active.svg";
 import myratings from "./profile/myratings.svg";
 import mytrips from "./profile/mytrips.svg";
 import mytrips_active from "./profile/mytrips_active.svg";
->>>>>>> origin/profile-view
 
 // Account created
 import accountCreatedImage from "./auth/cuentacreada.svg";
@@ -92,13 +89,11 @@ export {
   imagedni,
   accountCreatedImage,
   welcomeImage,
-<<<<<<< HEAD
   //driver
   check,
   driver,
   position,
   rectangle,
-=======
   cake,
   edit,
   dniFront,
@@ -111,5 +106,4 @@ export {
   myratings,
   mytrips,
   mytrips_active
->>>>>>> origin/profile-view
 };

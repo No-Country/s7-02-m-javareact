@@ -37,15 +37,8 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex">
-<<<<<<< HEAD
-                <img className="mr-2" src={Instagram} alt="instagram" />
-                <a href="instagram.com" target="_blank" rel="noreferrer">
-                  @JuntasCar
-                </a>
-=======
-                <img className="mr-2" src={Envelope} alt="envelope" />
+                <img className="mr-2" src={EnvelopeIcon} alt="envelope" />
                 <a href="mailto:consultas@juntas.com">@mail</a>
->>>>>>> origin/profile-view
               </li>
             </ul>
           </div>
@@ -53,11 +46,7 @@ const Footer = () => {
         <div className="flex justify-center sm:justify-start md:justify-center h-auto">
           <ul>
             <li>
-<<<<<<< HEAD
-              <a href="/">¿Cómo funciona?</a>
-=======
               <a href="/">T y C</a>
->>>>>>> origin/profile-view
             </li>
             <li>
               <a href="/" className="underline">

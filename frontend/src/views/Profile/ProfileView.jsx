@@ -10,8 +10,6 @@ import { accountCreatedImage,facebook, movil, instagram, cake} from '../../asset
 //Components
 import NoteItem from '../../components/NoteItem';
 
-//Icons
-import { Checklist } from '../../assets/images';
 
 //React bootstrap
 //import Fade from 'react-bootstrap/Fade';

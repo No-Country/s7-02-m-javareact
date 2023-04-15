@@ -11,7 +11,7 @@ import Logo from "../assets/logo.svg";
 import { useNavigate } from "react-router-dom";
 
 const navigation = [
-  { name: "Perfil", href: "/profile" },
+  { name: "Perfil", href: "/myprofile" },
   { name: "Mis viajes", href: "/trips" },
   { name: "Mi calificación", href: "/score" },
   { name: "Como funciona", href: "/faq" },
