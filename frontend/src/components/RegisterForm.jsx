@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 //Icons
 import {
@@ -83,12 +83,9 @@ const validationSchema = Yup.object().shape({
 
   const handleRegister = async (user) => {
 
-<<<<<<< HEAD
     const monthToSend = user.month < 10 ? `0${user.month}` : `${user.moth}`;
     const dayToSend = user.day < 10 ? `0${user.day}` : `${user.day}`;
-=======
     dispatch(loginStart())
->>>>>>> 57ffba5384f7f8615d8d8c3915bf2935a6da68e4
 
     const dataFormDefault = {
       "birthdayDate": `${user.year}-${monthToSend}-${dayToSend}`,
@@ -102,17 +99,6 @@ const validationSchema = Yup.object().shape({
     let headersList = {
       "Accept": "*/*",
       "Content-Type": "application/json" 
-<<<<<<< HEAD
-    };
-    let options = {
-      url:urlBase,
-      method: "POST",
-      headers:headersList,
-      data:dataFormDefault
-    };
-    console.log(dataFormDefault)
-
-=======
      }
 
      let options = {
@@ -121,7 +107,6 @@ const validationSchema = Yup.object().shape({
       headers:headersList,
       data:dataFormDefault
      }
->>>>>>> 57ffba5384f7f8615d8d8c3915bf2935a6da68e4
 
     try {
       console.log("Data form default: ", dataFormDefault)
