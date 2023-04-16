@@ -20,6 +20,9 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 //Yup
 import * as Yup from "yup";
 
+//Axios
+import axios from "axios";
+
 
 
 
@@ -64,46 +67,57 @@ const validationSchema = Yup.object().shape({
     .min(8, "Debe contener al menos 8 caracteres de largo")
     .required(required)
     .oneOf([Yup.ref("password")], "Las contraseñas no coinciden"),
-});
-
-function RegisterForm() {
-  const [userRegistered, setUserRegistered] = useState(null);
-
+  profileImage: Yup.string()
+    .min(3, "El nombre de imagen debe contener mas de 3 caracteres")
+    .required(required),
+  });
+  
+  function RegisterForm() {
+    const [userRegistered, setUserRegistered] = useState(null);
+    const urlBase = `https://juntas-production.up.railway.app/users/register`;
+    
   const storeUser = (user) => {
     setUserRegistered(user);
-  };
-  const handleRegister = (user) => {
-    console.log(user);
+    console.log("UserRegistered: ", userRegistered)
   };
 
-  const urlBase = `https://juntas-production.up.railway.app/users/register`;
- 
-  useEffect(()=>{
-    if(userRegistered===null)return;
-    //esquema del formulario según api.
+  const handleRegister = async (user) => {
+
+    const monthToSend = user.month < 10 ? `0${user.month}` : `${user.moth}`;
+    const dayToSend = user.day < 10 ? `0${user.day}` : `${user.day}`;
+
     const dataFormDefault = {
-      "birthdayDate": `${userRegistered.day}-${userRegistered.month}-${userRegistered.year}`,
-      "dni": userRegistered.NumberDNI,
-      "email": `${userRegistered.email}`,
-      "lastName": `${userRegistered.lastname}`,
-      "name": `${userRegistered.name}`,
-      "password": `${userRegistered.password}`,
-      "profileImage": "string",
+      "birthdayDate": `${user.year}-${monthToSend}-${dayToSend}`,
+      "dni": user.NumberDNI,
+      "email": `${user.email}`,
+      "lastName": `${user.lastname}`,
+      "name": `${user.name}`,
+      "password": `${user.password}`,
+      "profileImage": `${user.profileImage}`,
     };
-    
-    
-    
-    fetch(urlBase, {
-      method: 'POST', // or 'PUT'
-      body: JSON.stringify(dataFormDefault), // data can be `string` or {object}!
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(res => res.json())
-    .catch(error => console.error('Error:', error))
-    .then(response => console.log('Success:', response));
-  },[userRegistered]);
+    let headersList = {
+      "Accept": "*/*",
+      "Content-Type": "application/json" 
+    };
+    let options = {
+      url:urlBase,
+      method: "POST",
+      headers:headersList,
+      data:dataFormDefault
+    };
+    console.log(dataFormDefault)
+
+
+    try {
+      console.log("Data form default: ", dataFormDefault)
+      const data = await axios.request(options)
+      console.log("data: ", data)
+      setUserRegistered(data)
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
 
   return (
     <>
@@ -123,10 +137,11 @@ function RegisterForm() {
             email: "",
             password: "",
             confirmPassword: "",
+            profileImage:""
           }}
           validationSchema={validationSchema}
           onSubmit={(values, { resetForm }) => {
-            resetForm();
+            //resetForm();
             let user = {};
             user = {
               name: values.name,
@@ -139,8 +154,9 @@ function RegisterForm() {
               telNumber: values.telNumber,
               email: values.email,
               password: values.password,
+              profileImage: values.profileImage,
             };
-            storeUser(user);
+            handleRegister(user)
           }}
         >
           {({ errors }) => (
@@ -395,6 +411,35 @@ function RegisterForm() {
                   }}
                 />
               </div>
+
+              <div>
+                <label
+                  htmlFor="profileImage"
+                  className="block mt-2 text-sm font-medium text-gray-900 "
+                >
+                  Imagen de Perfil:
+                </label>
+                <div className="flex mb-1">
+                  <Field
+                    type="text"
+                    id="profileImage"
+                    name="profileImage"
+                    style={{ color: "black", border: "0.1px solid #E0E0E0" }}
+                    className="rounded-lg bg-gray-200 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <ErrorMessage
+                  name="profileImage"
+                  component={() => {
+                    return (
+                      <div style={{ color: "red", fontSize: "12px" }}>
+                        {errors.profileImage}
+                      </div>
+                    );
+                  }}
+                />
+              </div>
+
               <div>
                 <label
                   htmlFor="telefono"
