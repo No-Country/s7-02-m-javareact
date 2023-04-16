@@ -20,6 +20,9 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 //Yup
 import * as Yup from "yup";
 
+//Axios
+import axios from "axios";
+
 
 
 
@@ -64,47 +67,90 @@ const validationSchema = Yup.object().shape({
     .min(8, "Debe contener al menos 8 caracteres de largo")
     .required(required)
     .oneOf([Yup.ref("password")], "Las contraseñas no coinciden"),
-});
-
-function RegisterForm() {
-  const [userRegistered, setUserRegistered] = useState(null);
-
+  });
+  
+  function RegisterForm() {
+    const [userRegistered, setUserRegistered] = useState(null);
+    const urlBase = `https://juntas-production.up.railway.app/users/register`;
+    
   const storeUser = (user) => {
     setUserRegistered(user);
-  };
-  const handleRegister = (user) => {
-    console.log(user);
+    console.log("UserRegistered: ", userRegistered)
   };
 
-  const urlBase = `https://juntas-production.up.railway.app/users/register`;
- 
-  useEffect(()=>{
-    if(userRegistered===null)return;
-    //esquema del formulario según api.
+  const handleRegister = async (user) => {
+
     const dataFormDefault = {
-      "birthdayDate": `${userRegistered.day}-${userRegistered.month}-${userRegistered.year}`,
-      "dni": userRegistered.NumberDNI,
-      "email": `${userRegistered.email}`,
-      "lastName": `${userRegistered.lastname}`,
-      "name": `${userRegistered.name}`,
-      "password": `${userRegistered.password}`,
+      "birthdayDate": `${user.year}-0${user.month}-0${user.day}`,
+      "dni": user.NumberDNI,
+      "email": `${user.email}`,
+      "lastName": `${user.lastname}`,
+      "name": `${user.name}`,
+      "password": `${user.password}`,
       "profileImage": "string",
     };
-    
-    
-    
-    fetch(urlBase, {
-      method: 'POST', // or 'PUT'
-      body: JSON.stringify(dataFormDefault), // data can be `string` or {object}!
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(res => res.json())
-    .catch(error => console.error('Error:', error))
-    .then(response => console.log('Success:', response));
-  
-  },[userRegistered]);
+
+
+    let headersList = {
+      "Accept": "*/*",
+      "Content-Type": "application/json" 
+     }
+
+     let options = {
+      url:urlBase,
+      method: "POST",
+      headers:headersList,
+      data:dataFormDefault
+     }
+
+
+    console.log(dataFormDefault)
+
+
+    try {
+      console.log("Data form default: ", dataFormDefault)
+      const data = await axios.request(options)
+      console.log("data: ", data)
+      setUserRegistered(data)
+    } catch (error) {
+      console.log(error)
+    }
+
+  };
+
+ 
+/**
+ useEffect(()=>{
+   if(userRegistered===null)return;
+   //esquema del formulario según api.
+   const dataFormDefault = {
+     "birthdayDate": `${userRegistered.day}-${userRegistered.month}-${userRegistered.year}`,
+     "dni": userRegistered.NumberDNI,
+     "email": `${userRegistered.email}`,
+     "lastName": `${userRegistered.lastname}`,
+     "name": `${userRegistered.name}`,
+     "password": `${userRegistered.password}`,
+     "profileImage": "string",
+   };
+   
+   
+   
+   fetch(urlBase, {
+     method: 'POST', // or 'PUT'
+     body: JSON.stringify(dataFormDefault), // data can be `string` or {object}!
+     headers:{
+       'Content-Type': 'application/json'
+     }
+   })
+   .then(res => res.json())
+   .catch(error => console.error('Error:', error))
+   .then(response => console.log('Success:', response));
+ 
+ },[userRegistered]);
+ * 
+ * 
+ */
+
 
   return (
     <>
@@ -127,7 +173,7 @@ function RegisterForm() {
           }}
           validationSchema={validationSchema}
           onSubmit={(values, { resetForm }) => {
-            resetForm();
+            //resetForm();
             let user = {};
             user = {
               name: values.name,
@@ -141,7 +187,7 @@ function RegisterForm() {
               email: values.email,
               password: values.password,
             };
-            storeUser(user);
+            handleRegister(user)
           }}
         >
           {({ errors }) => (
