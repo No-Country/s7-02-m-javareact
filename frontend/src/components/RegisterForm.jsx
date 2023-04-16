@@ -23,13 +23,14 @@ import * as Yup from "yup";
 //Axios
 import axios from "axios";
 
+//React router dom
+import { Link } from "react-router-dom";
 
+//Redux
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { loginStart, loginSuccess, loginFailure, registeredSuccess, registeredFailure } from "../store/UserSlice";
 
-
-/**
- *
- * Cambiar el color del texto de los inputs a negro.
- */
 
 //Validation Schema
 const required = "* Campo obligatorio";
@@ -58,7 +59,7 @@ const validationSchema = Yup.object().shape({
   year: Yup.number()
     .required(required)
     .min(1900, "Debe ingresar una fecha válida")
-    .max(2050, "Debe ingresar una fecha válida"),
+    .max(2005, "Debe ingresar una fecha válida"),
   email: Yup.string().email("Debe ser un email válido").required(required),
   password: Yup.string()
     .min(8, "Debe contener al menos 8 caracteres de largo")
@@ -71,20 +72,23 @@ const validationSchema = Yup.object().shape({
     .min(3, "El nombre de imagen debe contener mas de 3 caracteres")
     .required(required),
   });
+
+
+  const url = import.meta.env.VITE_REACT_APP_API_URL;
   
   function RegisterForm() {
     const [userRegistered, setUserRegistered] = useState(null);
-    const urlBase = `https://juntas-production.up.railway.app/users/register`;
+    const dispatch = useDispatch();
     
-  const storeUser = (user) => {
-    setUserRegistered(user);
-    console.log("UserRegistered: ", userRegistered)
-  };
 
   const handleRegister = async (user) => {
 
+<<<<<<< HEAD
     const monthToSend = user.month < 10 ? `0${user.month}` : `${user.moth}`;
     const dayToSend = user.day < 10 ? `0${user.day}` : `${user.day}`;
+=======
+    dispatch(loginStart())
+>>>>>>> 57ffba5384f7f8615d8d8c3915bf2935a6da68e4
 
     const dataFormDefault = {
       "birthdayDate": `${user.year}-${monthToSend}-${dayToSend}`,
@@ -98,6 +102,7 @@ const validationSchema = Yup.object().shape({
     let headersList = {
       "Accept": "*/*",
       "Content-Type": "application/json" 
+<<<<<<< HEAD
     };
     let options = {
       url:urlBase,
@@ -107,13 +112,28 @@ const validationSchema = Yup.object().shape({
     };
     console.log(dataFormDefault)
 
+=======
+     }
+
+     let options = {
+      url:url,
+      method: "POST",
+      headers:headersList,
+      data:dataFormDefault
+     }
+>>>>>>> 57ffba5384f7f8615d8d8c3915bf2935a6da68e4
 
     try {
       console.log("Data form default: ", dataFormDefault)
       const data = await axios.request(options)
-      console.log("data: ", data)
+      //Carga la data del user en redux
+      dispatch(loginSuccess(data.data))
+      //Estado de registrado en redux
+      dispatch(registeredSuccess())
       setUserRegistered(data)
     } catch (error) {
+      dispatch(loginFailure(error))
+      dispatch(registeredFailure())
       console.log(error)
     }
   };
@@ -130,7 +150,7 @@ const validationSchema = Yup.object().shape({
             lastname: "",
             day: "",
             month: "",
-            NumberDNI: 0,
+            NumberDNI:0,
             year: "",
             date: "",
             telNumber: "",
@@ -485,7 +505,7 @@ const validationSchema = Yup.object().shape({
                     id="NumberDNI"
                     name="NumberDNI"
                     style={{ color: "black", border: "0.1px solid #E0E0E0",borderLeft:"none" }}
-                    className="rounded-r-lg bg-gray-200 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="rounded-lg bg-gray-200 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                 </div>
                 <ErrorMessage
@@ -533,7 +553,10 @@ const validationSchema = Yup.object().shape({
               />     
         </div>
          */}
-              <div className="text-center mt-10">
+              <div className="flex-col text-center mt-10">
+                <p>Ya tienes una cuenta?
+                  <Link to="/login" style={{color:"#FF3A90", textDecoration:"none", fontWeight:"bold"}} > Inicia sesión</Link>
+                </p>
                 <button
                   type="submit"
                   className="text-white bg-[#ED1E79] shadow-lg  focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:hover:bg-[#f0428f]"
