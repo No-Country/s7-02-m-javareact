@@ -6,6 +6,9 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 //Icons
 import { download } from "../assets/images";
 
+//React-redux
+import { useSelector } from "react-redux";
+
 //Components
 import Spinner from "./Spinner";
 import TandConditionsPdf from "./TandConditionsPdf";
@@ -43,7 +46,7 @@ const TermsAndConditions = ({ userRegistered }) => {
 
               borderRadius:"16px"
           }}
-          className="p-3 rounded-[20px"
+          className="p-3 rounded-[20px] max-sm:w-screen"
         >
           <div
             style={{ height: "600px"}}
@@ -218,10 +221,10 @@ const TermsAndConditions = ({ userRegistered }) => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-center h-[5rem]">
+            <div className="flex justify-center items-center h-[5rem] max-sm:flex-col max-sm:h-[10rem]">
               <button
                 onClick={() => handleRegister(userRegistered)}
-                className="px-5 m-5 h-3/6 "
+                className="px-5 h-3/6 max-sm:py-2 max-sm:m-0 "
                 style={{
                   backgroundColor: "#ED1E79",
                   color: "#fff",
@@ -238,7 +241,7 @@ const TermsAndConditions = ({ userRegistered }) => {
                 fileName="TerminosYCondiciones-JuntasApp.pdf"
               >
                 <button
-                  className="px-5 m-5 h-full flex justify-around py-2 items-center"
+                  className="px-5 m-5 h-full flex justify-around py-2 items-center max-sm:h-2/6"
                   style={{
                     width: "140px",
                     backgroundColor: "#16A000",

@@ -1,5 +1,10 @@
+
+//Components
+import Footer from "./../../components/Footer.jsx"
+
 const Home = () => {
   return (
+    <>
     <div>
       <br />
       <div className="w-4/5 m-auto my-3">
@@ -32,6 +37,8 @@ const Home = () => {
       </div>
       <br />
     </div>
+      <Footer/>
+    </>
   );
 };
 

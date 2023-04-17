@@ -19,9 +19,9 @@ function ModalEditProfilePic(props) {
   function handleChange(e) {
 
         // Get the selected file
-        const file = e.target.files[0];
-        setPic(file)
-        console.log(file);
+        const selectedPhoto = e.target.files[0];
+        setPic(selectedPhoto)
+        console.log(selectedPhoto);
     
   }
 

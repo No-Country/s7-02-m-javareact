@@ -1,18 +1,22 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function RedirectHome({ children }) {
-  // const user = "pepe@test.com";
-  const user = null;
+
+  const {currentUser} = useSelector((state)=>state.user)
+
+  console.log(currentUser)
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) {
+    if (currentUser) {
       navigate("/home");
     } else {
       navigate("/");
     }
-  }, [user, navigate]);
+  }, [currentUser, navigate]);
 
   return <>{children}</>;
 }

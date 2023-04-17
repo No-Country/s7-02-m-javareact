@@ -9,6 +9,9 @@ import Accordion from 'react-bootstrap/Accordion';
 //Icons
 import { edit, movil, cake, instagram, facebook, dniFront, dniBack, carnetBack, carnetFront } from '../../assets/images';
 
+//React-redux
+import { useSelector } from 'react-redux';
+
 //Components
 import NoteItem from '../../components/NoteItem';
 import Tabs from "../../components/Tabs"
@@ -19,6 +22,7 @@ function MyProfileView() {
   const [open, setOpen] = useState(false);
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShowPic, setModalShowPic]=React.useState(false)
+  const {currentUser} = useSelector((state)=>state.user)
 
   return (
     <>

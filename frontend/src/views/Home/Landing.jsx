@@ -20,6 +20,7 @@ import {
   HandThumbUpIcon,
 } from "@heroicons/react/24/outline";
 import Carousel from "../../components/Carousel";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   return (
@@ -194,6 +195,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

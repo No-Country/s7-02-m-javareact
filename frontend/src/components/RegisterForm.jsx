@@ -68,9 +68,6 @@ const validationSchema = Yup.object().shape({
     .min(8, "Debe contener al menos 8 caracteres de largo")
     .required(required)
     .oneOf([Yup.ref("password")], "Las contraseñas no coinciden"),
-  profileImage: Yup.string()
-    .min(3, "El nombre de imagen debe contener mas de 3 caracteres")
-    .required(required),
   });
 
 
@@ -78,15 +75,21 @@ const validationSchema = Yup.object().shape({
   
   function RegisterForm() {
     const [userRegistered, setUserRegistered] = useState(null);
+    const [profilePic, setprofilePic] = useState(null)
     const dispatch = useDispatch();
+
+  const handleProfileImage= (e)=>{
+    const file = e.target.files[0]
+    setprofilePic(file.name)
+    console.log(file)
+  }
     
 
   const handleRegister = async (user) => {
 
-    const monthToSend = user.month < 10 ? `0${user.month}` : `${user.moth}`;
+    const monthToSend = user.month < 10 ? `0${user.month}` : `${user.month}`;
     const dayToSend = user.day < 10 ? `0${user.day}` : `${user.day}`;
-    dispatch(loginStart())
-
+   
     const dataFormDefault = {
       "birthdayDate": `${user.year}-${monthToSend}-${dayToSend}`,
       "dni": user.NumberDNI,
@@ -94,7 +97,7 @@ const validationSchema = Yup.object().shape({
       "lastName": `${user.lastname}`,
       "name": `${user.name}`,
       "password": `${user.password}`,
-      "profileImage": `${user.profileImage}`,
+      "profileImage": `${profilePic}`,
     };
     let headersList = {
       "Accept": "*/*",
@@ -112,12 +115,13 @@ const validationSchema = Yup.object().shape({
       console.log("Data form default: ", dataFormDefault)
       const data = await axios.request(options)
       //Carga la data del user en redux
+      console.log(data.data)
       dispatch(loginSuccess(data.data))
       //Estado de registrado en redux
       dispatch(registeredSuccess())
       setUserRegistered(data)
     } catch (error) {
-      dispatch(loginFailure(error))
+      dispatch(loginFailure(error.response?.data.message))
       dispatch(registeredFailure())
       console.log(error)
     }
@@ -425,24 +429,16 @@ const validationSchema = Yup.object().shape({
                   Imagen de Perfil:
                 </label>
                 <div className="flex mb-1">
-                  <Field
-                    type="text"
+                  <input
+                    type="file"
                     id="profileImage"
                     name="profileImage"
+                    onChange={handleProfileImage}
                     style={{ color: "black", border: "0.1px solid #E0E0E0" }}
-                    className="rounded-lg bg-gray-200 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="roundend-lg"
+                    required
                   />
                 </div>
-                <ErrorMessage
-                  name="profileImage"
-                  component={() => {
-                    return (
-                      <div style={{ color: "red", fontSize: "12px" }}>
-                        {errors.profileImage}
-                      </div>
-                    );
-                  }}
-                />
               </div>
 
               <div>
