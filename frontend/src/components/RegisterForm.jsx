@@ -99,14 +99,14 @@ const validationSchema = Yup.object().shape({
     let headersList = {
       "Accept": "*/*",
       "Content-Type": "application/json" 
-     }
+    }
 
-     let options = {
+    let options = {
       url:url,
       method: "POST",
       headers:headersList,
       data:dataFormDefault
-     }
+    }
 
     try {
       console.log("Data form default: ", dataFormDefault)
@@ -510,7 +510,7 @@ const validationSchema = Yup.object().shape({
                 Identidad
               </p>
 
-              <UploadDni />
+              {/**<UploadDni />**/}
 
               {/**
          * 
