@@ -8,6 +8,7 @@ import java.time.LocalDate;
 
 @Setter
 @Getter
+
 public class UserResponseDto {
 
     private Long id;
@@ -20,5 +21,4 @@ public class UserResponseDto {
     private Boolean isConfirmedEmail;
     private Boolean hasConfirmedDni;
     private String profileImage;
-    private String token;
 }

@@ -25,4 +25,7 @@ spring:
     console:
       enabled: 'true'
 server:
-  port: '8081'
+  port: '8080'
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher

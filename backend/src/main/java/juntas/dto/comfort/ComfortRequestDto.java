@@ -1,11 +1,11 @@
-package juntas.dto.response;
+package juntas.dto.comfort;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class ComfortResponseDto {
+public class ComfortRequestDto {
 
     private Boolean acceptChild;
     private Boolean petFriendly;
