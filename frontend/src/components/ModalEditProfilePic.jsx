@@ -5,6 +5,9 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
+//React hot toast
+import {toast,Toaster} from "react-hot-toast"
+
 function ModalEditProfilePic(props) {
   const [pic, setPic] = useState(null);
 
@@ -24,41 +27,41 @@ function ModalEditProfilePic(props) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // if(pic===null){
+  if(pic===null){
 
-    //   toast.error('Los campos están vacios!',{
-    //     duration:3500,
-    //     position:'top-center',
-    //     style: {
-    //       borderRadius: '10px',
-    //       background: '#333',
-    //       color: '#fff',
-    //     },
-    //   })
+   toast.error('Los campos están vacios!',{
+        duration:3500,
+         position:'top-center',
+        style: {
+         borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+       },
+      })
 
-    //   return;
-    // }else{
-    //           setTimeout(() => {
-    //             setPic(null);
-    //             props.onHide()
-    //           }, 1);
+     return;
+    }else{
+         setTimeout(() => {
+               setPic(null);
+                props.onHide()
+             }, 1);
 
-    //           toast.success('Los cambios se han guardado!',{
-    //             duration:4000,
-    //             position:'top-center',
-    //             style: {
-    //               borderRadius: '10px',
-    //               background: '#333',
-    //               color: '#fff',
-    //             },
-    //           })
+               toast.success('Los cambios se han guardado!',{
+                 duration:4000,
+                position:'top-center',
+                style: {
+                  borderRadius: '10px',
+                  background: '#333',
+                  color: '#fff',
+                },
+              })
 
-    // }
+     }
   }
 
   return (
     <>
-      {/* <Toaster /> */}
+     <Toaster />
       <Modal
         {...props}
         size="md"

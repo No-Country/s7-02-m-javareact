@@ -104,7 +104,7 @@ const validationSchema = Yup.object().shape({
     }
 
     let options = {
-      url:url,
+      url:`${url}/register`,
       method: "POST",
       headers:headersList,
       data:dataFormDefault

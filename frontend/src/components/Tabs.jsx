@@ -6,9 +6,6 @@ import NoteItem from "./NoteItem";
 import MyTripsContainer from "./MyTripsContainer";
 import NoteItemMobile from "./NoteItemMobile";
 
-//React- bootstrap
-import Dropdown from "react-bootstrap/Dropdown";
-
 //Hooks
 import { useMobile } from "./../hooks/useMobile.js";
 

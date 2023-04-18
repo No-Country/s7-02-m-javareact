@@ -7,24 +7,66 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 
 import { email, facebook, google, key, outlook } from "../assets/images.js";
 import Spinner from "./Spinner";
-import { login } from "../js/auth";
+//Cookies
+import Cookies from "js-cookie";
+
+//Axios
+import axios from "axios";
+
+//Redux
+import { useDispatch } from "react-redux";
+import { loginStart, loginSuccess, loginFailure } from "../store/UserSlice";
+
+const url = import.meta.env.VITE_REACT_APP_API_URL
 
 const LoginForm = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleSubmit = async (values) => {
-    console.log(values);
+  const setTokenToCookies = async (cookiesToken) => {
+    Cookies.set("juntas_app_cookies", cookiesToken);
+  };
 
+
+  const handleSubmit = async (user) => {
+
+    const dataFormDefault = {
+      "email": `${user.email}`,
+      "password": `${user.password}`,
+    };
+
+
+    let headersList = {
+      "Accept": "*/*",
+      "Content-Type": "application/json" 
+    }
+
+    let options = {
+      url:`${url}/login`,
+      method: "POST",
+      headers:headersList,
+      data:dataFormDefault
+    }
+
+    
+    dispatch(loginStart());
+    
     try {
+      localStorage.setItem("email", user.email);
       setShow(true);
-      const loginUser = await login(values);
-      // setTimeout(() => {
-      setShow(false);
-      // sessionStorage.setItem("user", values.email);
-      // navigate("/home");
-      // }, 3000);
+
+      const data = await axios.request(options)
+      
+      setTokenToCookies(data.data.token)
+
+      dispatch(loginSuccess(data.data))
+      setTimeout(() => {
+       setShow(false);
+        navigate("/home");
+      }, 1500);
     } catch (error) {
+      loginFailure(error.mensaje?.data.response)
       console.log(error.message);
     }
   };
@@ -35,7 +77,14 @@ const LoginForm = () => {
           email: "",
           password: "",
         }}
-        onSubmit={handleSubmit}
+        onSubmit={(values,{resetForm})=>{
+          resetForm();
+          let user = {
+            email:values.email,
+            password:values.password
+          }
+          handleSubmit(user)
+        }}
       >
         {({ errors }) => (
           <Form className="w-full login-form flex flex-col items-center">
@@ -108,7 +157,7 @@ const LoginForm = () => {
               <br />
               <Link
                 className="underline text-[#616161] text-sm text-right block"
-                href="/recover"
+                to="/recover"
               >
                 Olvidé contraseña
               </Link>
@@ -116,7 +165,7 @@ const LoginForm = () => {
 
             <div className="text-center h-28 mt-6 flex items-center">
               {show ? (
-                <Spinner />
+               <Spinner/>
               ) : (
                 <button
                   type="submit"

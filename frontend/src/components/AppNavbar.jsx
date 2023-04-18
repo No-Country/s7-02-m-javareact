@@ -32,11 +32,12 @@ function classNames(...classes) {
 const AppNavbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const {currentUser} = useSelector((state)=>state.user)
+  const {currentUser} = useSelector((state)=>state.user)
 
   const handleLogout = () => {
     sessionStorage.clear();
     dispatch(logout());
+    localStorage.removeItem("email")
     navigate("/");
   };
   return (
@@ -76,12 +77,12 @@ const AppNavbar = () => {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Profile dropdown */}
-                {!user ? (
+                {!currentUser ? (
                   <>
                     <button className="text-pink-600 bg-white rounded p-1 border-white">
-                      <Link href="/login">Iniciar sesion</Link>
+                      <Link to="/login">Iniciar sesion</Link>
                     </button>
-                    <Link className="text-white p-1" href="/register">
+                    <Link className="text-white p-1" to="/register">
                       Registrate
                     </Link>
                   </>
@@ -109,7 +110,7 @@ const AppNavbar = () => {
                               <Menu.Item key={idx}>
                                 {({ active }) => (
                                   <Link
-                                    href={item.href}
+                                    to={item.href}
                                     className={classNames(
                                       active ? "bg-gray-100" : "",
                                       "block px-4 py-2 text-sm text-black"

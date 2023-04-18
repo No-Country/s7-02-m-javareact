@@ -62,7 +62,6 @@ function App() {
             <Route path="/driver" element={<WhereToDrive />} />
           </Routes>
         </div>
-        <Footer />
       </BrowserRouter>
     </div>
   );

@@ -43,21 +43,21 @@ function ProfileView() {
         setMessage({ consulta: "" });
       }, 1);
 
-      // toast.success('La consulta se envió exitosamente!',{
-      //   duration:3500,
-      //   position:'top-center',
-      //   style: {
-      //     borderRadius: '10px',
-      //     background: '#333',
-      //     color: '#fff',
-      //   },
-      // })
+       toast.success('La consulta se envió exitosamente!',{
+        duration:3500,
+        position:'top-center',
+        style: {
+           borderRadius: '10px',
+           background: '#333',
+           color: '#fff',
+        },
+       })
     }
   }
 
   return (
     <div className="profile-container flex max-sm:flex-col overflow-x-hidden items-center justify-center">
-      {/* <Toaster/> */}
+       <Toaster/> 
       <div className="container-column flex-col items-center w-4/6 p-3 max-sm:w-11/12  max-sm:p-0">
         <div className="username-container w-4/6 max-sm:w-full flex justify-evenly items-center p-2">
           <img

@@ -5,6 +5,9 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
+//React hot toast
+import {toast, Toaster} from "react-hot-toast"
+
 function ModalEditProfile(props) {
   const [newData, setnewData] = React.useState({
     tel: "",
@@ -22,39 +25,39 @@ function ModalEditProfile(props) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // if(newData.tel===""&&newData.facebook ===""&&newData.instagram===""){
+    if(newData.tel===""&&newData.facebook ===""&&newData.instagram===""){
 
-    //   toast.error('Los campos están vacios!',{
-    //     duration:4000,
-    //     position:'top-center',
-    //     style: {
-    //       borderRadius: '10px',
-    //       background: '#333',
-    //       color: '#fff',
-    //     },
-    //   })
-    // }else{
+      toast.error('Los campos están vacios!',{
+      duration:4000,
+        position:'top-center',
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        },
+     })
+     }else{
 
-    //           setTimeout(() => {
-    //             setnewData({tel:"",facebook:"", instagram:""});
-    //             props.onHide()
-    //           }, 1);
+              setTimeout(() => {
+                setnewData({tel:"",facebook:"", instagram:""});
+                 props.onHide()
+               }, 1);
 
-    //           toast.success('Los cambios se han guardado!',{
-    //             duration:3500,
-    //             position:'top-center',
-    //             style: {
-    //               borderRadius: '10px',
-    //               background: '#333',
-    //               color: '#fff',
-    //             },
-    //           })
-    // }
+              toast.success('Los cambios se han guardado!',{
+               duration:3500,
+                position:'top-center',
+                style: {
+                  borderRadius: '10px',
+                  background: '#333',
+                  color: '#fff',
+                 },
+              })
+     }
   }
 
   return (
     <>
-      {/* <Toaster/> */}
+      <Toaster/> 
       <Modal
         {...props}
         size="md"
