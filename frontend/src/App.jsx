@@ -34,6 +34,7 @@ function App() {
             />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/recover" element={<Recoverpassword />} />
             <Route
               path="/home"
               element={

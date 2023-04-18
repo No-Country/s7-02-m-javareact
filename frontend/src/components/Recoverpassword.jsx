@@ -1,14 +1,6 @@
 import React from "react";
-import { MdOutlineAlternateEmail } from "react-icons/md";
 
 const Recoverpassword = () => {
-  /*  const showPopUP = () => {
-    modal.showModal();
-  };
-
-  const closeModal = () => {
-    modal.close();
-  }; */
   return (
     <div className="bg-black h-96">
       <form action="">
@@ -26,7 +18,7 @@ const Recoverpassword = () => {
             </h5>
             <div className="flex ml-4">
               <div className="bg-[#D9D9D9] rounded-l-[10px] px-4">
-                <MdOutlineAlternateEmail className="  text-[#16A000] h-[50px]  w-[20px]  " />
+                {/* <MdOutlineAlternateEmail className="  text-[#16A000] h-[50px]  w-[20px]  " /> */}
               </div>
 
               <input
@@ -44,12 +36,6 @@ const Recoverpassword = () => {
           >
             Recuperá tu contraseña
           </button>
-
-          {/* <dialog id="modal">
-            <h2>Este es el título de mi ventana modal</h2>
-            <p>Este es un texto de ejemplo dentro de una ventana modal</p>
-            <button onclick={closeModal}>Cerrar</button>
-          </dialog> */}
         </div>
       </form>
     </div>
