@@ -1,10 +1,7 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 
-
-//React Bootsrap
-//import Dropdown from "react-bootstrap/dropdown";
-import Fade from "react-bootstrap/Fade";
-import Accordion from 'react-bootstrap/Accordion';
+//React router
+import { useLocation } from 'react-router-dom';
 
 //Icons
 import { edit, movil, cake, instagram, facebook, noImage, email } from '../../assets/images';
@@ -23,8 +20,17 @@ function MyProfileView() {
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShowPic, setModalShowPic]=React.useState(false)
   const {currentUser} = useSelector((state)=>state.user)
+  const [userEmail, setUserEmail] = useState("")
+  const location = useLocation()
+
+  useEffect(() => {
+ const email =  localStorage.getItem("email");
+ setUserEmail(email)
+  }, [location.pathname])
 
   //https://randomuser.me/api/portraits/women/90.jpg
+
+  //currentUser.profileImage? currentUser.profileImage : noImage
 
   return (
     <>
@@ -41,7 +47,7 @@ function MyProfileView() {
         <div style={{borderBottom:"0.09px solid gray", marginBottom:"15px"}} className='flex-col items-center' >
 
                <div style={{boxShadow:"rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px"}} className='myprofile-data relative pt-2 rounded-lg' >
-                  <img style={{borderRadius:"50%", border:"2px solid #3BED1E "}} src={currentUser.profileImage? currentUser.profileImage : noImage} alt='woman-pic' ></img>
+                  <img style={{borderRadius:"50%", border:"2px solid #3BED1E "}} src={`https://randomuser.me/api/portraits/women/95.jpg`} alt='woman-pic' ></img>
                   <span style={{fontSize:"30px"}}><strong>{
                     `${currentUser.name} ${currentUser.lastName}`
                     }</strong></span>
@@ -67,7 +73,7 @@ function MyProfileView() {
                     </li>
                     <li className='flex pb-2' >
                         <img className='pr-4'  src={email} alt="email-icon.svg"></img>
-                           {currentUser.email}
+                           {currentUser.email? currentUser.email : userEmail}
                     </li>
             </ul>
                    <img onClick={() => setModalShow(true)} style={{position:"absolute",top:"10px", left:"90%", height:"20px", cursor:"pointer"}} src={edit} alt="edit_icon.svg" ></img>
