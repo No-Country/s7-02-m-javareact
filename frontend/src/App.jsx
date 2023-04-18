@@ -73,6 +73,7 @@ function App() {
             <Route path="/start" element={<BeginTrip />} />
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
     </div>
   );
