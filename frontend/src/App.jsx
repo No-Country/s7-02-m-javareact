@@ -20,36 +20,30 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <AppNavbar />
-        <div>
-          <div className="container w-auto m-auto">
-      <AppNavbar />
-      <div className="flex justify-center">
-        <div className="container">
-          <BrowserRouter>
-            <Routes>
-              <Route
-                path="/"
-                exact
-                element={
-                  <RedirectHome>
-                    <Landing />
-                  </RedirectHome>
-                }
-              />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route
-                path="/home"
-                element={
-                  <RedirectHome>
-                    <Home />
-                  </RedirectHome>
-                }
-              />
-              <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />
-              <Route path="/termsAndConditions" element={<TermsAndConditions />} />
-            </Routes>
-          </div>
+        <div className="container w-auto m-auto">
+          <Routes>
+            <Route
+              path="/"
+              exact
+              element={
+                <RedirectHome>
+                  <Landing />
+                </RedirectHome>
+              }
+            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/home"
+              element={
+                <RedirectHome>
+                  <Home />
+                </RedirectHome>
+              }
+            />
+            <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />
+            <Route path="/tyc" element={<TermsAndConditions />} />
+          </Routes>
         </div>
       </BrowserRouter>
 

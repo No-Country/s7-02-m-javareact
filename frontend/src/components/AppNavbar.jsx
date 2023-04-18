@@ -17,6 +17,7 @@ const navigation = [
   { name: "Como funciona", href: "/faq" },
 ];
 const user = "pepe@test.com";
+// const user = null;
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
