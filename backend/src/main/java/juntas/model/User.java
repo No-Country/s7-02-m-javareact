@@ -22,6 +22,9 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
+    private Provider provider;
+
     @Column(unique = true)
     private String email;
 
