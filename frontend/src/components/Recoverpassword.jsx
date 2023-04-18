@@ -1,6 +1,6 @@
 import React from "react";
 
-const Recoverpassword = () => {
+const RecoverPassword = () => {
   return (
     <div className="bg-black h-96">
       <form action="">
@@ -42,4 +42,4 @@ const Recoverpassword = () => {
   );
 };
 
-export default Recoverpassword;
+export default RecoverPassword;

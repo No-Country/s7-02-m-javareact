@@ -15,11 +15,13 @@ import Home from "./views/Home/Home";
 // import RedirectHome from "./components/RedirectHome";
 import RedirectHome from "./components/RedirectHome";
 import TermsAndConditions from "./components/TermsAndConditions";
-import WhereToDrive from "./views/WhereToDrive/WhereToDrive";
+import WhereToDrive from "./views/Travel/WhereToDrive";
+import BeginTrip from "./views/Travel/BeginTrip";
 
 import ProfileView from "./views/Profile/ProfileView";
 import MyProfileView from "./views/Profile/MyProfileView";
 import TripDetail from "./components/TripDetail";
+import RecoverPassword from "./components/Recoverpassword";
 
 function App() {
   return (
@@ -55,11 +57,20 @@ function App() {
                 </RedirectHome>
               }
             />
+            <Route
+              path="/recover"
+              element={
+                <RedirectHome>
+                  <RecoverPassword />
+                </RedirectHome>
+              }
+            />
             <Route path="/tyc" element={<TermsAndConditions />} />
             <Route path="/profile" element={<ProfileView />} />
             <Route path="/myprofile" element={<MyProfileView />} />
             <Route path="/tripdetail" element={<TripDetail />} />
             <Route path="/driver" element={<WhereToDrive />} />
+            <Route path="/start" element={<BeginTrip />} />
           </Routes>
         </div>
       </BrowserRouter>

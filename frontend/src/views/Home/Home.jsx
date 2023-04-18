@@ -14,15 +14,21 @@ const Home = () => {
 
         <br />
         <div className="flex justify-between h-80">
-          <div className="passenger-option w-3/6 flex items-center justify-center">
-            <button className="text-white rounded-xl p-3 w-80 bg-[#16A000]">
+          <div className="passenger-option w-3/6 flex items-center justify-end">
+            <a
+              href="/start"
+              className="text-white text-center no-underline rounded-xl p-3 w-80 bg-[#16A000]"
+            >
               Soy pasajera
-            </button>
+            </a>
           </div>
-          <div className="driver-option w-3/6 flex items-center justify-center">
-            <button className="text-white rounded-xl p-3 w-80 bg-[#A00A4C]">
+          <div className="driver-option w-3/6 flex items-center justify-end">
+            <a
+              href="/driver"
+              className="text-white text-center no-underline rounded-xl p-3 w-80 bg-[#A00A4C]"
+            >
               Soy conductora
-            </button>
+            </a>
           </div>
         </div>
         <br />
