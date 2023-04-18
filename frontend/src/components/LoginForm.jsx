@@ -1,5 +1,5 @@
 import Logo from "../assets/logo2.svg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 //Formik
@@ -105,12 +105,12 @@ const LoginForm = () => {
                 />
               </div>
               <br />
-              <a
+              <Link
                 className="underline text-[#616161] text-sm text-right block"
                 href="/recover"
               >
                 Olvidé contraseña
-              </a>
+              </Link>
             </div>
 
             <div className="text-center h-28 mt-6 flex items-center">

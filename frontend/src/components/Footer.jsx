@@ -2,6 +2,9 @@ import { Instagram } from "../assets/images";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import Logo from "../assets/logo-home.svg";
 
+//React router dom
+import {Link} from "react-router-dom"
+
 const Footer = () => {
   return (
     <div className="bg-black px-6 break-word py-3">
@@ -46,17 +49,14 @@ const Footer = () => {
         <div className="flex justify-center sm:justify-start md:justify-center h-auto">
           <ul>
             <li>
-              <a href="/">T y C</a>
-            </li>
-            <li>
-              <a href="/" className="underline">
+              <Link href="/termsAndConditions" className="underline">
                 Términos y condiciones
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/" className="underline">
+              <Link href="/termsAndConditions" className="underline">
                 Política de privacidad
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
