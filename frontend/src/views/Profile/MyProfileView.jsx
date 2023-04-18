@@ -57,9 +57,9 @@ function MyProfileView() {
 
                <div style={{boxShadow:"rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px"}} className='myprofile-data relative pt-2 rounded-lg' >
                   <img style={{borderRadius:"50%", border:"2px solid #3BED1E "}} src={`https://randomuser.me/api/portraits/women/95.jpg`} alt='woman-pic' ></img>
-                  <span style={{fontSize:"30px"}}><strong>{
-                    `${currentUser.name} ${currentUser.lastName}`
-                    }</strong></span>
+                  <span style={{fontSize:"30px"}}><strong>
+                    {`${currentUser.name} ${currentUser.lastName}`
+ }</strong></span>
                   <img onClick={() => setModalShowPic(true)} style={{position:"absolute",top:"10px", left:"70%", height:"20px", cursor:"pointer"}} src={edit} alt="edit_icon.svg" ></img>
                 </div>
         <div style={{margin:"none", borderTop:"0.09px solid gray"}} className='userdata-container relative flex-col mt-3' >

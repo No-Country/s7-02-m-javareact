@@ -37,6 +37,7 @@ const AppNavbar = () => {
   const handleLogout = () => {
     sessionStorage.clear();
     dispatch(logout());
+    localStorage.removeItem("email")
     navigate("/");
   };
   return (

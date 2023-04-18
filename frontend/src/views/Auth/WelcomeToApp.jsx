@@ -1,6 +1,8 @@
 import React from "react";
 import { welcomeImage } from "../../assets/images";
 
+import { Link } from "react-router-dom";
+
 const WelcomeToApp = () => {
   return (
     <div
@@ -14,7 +16,7 @@ const WelcomeToApp = () => {
           type="button"
           className="text-white bg-[#ED1E79] shadow-lg  focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:hover:bg-[#f0428f]"
         >
-          <Link href="/to" className="text-white">Continuar</Link>
+          <Link to="/home" className="text-white">Continuar</Link>
         </button>
       </div>
     </div>

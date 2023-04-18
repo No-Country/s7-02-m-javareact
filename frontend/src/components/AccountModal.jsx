@@ -72,7 +72,7 @@ const AccountModal = ({ open }) => {
                   <button
                     type="button"
                     className="rounded-md bg-[#ED1E79] px-3 py-2 w-32 text-sm font-normal text-white shadow-sm  focus:bg-pink-700"
-                    onClick={() => navigate("/register/welcomeToApp")}
+                    onClick={() => navigate("/register/welcome")}
                   >
                     Ir al correo
                   </button>
