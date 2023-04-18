@@ -47,6 +47,7 @@ import myratings_active from "./profile/myratings_active.svg";
 import myratings from "./profile/myratings.svg";
 import mytrips from "./profile/mytrips.svg";
 import mytrips_active from "./profile/mytrips_active.svg";
+import noImage from "./profile/no_image.png"
 
 // Account created
 import accountCreatedImage from "./auth/cuentacreada.svg";
@@ -105,5 +106,6 @@ export {
   myratings_active,
   myratings,
   mytrips,
-  mytrips_active
+  mytrips_active,
+  noImage
 };

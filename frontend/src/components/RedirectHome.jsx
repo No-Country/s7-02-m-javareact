@@ -6,8 +6,6 @@ export default function RedirectHome({ children }) {
 
   const {currentUser} = useSelector((state)=>state.user)
 
-  console.log(currentUser)
-
   const navigate = useNavigate();
 
   useEffect(() => {

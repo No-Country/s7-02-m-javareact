@@ -97,7 +97,7 @@ const validationSchema = Yup.object().shape({
       "lastName": `${user.lastname}`,
       "name": `${user.name}`,
       "password": `${user.password}`,
-      "profileImage": `${profilePic}`,
+      "profileImage": `https://randomuser.me/api/portraits/women/95.jpg`,
     };
     let headersList = {
       "Accept": "*/*",
@@ -142,7 +142,6 @@ const validationSchema = Yup.object().shape({
             NumberDNI:0,
             year: "",
             date: "",
-            telNumber: "",
             email: "",
             password: "",
             confirmPassword: "",
@@ -160,7 +159,6 @@ const validationSchema = Yup.object().shape({
               NumberDNI: values.NumberDNI,
               year: values.year,
               date: values.date,
-              telNumber: values.telNumber,
               email: values.email,
               password: values.password,
               profileImage: values.profileImage,
@@ -443,37 +441,6 @@ const validationSchema = Yup.object().shape({
 
               <div>
                 <label
-                  htmlFor="telefono"
-                  className="block mt-2 text-sm font-medium text-gray-900 "
-                >
-                  Teléfono:
-                </label>
-                <div className="flex mb-1">
-                  <span style={{border:"none"}} className=" bg-gray-200 inline-flex items-center px-4 text-sm text-gray-900 border border-r-5 border-gray-300 rounded-l-md  ">
-                    <img src={movil} />
-                  </span>
-                  <Field
-                    type="text"
-                    id="telefono"
-                    name="telNumber"
-                    style={{ color: "black", border: "0.1px solid #E0E0E0",borderLeft:"none" }}
-                    className="rounded-r-lg bg-gray-200 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5   dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  />
-                </div>
-                <ErrorMessage
-                  name="telNumber"
-                  component={() => {
-                    return (
-                      <div style={{ color: "red", fontSize: "12px" }}>
-                        {errors.telNumber}
-                      </div>
-                    );
-                  }}
-                />
-              </div>
-
-              <div>
-                <label
                   htmlFor="NumberDNI"
                   className="block mt-2 text-sm font-medium text-gray-900 "
                 >
@@ -501,15 +468,15 @@ const validationSchema = Yup.object().shape({
                 />
               </div>
 
-              <p className="text-center text-black mt-4">
-                Para completar tu perfil, debes cargar tu Documento Nacional de
-                Identidad
-              </p>
 
               {/**<UploadDni />**/}
 
               {/**
-         * 
+               <p className="text-center text-black mt-4">
+                 Para completar tu perfil, debes cargar tu Documento Nacional de
+                 Identidad
+               </p>
+               * 
         <div>
         <label className="block text-sm font-medium text-center mt-3 text-gray-900">Carga tu Documento Nacional de Identidad</label>
         <label className="block text-sm font-medium mt-1 text-gray-900">Foto frontal:</label>

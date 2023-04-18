@@ -7,7 +7,7 @@ import Fade from "react-bootstrap/Fade";
 import Accordion from 'react-bootstrap/Accordion';
 
 //Icons
-import { edit, movil, cake, instagram, facebook, dniFront, dniBack, carnetBack, carnetFront } from '../../assets/images';
+import { edit, movil, cake, instagram, facebook, noImage, email } from '../../assets/images';
 
 //React-redux
 import { useSelector } from 'react-redux';
@@ -24,6 +24,8 @@ function MyProfileView() {
   const [modalShowPic, setModalShowPic]=React.useState(false)
   const {currentUser} = useSelector((state)=>state.user)
 
+  //https://randomuser.me/api/portraits/women/90.jpg
+
   return (
     <>
     <ModalEditProfile
@@ -39,27 +41,33 @@ function MyProfileView() {
         <div style={{borderBottom:"0.09px solid gray", marginBottom:"15px"}} className='flex-col items-center' >
 
                <div style={{boxShadow:"rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px"}} className='myprofile-data relative pt-2 rounded-lg' >
-                  <img style={{borderRadius:"50%", border:"2px solid #3BED1E "}} src={`https://randomuser.me/api/portraits/women/90.jpg`} alt='woman-pic' ></img>
-                  <span style={{fontSize:"30px"}}><strong>Camila Sosa</strong></span>
+                  <img style={{borderRadius:"50%", border:"2px solid #3BED1E "}} src={currentUser.profileImage? currentUser.profileImage : noImage} alt='woman-pic' ></img>
+                  <span style={{fontSize:"30px"}}><strong>{
+                    `${currentUser.name} ${currentUser.lastName}`
+                    }</strong></span>
                   <img onClick={() => setModalShowPic(true)} style={{position:"absolute",top:"10px", left:"70%", height:"20px", cursor:"pointer"}} src={edit} alt="edit_icon.svg" ></img>
                 </div>
         <div style={{margin:"none", borderTop:"0.09px solid gray"}} className='userdata-container relative flex-col mt-3' >
             <ul className='p-4  md:p-6'  >
                    <li className='flex pb-2' >
                   <img className='pr-4'  src={movil} alt="cellphone-icon"></img>
-                      1197545698
+                      Agrega tu número de teléfono
                     </li>
                     <li className='flex pb-2 ' >
                       <img className='pr-4'  style={{height:"20px"}} src={cake} alt="cake-icon"></img>
-                      14/06
+                      {currentUser.birthdayDate}
                     </li>
                     <li className='flex pb-2 ' >
                        <img className='pr-4'  src={facebook} style={{height:"22px"}} alt="facebook-icon"></img>
-                        facebook.com/miperfiljuntas
+                        Agrega tu link de facebook
                     </li>
                     <li className='flex pb-2' >
                         <img className='pr-4'  src={instagram} alt="instagram-icon.svg"></img>
-                            @miperfiljuntas
+                           Agrega tu link de instagram
+                    </li>
+                    <li className='flex pb-2' >
+                        <img className='pr-4'  src={email} alt="email-icon.svg"></img>
+                           {currentUser.email}
                     </li>
             </ul>
                    <img onClick={() => setModalShow(true)} style={{position:"absolute",top:"10px", left:"90%", height:"20px", cursor:"pointer"}} src={edit} alt="edit_icon.svg" ></img>
