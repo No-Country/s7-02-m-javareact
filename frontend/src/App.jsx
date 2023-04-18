@@ -14,6 +14,7 @@ import Home from "./views/Home/Home";
 
 import RedirectHome from "./components/RedirectHome";
 import TermsAndConditions from "./components/TermsAndConditions";
+import Recoverpassword from "./components/Recoverpassword";
 
 function App() {
   return (
