@@ -70,6 +70,7 @@ public class UserServiceImpl implements IUserService, UserDetailsService {
             userDb.setProvider(Provider.GOOGLE);
             repository.save(userDb);
             response.setToken(JwtUtil.generateToken(userDb));
+            response.setId(userDb.getId());
 
             return response;
         }
