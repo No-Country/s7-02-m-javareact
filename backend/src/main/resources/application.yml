@@ -1,4 +1,11 @@
 spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 109271994996-lgb7i04cllhp1nlssnh9fa88759v1922.apps.googleusercontent.com
+            clientSecret: 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
   jpa:
     open-in-view: 'false'
     properties:
