@@ -32,12 +32,36 @@ import key from "../assets/auth/password.svg";
 import registerViewPic from "../assets/auth/register-view-pic.png";
 import dni from "../assets/auth/dni.svg";
 import imagedni from "../assets/auth/dni.svg";
+import cake from "./auth/cake.svg"
+//import LoginViewPic from "../assets/auth/login-view-pic.png";
+
+//Profile view
+import edit from "./profile/edit.svg"
+import dniFront from "./profile/dni-front.png"
+import dniBack from "./profile/dni-Back.png"
+import carnetFront from "./profile/carnet-front.png"
+import carnetBack from "./profile/carnet-back.png"
+import mydocuments_active from "./profile/mydocuments_active.svg";
+import mydocuments from "./profile/mydocuments.svg"
+import myratings_active from "./profile/myratings_active.svg";
+import myratings from "./profile/myratings.svg";
+import mytrips from "./profile/mytrips.svg";
+import mytrips_active from "./profile/mytrips_active.svg";
+
 
 // Account created
 import accountCreatedImage from "./auth/cuentacreada.svg";
 
 //welcome
 import welcomeImage from "./auth/welcomeImage.png";
+//driver
+
+import check from "./driver/check.svg";
+import driver from "./driver/driver.svg";
+import position from "./driver/position.svg";
+import rectangle from "./driver/Rectangle 153.png";
+
+
 
 export {
   Juntas,
@@ -66,4 +90,20 @@ export {
   imagedni,
   accountCreatedImage,
   welcomeImage,
+  cake,
+  edit,
+  dniFront,
+  dniBack,
+  carnetFront,
+  carnetBack,
+  mydocuments_active,
+  mydocuments,
+  myratings_active,
+  myratings,
+  mytrips,
+  mytrips_active
+  check,
+  driver,
+  position,
+  rectangle,
 };

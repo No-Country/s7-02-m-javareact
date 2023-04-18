@@ -41,6 +41,7 @@ const Footer = () => {
                 <a href="instagram.com" target="_blank" rel="noreferrer">
                   @JuntasCar
                 </a>
+
               </li>
             </ul>
           </div>
@@ -54,6 +55,7 @@ const Footer = () => {
               <a href="/" className="underline">
                 Términos y condiciones
               </a>
+
             </li>
             <li>
               <a href="/" className="underline">
