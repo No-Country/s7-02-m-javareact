@@ -1,4 +1,4 @@
-import {  HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import "./styles/App.css";
 
 //Partials
@@ -17,7 +17,6 @@ import RedirectHome from "./components/RedirectHome";
 import TermsAndConditions from "./components/TermsAndConditions";
 import WhereToDrive from "./views/WhereToDrive/WhereToDrive";
 
-
 import ProfileView from "./views/Profile/ProfileView";
 import MyProfileView from "./views/Profile/MyProfileView";
 import TripDetail from "./components/TripDetail";
@@ -27,36 +26,41 @@ function App() {
     <div className="App">
       <HashRouter>
         <AppNavbar />
-        <div>
-          <div className="container w-auto m-auto">
-            <Routes>
-              <Route
-                path="/"
-                exact
-                element={
-                  <RedirectHome>
-                    <Landing />
-                  </RedirectHome>
-                }
-              />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route
-                path="/home"
-                element={
-                  <RedirectHome>
-                    <Home />
-                  </RedirectHome>
-                }
-              />
-              <Route path="/register/welcomeToApp" element={<WelcomeToApp />} />
-              <Route path="/termsAndConditions" element={<TermsAndConditions />} />
-              <Route path="/profile" element={<ProfileView />} />
-              <Route path="/myprofile" element={<MyProfileView />} />
-              <Route path="/tripdetail" element={<TripDetail />} />
-              <Route path="/driver" element={<WhereToDrive />} />
-            </Routes>
-          </div>
+        <div className="container w-auto m-auto">
+          <Routes>
+            <Route
+              path="/"
+              exact
+              element={
+                <RedirectHome>
+                  <Landing />
+                </RedirectHome>
+              }
+            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/home"
+              element={
+                <RedirectHome>
+                  <Home />
+                </RedirectHome>
+              }
+            />
+            <Route
+              path="/register/welcome"
+              element={
+                <RedirectHome>
+                  <WelcomeToApp />
+                </RedirectHome>
+              }
+            />
+            <Route path="/tyc" element={<TermsAndConditions />} />
+            <Route path="/profile" element={<ProfileView />} />
+            <Route path="/myprofile" element={<MyProfileView />} />
+            <Route path="/tripdetail" element={<TripDetail />} />
+            <Route path="/driver" element={<WhereToDrive />} />
+          </Routes>
         </div>
       </HashRouter>
     </div>

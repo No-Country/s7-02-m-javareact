@@ -7,6 +7,7 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 
 import { email, facebook, google, key, outlook } from "../assets/images.js";
 import Spinner from "./Spinner";
+import { login } from "../js/auth";
 
 const LoginForm = () => {
   const [show, setShow] = useState(false);
@@ -17,12 +18,12 @@ const LoginForm = () => {
 
     try {
       setShow(true);
-
-      setTimeout(() => {
-        setShow(false);
-        sessionStorage.setItem("user", values.email);
-        navigate("/home");
-      }, 3000);
+      const loginUser = await login(values);
+      // setTimeout(() => {
+      setShow(false);
+      // sessionStorage.setItem("user", values.email);
+      // navigate("/home");
+      // }, 3000);
     } catch (error) {
       console.log(error.message);
     }

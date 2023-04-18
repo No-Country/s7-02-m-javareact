@@ -3,7 +3,7 @@ import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import Logo from "../assets/logo-home.svg";
 
 //React router dom
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -36,12 +36,14 @@ const Footer = () => {
               <li className="w-max">
                 <EnvelopeIcon className="w-6 inline text-white" />{" "}
                 <a className="inline" href="mailto:consultas@juntas.com">
-                  @juntas.com
+                  consultas@juntas.com
                 </a>
               </li>
               <li className="flex">
-                <img className="mr-2" src={EnvelopeIcon} alt="envelope" />
-                <a href="mailto:consultas@juntas.com">@mail</a>
+                <img className="mr-2" src={Instagram} alt="instagram" />
+                <a href="instagram.com" target="_blank" rel="noreferrer">
+                  @JuntasCar
+                </a>
               </li>
             </ul>
           </div>
@@ -49,12 +51,12 @@ const Footer = () => {
         <div className="flex justify-center sm:justify-start md:justify-center h-auto">
           <ul>
             <li>
-              <Link href="/termsAndConditions" className="underline">
+              <Link href="/tyc" className="underline">
                 Términos y condiciones
               </Link>
             </li>
             <li>
-              <Link href="/termsAndConditions" className="underline">
+              <Link href="/tyc" className="underline">
                 Política de privacidad
               </Link>
             </li>
