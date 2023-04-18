@@ -1,6 +1,10 @@
+/* Profile */
+@import url("Profile-styles.css");
+
+/* Terms and conditions */
 @import url("TyC.css");
 
-*{
+* {
   box-sizing: border-box;
 }
 

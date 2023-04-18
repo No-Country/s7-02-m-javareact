@@ -11,10 +11,10 @@ import Logo from "../assets/logo.svg";
 import { useNavigate } from "react-router-dom";
 
 //React router dom
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 import { logout } from "../store/UserSlice";
-import{useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const navigation = [
   { name: "Perfil", href: "/myprofile" },
@@ -25,7 +25,6 @@ const navigation = [
 const user = "pepe@test.com";
 // const user = null;
 
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -33,11 +32,11 @@ function classNames(...classes) {
 const AppNavbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {currentUser} = useSelector((state)=>state.user)
+  // const {currentUser} = useSelector((state)=>state.user)
 
   const handleLogout = () => {
     sessionStorage.clear();
-    dispatch(logout())
+    dispatch(logout());
     navigate("/");
   };
   return (
@@ -77,7 +76,7 @@ const AppNavbar = () => {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Profile dropdown */}
-                {!currentUser? (
+                {!user ? (
                   <>
                     <button className="text-pink-600 bg-white rounded p-1 border-white">
                       <Link href="/login">Iniciar sesion</Link>

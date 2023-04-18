@@ -15,7 +15,7 @@ export default function RedirectHome({ children }) {
     } else {
       navigate("/");
     }
-  }, [currentUser, navigate]);
+  }, [user, navigate]);
 
   return <>{children}</>;
 }
