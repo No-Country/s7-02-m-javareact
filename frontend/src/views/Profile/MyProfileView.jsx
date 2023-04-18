@@ -4,16 +4,23 @@ import React,{useState, useEffect} from 'react'
 import { useLocation } from 'react-router-dom';
 
 //Icons
-import { edit, movil, cake, instagram, facebook, noImage, email } from '../../assets/images';
+import {
+  edit,
+  movil,
+  cake,
+  instagram,
+  facebook,
+  email,
+} from "../../assets/images";
+
 
 //React-redux
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 //Components
-import NoteItem from '../../components/NoteItem';
-import Tabs from "../../components/Tabs"
-import ModalEditProfile from '../../components/ModalEditProfile';
-import ModalEditProfilePic from '../../components/ModalEditProfilePic';
+import Tabs from "../../components/Tabs";
+import ModalEditProfile from "../../components/ModalEditProfile";
+import ModalEditProfilePic from "../../components/ModalEditProfilePic";
 
 function MyProfileView() {
   const [open, setOpen] = useState(false);
@@ -34,15 +41,17 @@ function MyProfileView() {
 
   return (
     <>
-    <ModalEditProfile
-       show={modalShow}
-       onHide={() => setModalShow(false)}
-    />
-    <ModalEditProfilePic show={modalShowPic} onHide={()=>setModalShowPic(false)} />
-    <div  className="profile-container flex max-sm:flex-col overflow-x-hidden items-start justify-center"  >
-      <div style={{ alignSelf:"center"}} className='container-column flex-col justify-around items-center w-2/6
+       <ModalEditProfile show={modalShow} onHide={() => setModalShow(false)} />
+      <ModalEditProfilePic
+        show={modalShowPic}
+        onHide={() => setModalShowPic(false)}
+      /> 
+      <div className="profile-container flex max-sm:flex-col overflow-x-hidden items-start justify-center">
+        <div
+          style={{ alignSelf: "center" }}
+          className="container-column flex-col justify-around items-center w-2/6
             pt-5
-            p-3 max-sm:w-11/12  max-sm:p-0' >
+            p-3 max-sm:w-11/12  max-sm:p-0" >
               <h2 style={{textAlign:"center"}} >Mi perfil</h2>
         <div style={{borderBottom:"0.09px solid gray", marginBottom:"15px"}} className='flex-col items-center' >
 
@@ -80,49 +89,13 @@ function MyProfileView() {
 
         </div>
               </div>
-        {
-          /**
-           * 
-           * <div       onClick={() => setOpen(!open)}
-        aria-controls="example-fade-text"
-        aria-expanded={open} style={{width:"80%", borderRadius:"10px"}} className="select-container flex justify-between items-center px-3" >
-          <h4>Mis Calificaciones</h4>
-      <Dropdown>
-            <Dropdown.Toggle style={{backgroundColor:"#fff",border:"none", height:"30px", color:"black"}} variant="success" id="dropdown-basic">
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu align="end" >
-              <Dropdown.Item href="#/action-1">Mas recientes</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Mejores calificaciones</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Menor costo</Dropdown.Item>
-            </Dropdown.Menu>
-    </Dropdown>
         </div>
-    <Fade in={open}>
-    <div id="example-fade-text" className="calificacion-container w-5/6 overflow-y-auto">
-          <NoteItem/>
-          <NoteItem/>
-          <NoteItem/>
-          <NoteItem/>
-          <NoteItem/>
-          <NoteItem/>
-          <NoteItem/>
-          <NoteItem/>
-          <NoteItem/>
-          <NoteItem/>
-          <NoteItem/>
-          <NoteItem/>
+        <div className="container-column flex-col items-center w-4/6  max-sm:w-11/12  max-sm:p-0">
+          <Tabs />
         </div>
-      </Fade>
-           */
-        }
-        </div>
-            <div className='container-column flex-col items-center w-4/6  max-sm:w-11/12  max-sm:p-0' >
-            <Tabs/>
-            </div>
-    </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default MyProfileView
+export default MyProfileView;

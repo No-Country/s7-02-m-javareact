@@ -7,7 +7,6 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 
 import { email, facebook, google, key, outlook } from "../assets/images.js";
 import Spinner from "./Spinner";
-
 //Cookies
 import Cookies from "js-cookie";
 
