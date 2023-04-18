@@ -89,8 +89,9 @@ public class UserServiceImpl implements IUserService, UserDetailsService {
             //Siempre se agrega como local
             user.setProvider(Provider.LOCAL);
 
+
             UserResponseDto response = mapper.map(repository.save(user), UserResponseDto.class);
-            
+            response.setToken(JwtUtil.generateToken(user));
 
         return response;
     }
