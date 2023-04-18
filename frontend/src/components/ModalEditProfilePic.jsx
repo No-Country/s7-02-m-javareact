@@ -21,7 +21,6 @@ function ModalEditProfilePic(props) {
         // Get the selected file
         const selectedPhoto = e.target.files[0];
         setPic(selectedPhoto)
-        console.log(selectedPhoto);
     
   }
 
@@ -47,8 +46,6 @@ function ModalEditProfilePic(props) {
 
       return;
     }else{
-          console.log(pic)
-          
               setTimeout(() => {
                 setPic(null);
                 props.onHide()

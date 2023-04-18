@@ -15,7 +15,6 @@ function handleInputChangeBack(e) {
 
 function handleInputChange(e) {
   const file=e.target.files[0]
-  console.log(file)
   setfileNameFrontal(file.name)
 }
 

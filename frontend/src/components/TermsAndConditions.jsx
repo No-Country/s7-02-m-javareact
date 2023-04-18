@@ -25,7 +25,6 @@ const TermsAndConditions = ({ userRegistered }) => {
   }, []);
 
   const handleRegister = (user) => {
-    console.log(user);
     setOpen(true);
   };
 

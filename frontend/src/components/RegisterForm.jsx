@@ -81,7 +81,6 @@ const validationSchema = Yup.object().shape({
   const handleProfileImage= (e)=>{
     const file = e.target.files[0]
     setprofilePic(file.name)
-    console.log(file)
   }
     
 
@@ -112,10 +111,8 @@ const validationSchema = Yup.object().shape({
     }
 
     try {
-      console.log("Data form default: ", dataFormDefault)
       const data = await axios.request(options)
       //Carga la data del user en redux
-      console.log(data.data)
       dispatch(loginSuccess(data.data))
       //Estado de registrado en redux
       dispatch(registeredSuccess())
@@ -123,7 +120,6 @@ const validationSchema = Yup.object().shape({
     } catch (error) {
       dispatch(loginFailure(error.response?.data.message))
       dispatch(registeredFailure())
-      console.log(error)
     }
   };
 

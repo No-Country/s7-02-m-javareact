@@ -13,7 +13,7 @@ const AccountModal = ({ open }) => {
         as="div"
         className="relative z-10"
         initialFocus={cancelButtonRef}
-        onClose={() => console.log("false")}
+        onClose={() => console.log("")}
         static
       >
         <Transition.Child

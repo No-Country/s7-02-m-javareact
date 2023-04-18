@@ -24,7 +24,6 @@ function ModalEditProfile(props) {
       [e.target.name]:e.target.value
     })
 
-    console.log(newData)
   }
 
   function handleSubmit(e) {
@@ -42,8 +41,7 @@ function ModalEditProfile(props) {
         },
       })
     }else{
-          console.log(newData)
-          
+    
               setTimeout(() => {
                 setnewData({tel:"",facebook:"", instagram:""});
                 props.onHide()

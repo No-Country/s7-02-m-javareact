@@ -29,8 +29,6 @@ function ProfileView() {
       ...message,
       [e.target.name]:e.target.value
     })
-
-    console.log(message)
   }
 
   function handleSubmit(e) {
@@ -39,7 +37,6 @@ function ProfileView() {
     if(message.consulta===""){
       return;
     }else{
-          console.log(message)
           
               setTimeout(() => {
                 setMessage({consulta:""})
