@@ -12,8 +12,6 @@ import  registerViewPic  from "./../../assets/auth/register-view-pic.png";
 const Register = () => {
 
 
-  
-
   const isMobile = useMobile();
     return (
       <div style={{padding:"0",maxHeight:"165vh",zIndex:"-10"}}  className='w-full flex max-md:flex-col justify-around items-center bg-white' >
@@ -30,7 +28,7 @@ const Register = () => {
         borderRadius: '5px',
         textAlign:"center",
         width:"90%",
-    wordBreak:"keep-all"
+        wordBreak:"keep-all",
       }}>
         <h1>Mayor<strong> seguridad, comodidad y confianza</strong> en cada viaje.</h1>
       

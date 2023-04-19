@@ -13,7 +13,7 @@ const Home = () => {
         </div>
 
         <br />
-        <div className="flex justify-between h-80">
+        <div className="flex flex-col justify-between h-80 md:flex-row">
           <div className="passenger-option w-3/6 flex items-center justify-center">
             <button className="text-white rounded-xl p-3 w-80 bg-[#16A000]">
               Soy pasajera

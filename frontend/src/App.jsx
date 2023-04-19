@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import "./styles/App.css";
 
 //Partials
@@ -24,7 +24,7 @@ import TripDetail from "./components/TripDetail";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <AppNavbar />
         <div className="container w-auto m-auto">
           <Routes>
@@ -62,7 +62,8 @@ function App() {
             <Route path="/driver" element={<WhereToDrive />} />
           </Routes>
         </div>
-      </BrowserRouter>
+        <Footer/>
+      </HashRouter>
     </div>
   );
 }
