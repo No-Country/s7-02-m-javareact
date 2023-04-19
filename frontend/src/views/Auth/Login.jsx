@@ -9,7 +9,7 @@ const Login = () => {
           mujeres!
         </h2>
       </div>
-      <div className="flex items-center p-7  justify-center">
+      <div className="flex items-center p-7 justify-center">
         <LoginForm />
       </div>
     </div>
