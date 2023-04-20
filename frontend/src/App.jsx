@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <AppNavbar />
-        <div className="container w-auto m-auto">
+        <div className="container">
           <Routes>
             <Route
               path="/"
