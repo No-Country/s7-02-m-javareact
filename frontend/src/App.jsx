@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import "./styles/App.css";
 
 //Partials
@@ -17,6 +17,7 @@ import RedirectHome from "./components/RedirectHome";
 import TermsAndConditions from "./components/TermsAndConditions";
 import WhereToDrive from "./views/Travel/WhereToDrive";
 import BeginTrip from "./views/Travel/BeginTrip";
+import ChooseTrip from "./views/Travel/ChooseTrip";
 
 import ProfileView from "./views/Profile/ProfileView";
 import MyProfileView from "./views/Profile/MyProfileView";
@@ -26,7 +27,7 @@ import RecoverPassword from "./components/Recoverpassword";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <AppNavbar />
         <div className="container">
           <Routes>
@@ -71,10 +72,11 @@ function App() {
             <Route path="/tripdetail" element={<TripDetail />} />
             <Route path="/driver" element={<WhereToDrive />} />
             <Route path="/start" element={<BeginTrip />} />
+            <Route path="/choose" element={<ChooseTrip/>} />
           </Routes>
         </div>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

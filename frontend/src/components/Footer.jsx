@@ -23,10 +23,14 @@ const Footer = () => {
             </ul>
           </div>
           <div className="sm:mb-3">
-            <h6 className="text-md font-bold">Perfil</h6>
+            <h6 className="text-md font-bold">
+            <Link href="/profile" className="no-underline text-white">
+              Perfil
+            </Link>
+            </h6>
           </div>
           <div className="sm:mb-3">
-            <h6 className="text-md font-bold">Mis Viajes</h6>
+            <h6 className="text-md font-bold"><Link href="/profile" className="no-underline text-white">Mis Viajes</Link></h6>
             <ul></ul>
           </div>
           <div className="sm:mb-3">
@@ -35,13 +39,13 @@ const Footer = () => {
             <ul>
               <li className="w-max">
                 <EnvelopeIcon className="w-6 inline text-white" />{" "}
-                <a className="inline" href="mailto:consultas@juntas.com">
+                <a className="inline text-white" href="mailto:consultas@juntas.com">
                   consultas@juntas.com
                 </a>
               </li>
               <li className="flex">
                 <img className="mr-2" src={Instagram} alt="instagram" />
-                <a href="instagram.com" target="_blank" rel="noreferrer">
+                <a href="instagram.com" className="text-white" target="_blank" rel="noreferrer">
                   @JuntasCar
                 </a>
               </li>
@@ -51,12 +55,12 @@ const Footer = () => {
         <div className="flex justify-center sm:justify-start md:justify-center h-auto">
           <ul>
             <li>
-              <Link href="/tyc" className="underline">
+              <Link href="/tyc" className=" text-white underline">
                 Términos y condiciones
               </Link>
             </li>
             <li>
-              <Link href="/tyc" className="underline">
+              <Link href="/tyc" className="text-white underline">
                 Política de privacidad
               </Link>
             </li>

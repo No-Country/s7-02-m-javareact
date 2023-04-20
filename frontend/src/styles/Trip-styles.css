@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --green:#3BED1E;
+    --pink:#FF3A90;
+    --font-raleway: 'Raleway', sans-serif;
+}
+
+.choose_trip_container{
+    height: 91vh;
+    width:100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-y: hidden;
+    font-family: var(--font-raleway);
+    display: flex;
+    flex-direction: row;
+}
+
+.column_one{
+    display:flex;
+    flex-direction: column;
+    width: 33%;
+    align-items: center;
+
+}
+
+.column_one span{
+    color: var(--pink);
+    font-weight: bold;
+}
+
+.list{
+width: 50%;
+}
+
+.list div{
+}
+
+.column_two{
+}
+
+.choose_item_container{
+    margin: .9375rem;
+    margin-bottom: 1rem;
+    border-radius:20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    height: 14rem;
+    background-color: var(--pink);
+    padding-left: 1rem;
+}
+
+.column_one_item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.choose_item_container .trip-container{
+    height:70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+.column_two_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4px;
+}
+.column_one_item ul{
+    width: 60%;
+}
+
+
+.column_two_item img{
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.column_two_item span{
+    font-size: small;
+}
+
+.column_two_item button{
+    background-color:var(--green);
+    padding: 4px 18px 4px 18px;
+    border-radius: 1.25rem;
+    align-self: flex-end;
+}
+
+.column_two_item button a{
+    text-decoration:none;
+    color: black;
+}
+
+@media (max-width:800px){
+    .choose_trip_container{
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .column_one{
+        width: 100%;
+    }
+
+    .column_two{
+        width: 100%;
+    }
+}

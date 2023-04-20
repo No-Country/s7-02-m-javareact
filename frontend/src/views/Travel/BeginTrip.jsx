@@ -2,7 +2,7 @@ import { GoogleMap, LoadScript, MarkerF } from "@react-google-maps/api";
 import { Button, Form, Modal } from "react-bootstrap";
 import { cities } from "../../assets/cities";
 import { useState } from "react";
-import ModalContinue from "../../components/ModalContinue";
+import { useNavigate } from "react-router-dom";
 
 const containerStyle = {
   width: "100%",
@@ -64,10 +64,11 @@ const medical = [
   },
 ];
 
-const BeginTrip = (props) => {
+const BeginTrip = () => {
   const [originCoords, setOriginCoords] = useState([]);
   const [destinyCoords, setDestinyCoords] = useState([]);
-  const [modalShow, setModalShow] = useState(false);
+
+  const navigate = useNavigate();
 
   const setOrigin = (origin) => {
     setOriginCoords(origin);
@@ -79,7 +80,7 @@ const BeginTrip = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setModalShow(true);
+    navigate("/choose");
   };
   return (
     <>
@@ -242,7 +243,6 @@ const BeginTrip = (props) => {
           </Form>
         </div>
       </div>
-      <ModalContinue show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 };
