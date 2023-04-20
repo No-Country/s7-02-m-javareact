@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <>
@@ -10,22 +12,22 @@ const Home = () => {
         </div>
 
         <br />
-        <div className="flex justify-between h-80">
-          <div className="passenger-option w-3/6 flex items-center justify-end">
-            <a
-              href="/start"
+        <div className="row h-80">
+          <div className="flex align-items-center justify-content-end passenger-option col-md-6">
+            <Link
+              to="/start"
               className="text-white text-center no-underline rounded-xl p-3 w-80 bg-[#16A000]"
             >
               Soy pasajera
-            </a>
+            </Link>
           </div>
-          <div className="driver-option w-3/6 flex items-center justify-end">
-            <a
-              href="/driver"
+          <div className="flex align-items-center justify-content-end driver-option col-md-6">
+            <Link
+              to="/driver"
               className="text-white text-center no-underline rounded-xl p-3 w-80 bg-[#A00A4C]"
             >
               Soy conductora
-            </a>
+            </Link>
           </div>
         </div>
         <br />

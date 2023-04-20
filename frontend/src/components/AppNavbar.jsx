@@ -1,4 +1,7 @@
 import { Fragment } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -8,13 +11,6 @@ import {
   UserCircleIcon,
 } from "@heroicons/react/24/solid";
 import Logo from "../assets/logo.svg";
-import { useNavigate } from "react-router-dom";
-
-//React router dom
-import { Link } from "react-router-dom";
-
-import { logout } from "../store/UserSlice";
-import { useDispatch, useSelector } from "react-redux";
 
 const navigation = [
   { name: "Perfil", href: "/myprofile" },
@@ -22,8 +18,8 @@ const navigation = [
   { name: "Mi calificación", href: "/score" },
   { name: "Como funciona", href: "/faq" },
 ];
-const user = "pepe@test.com";
-// const user = null;
+
+const user = localStorage.getItem("token");
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -31,24 +27,22 @@ function classNames(...classes) {
 
 const AppNavbar = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const {currentUser} = useSelector((state)=>state.user)
+
+  // const { currentUser } = useSelector((state) => state.user);
 
   const handleLogout = () => {
-    sessionStorage.clear();
-    dispatch(logout());
-    localStorage.removeItem("email")
+    localStorage.clear();
     navigate("/");
   };
   return (
     <Disclosure as="nav" className="bg-[#ED1E79]">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-2 px-md-2 px-lg-3">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 left-0 flex items-center d-md-none d-lg-none">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-white">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-white ">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -57,35 +51,43 @@ const AppNavbar = () => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="d-flex flex-grow-1 align-items-center justify-content-start flex-sm-nowrap justify-content-sm-center justify-content-md-start">
                 <div className="flex flex-shrink-0 items-center">
                   <Link to="/">
                     <img
-                      className="block h-8 w-auto lg:hidden"
+                      className="block h-8 d-lg-none"
                       src={Logo}
                       alt="juntas-logo"
                     />
                   </Link>
                   <Link to="/">
                     <img
-                      className="hidden h-8 w-auto lg:block"
+                      className="hidden h-8  d-lg-block"
                       src={Logo}
                       alt="juntas-logo"
                     />
                   </Link>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 position-static mx-auto ml-sm-6 pr-sm-0 ">
                 {/* Profile dropdown */}
-                {!currentUser ? (
-                  <>
+                {!user ? (
+                  <div className="d-sm-none d-md-flex">
                     <button className="text-pink-600 bg-white rounded p-1 border-white">
-                      <Link to="/login">Iniciar sesion</Link>
+                      <Link
+                        to="/login"
+                        className="text-decoration-none text-[#ED1E79]"
+                      >
+                        Iniciar sesion
+                      </Link>
                     </button>
-                    <Link className="text-white p-1" to="/register">
+                    <Link
+                      className="text-white p-1 text-decoration-none"
+                      to="/register"
+                    >
                       Registrate
                     </Link>
-                  </>
+                  </div>
                 ) : (
                   <>
                     <Menu as="div" className="relative ml-3">
@@ -159,24 +161,54 @@ const AppNavbar = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
+          <Disclosure.Panel className="d-lg-none">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block rounded-md px-3 py-2 text-base font-medium"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
+              {!user ? (
+                <>
+                  <button className="text-pink-600 bg-white rounded p-1 border-white">
+                    <Link
+                      className="text-decoration-none text-[#ED1E79]"
+                      to="/login"
+                    >
+                      Iniciar sesion
+                    </Link>
+                  </button>
+                  <Link
+                    className="text-white p-1 ml-4 text-decoration-none"
+                    to="/register"
+                  >
+                    Registrate
+                  </Link>
+                </>
+              ) : (
+                <>
+                  {navigation.map((item) => (
+                    <>
+                      <Disclosure.Button
+                        key={item.name}
+                        as="a"
+                        href={item.href}
+                        className={classNames(
+                          item.current
+                            ? "bg-gray-900 text-white"
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          "block rounded-md px-3 py-2 text-base font-medium"
+                        )}
+                        aria-current={item.current ? "page" : undefined}
+                      >
+                        {item.name}
+                      </Disclosure.Button>
+                      <hr className="text-white" />
+                    </>
+                  ))}
+                  <button
+                    className="px-3 py-2 text-base font-medium text-gray-300 hover:bg-white hover:text-[#ED1E79]"
+                    onClick={handleLogout}
+                  >
+                    Cerrar Sesión
+                  </button>
+                </>
+              )}
             </div>
           </Disclosure.Panel>
         </>
