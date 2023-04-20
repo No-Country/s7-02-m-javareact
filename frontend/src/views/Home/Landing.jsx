@@ -129,7 +129,6 @@ const Home = () => {
             <div className="flex flex-col items-center justify-center">
               <span className="text-white">Elige tu mejor opción</span>
               <div className="bg-pink-700 w-32 h-32 mt-3 rounded-full flex items-center justify-center">
-                {/* <img className="w-14" src={Like} alt="like" /> */}
                 <HandThumbUpIcon className="w-14" />
               </div>
             </div>
@@ -147,7 +146,6 @@ const Home = () => {
             <div className="flex flex-col items-center justify-center">
               <span className="text-white">Tu ruta</span>
               <div className="bg-green w-32 h-32 mt-3 rounded-full flex items-center justify-center">
-                {/* <img className="w-14" src={Route} alt="route" /> */}
                 <MapIcon className="w-14" />
               </div>
             </div>
@@ -155,7 +153,6 @@ const Home = () => {
             <div className="flex flex-col items-center justify-center">
               <span className="text-white">Fecha y hora</span>
               <div className="bg-pink-700 w-32 h-32 mt-3 rounded-full flex items-center justify-center">
-                {/* <img className="w-10" src={Clock} alt="clock" /> */}
                 <ClockIcon className="w-14" />
               </div>
             </div>
@@ -172,7 +169,6 @@ const Home = () => {
                 Selecciona tus <br /> condiciones
               </span>
               <div className="bg-pink-700 w-32 h-32 mt-3 rounded-full flex items-center justify-center">
-                {/* <img className="w-10" src={Checklist} alt="checklist" /> */}
                 <ListBulletIcon className="w-14" />
               </div>
             </div>

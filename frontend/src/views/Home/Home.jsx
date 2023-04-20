@@ -1,5 +1,4 @@
-//Components
-import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -13,16 +12,22 @@ const Home = () => {
         </div>
 
         <br />
-        <div className="flex flex-col justify-between h-80 md:flex-row">
-          <div className="passenger-option w-3/6 flex items-center justify-center">
-            <button className="text-white rounded-xl p-3 w-80 bg-[#16A000]">
+        <div className="row h-80">
+          <div className="flex align-items-center justify-content-end passenger-option col-md-6">
+            <Link
+              to="/start"
+              className="text-white text-center no-underline rounded-xl p-3 w-80 bg-[#16A000]"
+            >
               Soy pasajera
-            </button>
+            </Link>
           </div>
-          <div className="driver-option w-3/6 flex items-center justify-center">
-            <button className="text-white rounded-xl p-3 w-80 bg-[#A00A4C]">
+          <div className="flex align-items-center justify-content-end driver-option col-md-6">
+            <Link
+              to="/driver"
+              className="text-white text-center no-underline rounded-xl p-3 w-80 bg-[#A00A4C]"
+            >
               Soy conductora
-            </button>
+            </Link>
           </div>
         </div>
         <br />
@@ -36,7 +41,6 @@ const Home = () => {
         </div>
         <br />
       </div>
-      <Footer/>
     </>
   );
 };
