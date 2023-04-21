@@ -23,6 +23,7 @@ import ProfileView from "./views/Profile/ProfileView";
 import MyProfileView from "./views/Profile/MyProfileView";
 import TripDetail from "./components/TripDetail";
 import RecoverPassword from "./components/Recoverpassword";
+import SelectedTrip from "./views/Travel/SelectedTrip";
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function App() {
             <Route path="/driver" element={<WhereToDrive />} />
             <Route path="/start" element={<BeginTrip />} />
             <Route path="/choose" element={<ChooseTrip/>} />
+            <Route path="/selectedtrip" element={<SelectedTrip/>} />
           </Routes>
         </div>
         <Footer />

@@ -3,6 +3,8 @@ import React from 'react'
 import ChooseTripItem from "./../../components/ChooseTripItem"
 
 function ChooseTrip() {
+
+    
   return (
     <div className="choose_trip_container">
         <div className='column_one pt-7' >
@@ -28,9 +30,9 @@ function ChooseTrip() {
             </div>
         </div>
     <div className="column_two flex-col w-4/6 h-11/12 overflow-y-auto">
-<ChooseTripItem completed={50} />
-<ChooseTripItem completed={100} />
-<ChooseTripItem completed={20} />
+<ChooseTripItem completed={50} rate={4} />
+<ChooseTripItem completed={100} rate={2} />
+<ChooseTripItem completed={20} rate={5} />
     </div>
         </div>
   )

@@ -12,7 +12,7 @@ import {CalendarDaysIcon, UserIcon } from '@heroicons/react/24/solid'
  import { ClockIcon } from '@heroicons/react/24/outline';
 
 
-function ChooseTripItem({completed}) {
+function ChooseTripItem({completed, rate}) {
 
   const Star = (
     <path d="M62 25.154H39.082L32 3l-7.082 22.154H2l18.541 13.693L13.459 61L32 47.309L50.541 61l-7.082-22.152L62 25.154z" />
@@ -58,21 +58,21 @@ const customStyles = {
           </li>
         </ul>
       </div>
-      <div className='column_two_item w-2/6'>
+      <div style={{border:"2px solid blue"}} className='column_two_item w-2/6'>
         <span className='font-bold text-white' > {completed < 30 ? "Hay lugar!" : completed < 60? "A la mitad" :"Completo"}</span>
-      <div className="w-[66%] h-6 bg-gray-200 rounded-full ">
-  <div style={{backgroundColor:completed < 30 ? "#3BED1E" : completed < 60? "yellow" :"#A00A4C" , width:completed*1.6}} className="h-6 rounded-full text-white">
+      <div  className="w-[175px] h-6 bg-gray-200 rounded-full items-center ">
+  <div style={{backgroundColor:completed < 30 ? "#3BED1E" : completed < 60? "yellow" :"#A00A4C" , width:`${completed}%`}} className="h-6 rounded-full text-white">
   </div>
 </div>
 <img src="https://randomuser.me/api/portraits/women/29.jpg" ></img>
 <span>Conducido por: <strong>Catalina Gomez</strong></span>
       <Rating
       style={{ maxWidth: 180 }}
-      value={3}
+      value={rate}
       itemStyles={customStyles}
       readOnly
     />
-   <button><Link to='/myprofile' >Ver Viaje</Link></button>
+   <button><Link to='/selectedtrip' >Ver Viaje</Link></button>
       </div>
     </div>
   )
