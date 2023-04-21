@@ -60,7 +60,7 @@ const customStyles = {
       </div>
       <div style={{border:"2px solid blue"}} className='column_two_item w-2/6'>
         <span className='font-bold text-white' > {completed < 30 ? "Hay lugar!" : completed < 60? "A la mitad" :"Completo"}</span>
-      <div  className="w-[175px] h-6 bg-gray-200 rounded-full items-center ">
+      <div  className="w-[175px] h-6 bg-gray-200 rounded-full ">
   <div style={{backgroundColor:completed < 30 ? "#3BED1E" : completed < 60? "yellow" :"#A00A4C" , width:`${completed}%`}} className="h-6 rounded-full text-white">
   </div>
 </div>

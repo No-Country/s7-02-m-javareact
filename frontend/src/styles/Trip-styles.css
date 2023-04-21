@@ -139,8 +139,23 @@ width: 50%;
 
 .selected_trip_container .container_row_one .column_one{
     border: 3px solid green;
-    width:50%
+    width:50%;
+    display: flex;
+    justify-content: center;
 }
+
+.selected_trip_container .container_row_one .column_one .user_info img{
+ height: 60px;
+ border-radius: 50%;
+ object-fit: cover;
+}
+
+.selected_trip_container .container_row_one .column_one .user_info {
+    display: flex;
+  justify-content: center;
+   }
+   
+   
 
 .selected_trip_container .container_row_one .column_two{
     border: 3px solid green;
@@ -150,11 +165,29 @@ width: 50%;
 .selected_trip_container .container_row_one .column_two .available{
     border: 3px solid rgb(255, 219, 89);
     align-items: center;
-    justify-content: center;
-    text-align:center
+    display: flex;
+    justify-content: space-around;
+    text-align:center;
+    align-items: center;
+    align-content: center;
 }
 
 
 .selected_trip_container .container_row_two{
     border: 3px solid rgb(219, 71, 219);
+    display: flex;
+    flex-direction: row;
+}
+
+.selected_trip_container .container_row_two .column{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.passengers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }

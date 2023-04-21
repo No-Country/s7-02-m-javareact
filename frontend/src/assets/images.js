@@ -48,6 +48,9 @@ import myratings from "./profile/myratings.svg";
 import mytrips from "./profile/mytrips.svg";
 import mytrips_active from "./profile/mytrips_active.svg";
 
+//Trip view
+import mapaImg from "./Trip/mapa_img.png"
+
 // Account created
 import accountCreatedImage from "./auth/cuentacreada.svg";
 
@@ -103,4 +106,5 @@ export {
   driver,
   position,
   rectangle,
+  mapaImg
 };
