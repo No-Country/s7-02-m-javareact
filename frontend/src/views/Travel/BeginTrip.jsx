@@ -3,6 +3,7 @@ import { Button, Form, Modal } from "react-bootstrap";
 import { cities } from "../../assets/cities";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Map from "../../components/Map";
 
 const containerStyle = {
   width: "100%",
@@ -78,30 +79,26 @@ const BeginTrip = () => {
     setDestinyCoords(destiny);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    await buildRoute(originCoords, destinyCoords);
     navigate("/choose");
   };
   return (
     <>
       <div className="row">
         <div className="col-md-4">
-          <LoadScript googleMapsApiKey="">
+          <Map start={originCoords} end={destinyCoords} />
+          {/* <LoadScript googleMapsApiKey="">
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}
               zoom={5}
             >
-              {originCoords != undefined && destinyCoords != undefined ? (
-                <>
-                  <MarkerF position={originCoords} />
-                  <MarkerF position={destinyCoords} />
-                </>
-              ) : (
-                console.log("test")
-              )}
+              <MarkerF position={originCoords} />
+              <MarkerF position={destinyCoords} />
             </GoogleMap>
-          </LoadScript>
+          </LoadScript> */}
         </div>
         <div className="col-md-8">
           <div className="text-center">
