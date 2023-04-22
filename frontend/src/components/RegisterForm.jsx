@@ -104,7 +104,7 @@ const validationSchema = Yup.object().shape({
     }
 
     let options = {
-      url:`https://juntas-production.up.railway.app/users/register`,
+      url:`https://juntas-web-server-production.up.railway.app/users/register`,
       method: "POST",
       headers:headersList,
       data:dataFormDefault

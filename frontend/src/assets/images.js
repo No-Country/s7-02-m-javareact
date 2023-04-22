@@ -57,11 +57,15 @@ import accountCreatedImage from "./auth/cuentacreada.svg";
 //welcome
 import welcomeImage from "./auth/welcomeImage.png";
 //driver
-
 import check from "./driver/check.svg";
 import driver from "./driver/driver.svg";
 import position from "./driver/position.svg";
 import rectangle from "./driver/Rectangle 153.png";
+//payment
+import mercadoPagoFrame from "./payment/mercadoPagoFrame.svg";
+import PaypalFrame from "./payment/paypalFrame.svg";
+import bankTransfer from "./payment/bankTransfer.svg";
+import warningFrame from "./payment/warningFrame.svg";
 
 export {
   Juntas,
@@ -106,5 +110,9 @@ export {
   driver,
   position,
   rectangle,
-  mapaImg
+  mapaImg,
+  mercadoPagoFrame,
+  PaypalFrame,
+  warningFrame,
+  bankTransfer,
 };

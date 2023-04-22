@@ -1,8 +1,11 @@
 import React from 'react'
+import PaymentPath from '../../components/PaymentPath'
 
 const Payment = () => {
   return (
-    <div>Payment</div>
+    <div className='w-full'>
+      <PaymentPath/>
+    </div>
   )
 }
 
