@@ -1,30 +1,37 @@
-export const getDistance = async (origin, destinations) => {
-  const dCoords = destinations.map((d) => Object.values(d));
-  const oCoords = Object.values(origin);
-  const locations = [oCoords, ...dCoords];
-  const data = {
-    sources: [0],
-    locations: locations,
-    metrics: ["distance"],
-    units: "km",
-  };
-  try {
-    const response = await axios.post(
-      "https://api.openrouteservice.org/v2/matrix/driving-car",
-      data,
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_OPENROUTE_KEY}`,
-        },
-      }
-    );
-    return response.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
+import axios from "axios";
 
-export const buildRoute = async (origin, destination) => {
+// export const getDistance = async (origin, destinations) => {
+//   const dCoords = JSON.parse(destinations);
+//   const oCoords = JSON.parse(origin);
+//   let locations = [
+//     [oCoords.lng, oCoords.lat],
+//     [dCoords.lng, dCoords.lat],
+//   ];
+//   const data = {
+//     sources: [0],
+//     locations: locations,
+//     metrics: ["distance"],
+//     units: "km",
+//   };
+//   console.log(data);
+//   // try {
+//   //   const response = await axios.post(
+//   //     "https://api.openrouteservice.org/v2/matrix/driving-car",
+//   //     data,
+//   //     {
+//   //       headers: {
+//   //         Authorization: `Bearer ${import.meta.env.VITE_OPENROUTE_KEY}`,
+//   //       },
+//   //     }
+//   //   );
+//   //   // return response.data;
+//   //   console.log(response.data);
+//   // } catch (error) {
+//   //   console.log(error);
+//   // }
+// };
+
+export const getDirections = async (origin, destination) => {
   try {
     const response = await axios.get(
       "https://api.openrouteservice.org/v2/directions/driving-car",
