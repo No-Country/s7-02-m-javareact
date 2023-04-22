@@ -31,7 +31,7 @@ const LoginForm = () => {
     try {
       setShow(true);
       const response = await login(user);
-      dispatch(loginSuccess(response.data))
+      dispatch(loginSuccess(response))
       setShow(false);
       navigate("/home");
       window.location.reload();

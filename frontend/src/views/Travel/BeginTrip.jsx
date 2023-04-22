@@ -1,4 +1,9 @@
-import { GoogleMap, LoadScript, MarkerF } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  LoadScript,
+  MarkerF,
+  PolylineF,
+} from "@react-google-maps/api";
 import { Button, Form, Modal } from "react-bootstrap";
 import { cities } from "../../assets/cities";
 import { useState } from "react";
@@ -72,13 +77,15 @@ const BeginTrip = () => {
 
   const setOrigin = (origin) => {
     setOriginCoords(origin);
+    localStorage.setItem("origin", JSON.stringify(origin));
   };
 
   const setDestination = (destiny) => {
     setDestinyCoords(destiny);
+    localStorage.setItem("destination", JSON.stringify(destiny));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     navigate("/choose");
   };
@@ -86,20 +93,24 @@ const BeginTrip = () => {
     <>
       <div className="row">
         <div className="col-md-4">
-          <LoadScript googleMapsApiKey="">
+          <LoadScript googleMapsApiKey={`${import.meta.env.VITE_GMAPS_KEY}`}>
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}
               zoom={5}
             >
-              {originCoords != undefined && destinyCoords != undefined ? (
-                <>
-                  <MarkerF position={originCoords} />
-                  <MarkerF position={destinyCoords} />
-                </>
-              ) : (
-                console.log("test")
-              )}
+              <MarkerF position={originCoords} />
+              <MarkerF position={destinyCoords} />
+
+              <PolylineF
+                path={[originCoords, destinyCoords]}
+                options={{
+                  strokeColor: "#A00A4C",
+                  strokeOpacity: 1.0,
+                  strokeWeight: 4,
+                  geodesic: true,
+                }}
+              />
             </GoogleMap>
           </LoadScript>
         </div>
