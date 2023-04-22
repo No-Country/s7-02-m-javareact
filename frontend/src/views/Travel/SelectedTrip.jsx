@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom'
 //Images and Icons
 import { mapaImg } from '../../assets/images';
 
+//Components
+import BookedTrip from '../../components/BookedTrip';
+
 function SelectedTrip() {
 
-    const completed =50;
+    const completed =80;
 
   return (
     <div className='selected_trip_container'>
@@ -44,12 +47,8 @@ function SelectedTrip() {
 </div>
 <div style={{border:"4px dashed purple"}} className='column w-5/6' >
     <span>El recorrido de Maria</span>
-    <div></div>
-    <div className='amount'>
-        <span>Reservalo por:</span>
-        <div className='price'></div>
-    </div>
-    <button><Link to='/myprofile' >Reservar</Link></button>
+    <BookedTrip/>
+    <button><Link to='/payment' >Reservar</Link></button>
 </div>
         </div>
 

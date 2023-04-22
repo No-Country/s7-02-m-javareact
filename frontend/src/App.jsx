@@ -24,6 +24,7 @@ import MyProfileView from "./views/Profile/MyProfileView";
 import TripDetail from "./components/TripDetail";
 import RecoverPassword from "./components/Recoverpassword";
 import SelectedTrip from "./views/Travel/SelectedTrip";
+import Payment from "./views/Payment/Payment"
 
 function App() {
   return (
@@ -75,6 +76,7 @@ function App() {
             <Route path="/start" element={<BeginTrip />} />
             <Route path="/choose" element={<ChooseTrip/>} />
             <Route path="/selectedtrip" element={<SelectedTrip/>} />
+            <Route path="/payment" element={<Payment/>}/>
           </Routes>
         </div>
         <Footer />
