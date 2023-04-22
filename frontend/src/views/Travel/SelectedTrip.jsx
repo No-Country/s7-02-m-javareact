@@ -16,7 +16,6 @@ function SelectedTrip() {
       <div className="container_row_one h-1/5 flex">
         <div className="column_one ">
           <div
-            style={{ border: "2px solid red" }}
             className="user_info flex-col h-full w-10/12"
           >
             <div className="flex items-center">
@@ -90,11 +89,11 @@ function SelectedTrip() {
         </div>
       </div>
       <div className="container_row_two h-4/5">
-        <div style={{ border: "2px solid orange" }} className="map w-2/6 ml-4 ">
+        <div className="map w-2/6 ml-4 ">
           <Map />
         </div>
-        <div style={{ border: "4px dashed purple" }} className="column w-5/6">
-          <span>El recorrido de Maria</span>
+        <div className="column w-5/6">
+          <span className="text-white p-2 font-bold" >El recorrido de Catalina</span>
           <BookedTrip />
           <button>
             <Link to="/payment">Reservar</Link>

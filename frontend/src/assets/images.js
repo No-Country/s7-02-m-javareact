@@ -60,8 +60,12 @@ import welcomeImage from "./auth/welcomeImage.png";
 
 import check from "./driver/check.svg";
 import driver from "./driver/driver.svg";
+import driverBlack from "./driver/driverBlack.svg"
 import position from "./driver/position.svg";
 import rectangle from "./driver/Rectangle 153.png";
+import gas from "./driver/gas.svg"
+import flag from "./driver/flag.svg"
+import money from "./driver/money.svg"
 
 export {
   Juntas,
@@ -106,5 +110,9 @@ export {
   driver,
   position,
   rectangle,
-  mapaImg
+  mapaImg,
+  driverBlack,
+  gas, 
+  flag,
+  money
 };
