@@ -415,7 +415,7 @@ const validationSchema = Yup.object().shape({
                 />
               </div>
 
-              {/**<div>
+              <div>
                 <label
                   htmlFor="profileImage"
                   className="block mt-2 text-sm font-medium text-gray-900 "
@@ -433,7 +433,7 @@ const validationSchema = Yup.object().shape({
                     required
                   />
                 </div>
-                </div>**/}
+              </div>
 
               <div>
                 <label
@@ -463,7 +463,9 @@ const validationSchema = Yup.object().shape({
                   }}
                 />
               </div>
+
               <UploadDni />
+
               {/**
                <p className="text-center text-black mt-4">
                  Para completar tu perfil, debes cargar tu Documento Nacional de
