@@ -4,8 +4,6 @@ import {
   MarkerF,
   PolylineF,
 } from "@react-google-maps/api";
-import { buildRoute, getDistance } from "../js/functions";
-import { useEffect } from "react";
 
 const containerStyle = {
   width: "100%",
@@ -17,46 +15,26 @@ const center = {
   lng: -65.30470872298973,
 };
 
-const start = localStorage.getItem("origin");
-const end = localStorage.getItem("destination");
+const start = JSON.parse(localStorage.getItem("origin"));
+const end = JSON.parse(localStorage.getItem("destination"));
 
 const Map = () => {
-  const validateLocations = () => {
-    return Object.values(start).length > 1 && Object.values(end).length > 1;
-  };
-
-  // const directions = await buildRoute(start, end);
-
-  // useEffect(() => {
-  //   async function run() {
-  //     const distanceInfo = await getDistance(start, end);
-  //   }
-
-  //   run();
-  // }, []);
-
   return (
     <LoadScript googleMapsApiKey="">
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={5}>
-        {/* {validateLocations ? ( */}
-        <>
-          <MarkerF position={start} />
-          <MarkerF position={end} />
+        <MarkerF position={start} />
+        <MarkerF position={end} />
 
-          <PolylineF
-            path={[start, end]}
-            options={{
-              strokeColor: "black",
-              strokeOpacity: 1.0,
-              strokeWeight: 4,
-              geodesic: true,
-              clickable: true,
-            }}
-          />
-        </>
-        {/* ) : ( */}
-        {/* console.log("test") */}
-        {/* )} */}
+        <PolylineF
+          path={[start, end]}
+          options={{
+            strokeColor: "#A00A4C",
+            strokeOpacity: 1.0,
+            strokeWeight: 4,
+            geodesic: true,
+            clickable: true,
+          }}
+        />
       </GoogleMap>
     </LoadScript>
   );

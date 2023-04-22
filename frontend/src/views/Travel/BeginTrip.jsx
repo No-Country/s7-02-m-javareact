@@ -1,24 +1,11 @@
-import {
-  GoogleMap,
-  LoadScript,
-  MarkerF,
-  PolylineF,
-} from "@react-google-maps/api";
-import { Button, Form, Modal } from "react-bootstrap";
-import { cities } from "../../assets/cities";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+import { Button, Form } from "react-bootstrap";
+
 import Map from "../../components/Map";
+import { cities } from "../../assets/cities";
 
-const containerStyle = {
-  width: "100%",
-  height: "700px",
-};
-
-const center = {
-  lat: -35.21771789700376,
-  lng: -65.30470872298973,
-};
 const conditions = [
   {
     label: "allowPets",
@@ -94,28 +81,7 @@ const BeginTrip = () => {
     <>
       <div className="row">
         <div className="col-md-4">
-          {/* <Map /> */}
-          <LoadScript googleMapsApiKey="">
-            <GoogleMap
-              mapContainerStyle={containerStyle}
-              center={center}
-              zoom={5}
-            >
-              <MarkerF position={originCoords} />
-              <MarkerF position={destinyCoords} />
-
-              <PolylineF
-                path={[originCoords, destinyCoords]}
-                options={{
-                  strokeColor: "#A00A4C",
-                  strokeOpacity: 1.0,
-                  strokeWeight: 4,
-                  geodesic: true,
-                  clickable: true,
-                }}
-              />
-            </GoogleMap>
-          </LoadScript>
+          <Map />
         </div>
         <div className="col-md-8">
           <div className="text-center">
