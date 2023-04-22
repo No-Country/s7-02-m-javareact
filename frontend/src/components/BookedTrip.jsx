@@ -18,7 +18,7 @@ const CarInfoItem = ()=>{
 
 function BookedTrip() {
   return (
-    <div  style={{border:"2px solid blue"}} className='booked_trip_container' >
+    <div  className='booked_trip_container' >
       <div className='division_one w-3/6 pl-5'>
       <ol className="relative border-l border-gray-200 dark:border-gray-700">
       <li className="mb-2 ">
@@ -50,7 +50,7 @@ function BookedTrip() {
         </div>    
         <div className='division_two w-3/6'>
           
-<ol className="relative border-l border-gray-200 dark:border-gray-700">                  
+<ol className="relative border-l border-gray-200 dark:border-gray-700 ml-3">                  
     <li className="mb-2 ">
         <div className="absolute w-3 h-3 bg-[#FF3A90] rounded-full mt-1.5 -left-2 border border-white dark:border-gray-900 dark:bg-[#FF3A90]"></div>
         <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Km 0 | 00:00hs</time>
@@ -90,7 +90,7 @@ function BookedTrip() {
 
         </div>
     <div className='amount'>
-    <span>Reservalo por:</span>
+    <span className='text-white font-bold'>Reservalo por:</span>
     <div className='price'>
         $1500
     </div>

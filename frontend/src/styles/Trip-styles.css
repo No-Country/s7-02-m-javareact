@@ -40,12 +40,6 @@
 width: 50%;
 }
 
-.list div{
-}
-
-.column_two{
-}
-
 .choose_item_container{
     margin: .9375rem;
     margin-bottom: 1rem;
@@ -130,25 +124,20 @@ width: 50%;
     font-family: var(--font-raleway);
     display: flex;
     flex-direction: column;
-    border: 3px solid black;
+    padding-top: 0.9375rem;
 }
-
-.selected_trip_container .container_row_one{
-    border: 3px solid green;
-}
-
 
 .selected_trip_container .container_row_one .column_one{
-    border: 3px solid green;
     width:50%;
     display: flex;
     justify-content: center;
 }
 
 .selected_trip_container .container_row_one .column_one .user_info img{
- height: 60px;
+ height: 70px;
  border-radius: 50%;
  object-fit: cover;
+ box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 .selected_trip_container .container_row_one .column_one .user_info {
@@ -159,12 +148,10 @@ width: 50%;
    
 
 .selected_trip_container .container_row_one .column_two{
-    border: 3px solid green;
     width: 50%;
 }
 
 .selected_trip_container .container_row_one .column_two .available{
-    border: 3px solid rgb(255, 219, 89);
     align-items: center;
     display: flex;
     justify-content: space-around;
@@ -172,6 +159,7 @@ width: 50%;
     align-items: center;
     align-content: center;
 }
+
 
 .selected_trip_container .container_row_two .column{
     display: flex;
@@ -183,19 +171,54 @@ width: 50%;
 
 
 .selected_trip_container .container_row_two{
-    border: 3px solid rgb(219, 71, 219);
     display: flex;
     flex-direction: row;
 }
 
+@media(max-width:50rem ){
+
+    .selected_trip_container{
+        min-height:250vh;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .selected_trip_container .container_row_one .column_one{
+        width: 100%;
+    }
+    .selected_trip_container .container_row_one .column_two{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: .625rem;
+    }
+
+    
+    .selected_trip_container .container_row_one .column_two .available{
+        margin-bottom: 1.25rem;
+    }
+
+    .selected_trip_container .container_row_two{
+        flex-direction: column;
+    }
+
+    .selected_trip_container .container_row_two .column{
+        width:100%;
+    }
+
+    }
+
+    /*SEPARADOR*/
+
 .selected_trip_container button{
-    border: 2px solid brown;
     align-self: flex-end;
     margin-right: 3rem;
     margin-top: .9375rem;
     padding: .3125rem 1rem 0.3125rem 1rem;
     border-radius: 1rem;
     background-color: var(--green);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
 .selected_trip_container button a{
@@ -211,31 +234,29 @@ width: 50%;
 }
 
 .booked_trip_container{
-    height: 80%;
+    height: 70%;
     width: 90%;
     border-radius: 1.25rem;
     padding: 0.8rem;
     position: relative;
     display: flex;
     background-color: white;
+    margin-top: 20px;
 }
 
 .booked_trip_container .division_one{
-    border: 2px solid red;
     display: flex;
     flex-direction: column;
     align-items: start;
 }
 
 .booked_trip_container .division_two{
-    border: 2px solid green;
     max-height: 100%;
     overflow-y: auto;
 }
 
 
 .booked_trip_container .amount{
-    border: 2px solid red;
     width: 12.5rem;
     display: flex;
     align-items: center;
@@ -246,7 +267,6 @@ width: 50%;
 }
 
 .booked_trip_container .amount .price{
-    border:2px solid black;
     border-radius: 50%;
     height: 4.375rem;
     display: flex;
@@ -256,10 +276,11 @@ width: 50%;
     background-color: white;
     color: var(--dark-pink);
     font-weight:bold;
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
 .car_info_container{
-    border:2px solid blue;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -277,7 +298,7 @@ margin-left: 0.625rem;
 
 .car_info_container button{
     position: absolute;
-    right: 0px;
+    right: 1px;
     margin: 0;
     margin-bottom: 0.2rem;
     margin-right: 0.18rem;
@@ -319,3 +340,66 @@ margin-left: 0.625rem;
   .division_two::-webkit-scrollbar-track {
     border-radius: 10px;
   }
+
+  @media(max-width:50rem ){
+
+    .selected_trip_container{
+        min-height:240vh;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .selected_trip_container .container_row_one .column_one{
+        width: 100%;
+    }
+    .selected_trip_container .container_row_one .column_two{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: .625rem;
+    }
+
+    
+    .selected_trip_container .container_row_one .column_two .available{
+        margin-bottom: 1.25rem;
+    }
+
+    .selected_trip_container .container_row_two{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .selected_trip_container .container_row_two .column{
+        width:100%;
+    }
+    .booked_trip_container{
+        width: 100%;
+        flex-direction: column;
+        border-radius: 0;
+    }
+
+    .booked_trip_container .division_one{
+        width: 100%;
+        border-bottom: 0.02px solid gray;
+   
+    }
+
+    .booked_trip_container .division_two{
+        width: 100%;
+    }
+
+    .selected_trip_container button{
+        text-decoration: none;
+        color: black;
+        margin-right: 0;
+    }
+
+    .passengers{
+        margin-top: .9375rem;
+        width: 100%;
+    }
+
+    }
+
+    /*SEPARADOR*/

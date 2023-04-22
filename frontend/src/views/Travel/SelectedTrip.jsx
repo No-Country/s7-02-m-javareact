@@ -13,12 +13,12 @@ function SelectedTrip() {
 
   return (
     <div className="selected_trip_container">
-      <div className="container_row_one h-1/5 flex">
+      <div className="container_row_one h-1/5 max-sm:flex-col max-sm-full flex">
         <div className="column_one ">
           <div
             className="user_info flex-col h-full w-10/12"
           >
-            <div className="flex items-center">
+            <div className="flex items-center max-sm:flex-col">
               <img
                 className="mr-4"
                 src="https://randomuser.me/api/portraits/women/29.jpg"
@@ -33,7 +33,7 @@ function SelectedTrip() {
             </span>
           </div>
         </div>
-        <div className="column_two flex ">
+        <div className="column_two flex max-sm:flex-col ">
           <div className="available flex-col w-3/6">
             <span>
               <strong>Apurate!</strong>
@@ -64,10 +64,9 @@ function SelectedTrip() {
             </div>
           </div>
           <div
-            style={{ border: "2px solid blue" }}
             className="passengers h-full w-3/6"
           >
-            <div className="flex items-center justify-around">
+            <div className="flex items-center justify-around w-3/6">
               <img
                 className="w-10 h-10 rounded-full"
                 src="https://randomuser.me/api/portraits/women/26.jpg"
@@ -89,7 +88,7 @@ function SelectedTrip() {
         </div>
       </div>
       <div className="container_row_two h-4/5">
-        <div className="map w-2/6 ml-4 ">
+        <div className="map w-2/6 ml-4 max-sm:w-full max-sm:ml-0">
           <Map />
         </div>
         <div className="column w-5/6">
