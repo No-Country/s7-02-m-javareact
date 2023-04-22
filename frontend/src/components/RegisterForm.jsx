@@ -116,6 +116,8 @@ const validationSchema = Yup.object().shape({
       dispatch(loginSuccess(data.data))
       //Estado de registrado en redux
       dispatch(registeredSuccess())
+      localStorage.setItem('token', data.data.token)
+      window.location.reload();
       setUserRegistered(data)
     } catch (error) {
       dispatch(loginFailure(error.response?.data.message))

@@ -9,7 +9,7 @@ import BookedTrip from "../../components/BookedTrip";
 import Map from "../../components/Map";
 
 function SelectedTrip() {
-  const completed = 80;
+  const completed = 50;
 
   return (
     <div className="selected_trip_container">
@@ -40,7 +40,7 @@ function SelectedTrip() {
             </span>
             <span className=" text-black">
               {" "}
-              {completed < 30
+              {completed < 49
                 ? "Hay lugar!"
                 : completed < 65
                 ? "A la mitad"
@@ -48,7 +48,7 @@ function SelectedTrip() {
                 ? "Casi lleno"
                 : "Completo"}
             </span>
-            <div className="w-[175px] h-6 bg-gray-200 rounded-full items-center ">
+            <div style={{boxShadow:"rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset"}} className="w-[175px] h-6 bg-gray-200 rounded-full items-center ">
               <div
                 style={{
                   backgroundColor:
