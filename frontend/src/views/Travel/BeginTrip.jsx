@@ -93,7 +93,7 @@ const BeginTrip = () => {
     <>
       <div className="row">
         <div className="col-md-4">
-          <LoadScript googleMapsApiKey="">
+          <LoadScript googleMapsApiKey={`${import.meta.env.VITE_GMAPS_KEY}`}>
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}

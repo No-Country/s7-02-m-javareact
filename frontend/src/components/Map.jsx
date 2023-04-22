@@ -20,7 +20,7 @@ const end = JSON.parse(localStorage.getItem("destination"));
 
 const Map = () => {
   return (
-    <LoadScript googleMapsApiKey="">
+    <LoadScript googleMapsApiKey={`${import.meta.env.VITE_GMAPS_KEY}`}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={5}>
         <MarkerF position={start} />
         <MarkerF position={end} />
