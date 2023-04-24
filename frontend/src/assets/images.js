@@ -70,6 +70,8 @@ import warningFrame from "./payment/warningFrame.svg";
 import gas from "./driver/gas.svg"
 import flag from "./driver/flag.svg"
 import money from "./driver/money.svg"
+import checkBank from "./payment/checkBankData.svg";
+import groupCheckBank from "./payment/Group2069.png";
 
 export {
   Juntas,
@@ -122,5 +124,7 @@ export {
   driverBlack,
   gas, 
   flag,
-  money
+  money,
+  checkBank,
+  groupCheckBank,
 };
