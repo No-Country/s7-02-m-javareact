@@ -21,6 +21,7 @@ import { login } from "../js/auth";
 const LoginForm = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   // const setTokenToCookies = async (cookiesToken) => {
   //   Cookies.set("juntas_app_cookies", cookiesToken);
@@ -29,7 +30,8 @@ const LoginForm = () => {
   const handleSubmit = async (user) => {
     try {
       setShow(true);
-      await login(user);
+      const response = await login(user);
+      dispatch(loginSuccess(response))
       setShow(false);
       navigate("/home");
       window.location.reload();

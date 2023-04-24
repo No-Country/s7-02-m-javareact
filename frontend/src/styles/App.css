@@ -4,8 +4,13 @@
 /* Terms and conditions */
 @import url("TyC.css");
 
+
+/* Trip */
+@import url("Trip-styles.css");
+
 * {
   box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* Landing */

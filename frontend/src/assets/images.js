@@ -48,17 +48,30 @@ import myratings from "./profile/myratings.svg";
 import mytrips from "./profile/mytrips.svg";
 import mytrips_active from "./profile/mytrips_active.svg";
 
+//Trip view
+import mapaImg from "./Trip/mapa_img.png"
+
 // Account created
 import accountCreatedImage from "./auth/cuentacreada.svg";
 
 //welcome
 import welcomeImage from "./auth/welcomeImage.png";
 //driver
-
 import check from "./driver/check.svg";
 import driver from "./driver/driver.svg";
+import driverBlack from "./driver/driverBlack.svg"
 import position from "./driver/position.svg";
 import rectangle from "./driver/Rectangle 153.png";
+//payment
+import mercadoPagoFrame from "./payment/mercadoPagoFrame.svg";
+import PaypalFrame from "./payment/paypalFrame.svg";
+import bankTransfer from "./payment/bankTransfer.svg";
+import warningFrame from "./payment/warningFrame.svg";
+import gas from "./driver/gas.svg"
+import flag from "./driver/flag.svg"
+import money from "./driver/money.svg"
+import checkBank from "./payment/checkBankData.svg";
+import groupCheckBank from "./payment/Group2069.png";
 
 export {
   Juntas,
@@ -103,4 +116,15 @@ export {
   driver,
   position,
   rectangle,
+  mapaImg,
+  mercadoPagoFrame,
+  PaypalFrame,
+  warningFrame,
+  bankTransfer,
+  driverBlack,
+  gas, 
+  flag,
+  money,
+  checkBank,
+  groupCheckBank,
 };

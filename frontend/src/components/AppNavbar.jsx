@@ -55,14 +55,14 @@ const AppNavbar = () => {
                 <div className="flex flex-shrink-0 items-center">
                   <Link to="/">
                     <img
-                      className="block h-8 d-lg-none"
+                      className="block h-16 d-lg-none"
                       src={Logo}
                       alt="juntas-logo"
                     />
                   </Link>
                   <Link to="/">
                     <img
-                      className="hidden h-8  d-lg-block"
+                      className="hidden h-16 d-lg-block"
                       src={Logo}
                       alt="juntas-logo"
                     />
